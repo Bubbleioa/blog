@@ -182,26 +182,24 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2018/11/07/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay5%E3%80%91%E8%80%83%E8%AF%95%E6%97%B6%E5%AE%8C%E5%85%A8%E6%B2%A1%E6%9C%89%E6%80%9D%E8%B7%AF%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F%E5%8F%AF%E4%BB%A5%E6%9A%B4%E5%8A%9B%E5%90%97%EF%BC%9F%E5%8F%AF%E4%BB%A5%E4%B9%B1%E6%90%9E%E5%90%97%EF%BC%9F/" target="_self">
-          【考前冲刺Day5】考试时完全没有思路怎么办？可以暴力吗？可以乱搞吗？
+        <a href="/2019/04/19/%5BCF1151B%5DDima%20and%20a%20Bad%20XOR(%E6%80%9D%E7%BB%B4%E9%A2%98)/" target="_self">
+          [CF1151B]Dima and a Bad XOR(思维题)
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2018/11/07/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay5%E3%80%91%E8%80%83%E8%AF%95%E6%97%B6%E5%AE%8C%E5%85%A8%E6%B2%A1%E6%9C%89%E6%80%9D%E8%B7%AF%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F%E5%8F%AF%E4%BB%A5%E6%9A%B4%E5%8A%9B%E5%90%97%EF%BC%9F%E5%8F%AF%E4%BB%A5%E4%B9%B1%E6%90%9E%E5%90%97%EF%BC%9F/" target="_self">
+        <a href="/2019/04/19/%5BCF1151B%5DDima%20and%20a%20Bad%20XOR(%E6%80%9D%E7%BB%B4%E9%A2%98)/" target="_self">
           
           
             
           
-          T1 改造二叉树
-题面
+          
+题目链接
 
-洛谷上的数据有水，过了不代表正确；
-这题还是比较难想的（至少我是这么认为的）  
-首先如果我们对一颗平衡树进行中序遍历，得到的一个遍历的序列是单调上升的。于是我们这道题就转化成一个这样的问题：给一棵二叉树，让它的中序遍历序列变为严格单调上升序列，最少需要多少次修改  
-《算法竞赛进阶指南（第二版）》的263面提过一个思考题：  
-
-把一个序列A变成非严格单调递增的（单调不
+题解学OI学傻了，一开始想到一个 $O(m^n)$ 的暴力，显然是过不了的，后面想到一个 $O(2^nm)$ 的做法，就没思路了
+其实正解很简单。
+我们先取好一组（这里默认就是第一列），如果它的值大于0，那就是答案了，输出即可。
+如果不大于0，它的值肯定就为0了，对于每一行，如果能找到一个数与当前所选的数不一致的数，那就选它（因为它们的二进制数肯定不同，当前异或和为0，换一个不一样的
         </a>
       </p>
 
@@ -209,8 +207,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2018-11-07 15:36" pubdate>
-              2018-11-07
+            <time datetime="2019-04-19 14:58" pubdate>
+              2019-04-19
             </time>
           </div>
         
@@ -226,19 +224,31 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2018/11/07/%E4%BA%BA%E7%94%9F%E7%AC%AC%E4%B8%80%E6%AC%A1Pull%20Request%E8%A2%AB%E9%87%87%E7%BA%B3%E4%BA%86%EF%BC%81%EF%BC%81/" target="_self">
-          人生第一次Pull Request被采纳了！！
+        <a href="/2019/04/18/%5BJXOI2018%5D%E5%AE%88%E5%8D%AB%EF%BC%88dp%EF%BC%89/" target="_self">
+          [JXOI2018]守卫（dp）
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2018/11/07/%E4%BA%BA%E7%94%9F%E7%AC%AC%E4%B8%80%E6%AC%A1Pull%20Request%E8%A2%AB%E9%87%87%E7%BA%B3%E4%BA%86%EF%BC%81%EF%BC%81/" target="_self">
+        <a href="/2019/04/18/%5BJXOI2018%5D%E5%AE%88%E5%8D%AB%EF%BC%88dp%EF%BC%89/" target="_self">
           
           
             
           
-          人生第一次Pull Request被采纳了！！记录下这个时刻！！！
+          
+题目链接
 
+题解要是今年也有这么简单的题目就好了
+代码#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+const int MAXN = 5003;
+int f[MAXN][MAXN];
+int n;
+int h[MAXN];
+
+bool check(int x, int mid, int y)
+&#123;
+    doub
         </a>
       </p>
 
@@ -246,8 +256,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2018-11-07 07:54" pubdate>
-              2018-11-07
+            <time datetime="2019-04-18 22:19" pubdate>
+              2019-04-18
             </time>
           </div>
         
@@ -263,19 +273,31 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2018/11/06/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay4%E3%80%91%E5%85%B3%E4%BA%8E%E6%88%91%E4%B8%8D%E5%BC%80long%20long%E8%A7%81%E7%A5%96%E5%AE%97%E8%BF%99%E6%A1%A9%E4%BA%8B/" target="_self">
-          【考前冲刺Day4】关于我不开long long见祖宗这桩事
+        <a href="/2019/04/18/%5BP4310%5D%E7%BB%9D%E4%B8%96%E5%A5%BD%E9%A2%98/" target="_self">
+          [P4310]绝世好题
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2018/11/06/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay4%E3%80%91%E5%85%B3%E4%BA%8E%E6%88%91%E4%B8%8D%E5%BC%80long%20long%E8%A7%81%E7%A5%96%E5%AE%97%E8%BF%99%E6%A1%A9%E4%BA%8B/" target="_self">
+        <a href="/2019/04/18/%5BP4310%5D%E7%BB%9D%E4%B8%96%E5%A5%BD%E9%A2%98/" target="_self">
           
           
             
           
-          T1 增援前线实锤乱搞题，考试的时候写了一个错误的dp，只拿了一半的分。实际上这一题应该属于贪心吧我们用f[i]表示i号点能站多少人。显然，前l个点的f[i]=a[i]；对于其他情况，f[i]应由i-l到i-1这段区间内的点更新而来。具体来说，就是“能跳则跳，满员为止”我们优先选择距离当前点较远的点来更新，下面将证明这一结论。  
-我们每次只能在[latex]i-l[/latex]到[latex]
+          
+题目链接
+
+题解代码#include &amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+int n;
+int f[35];
+
+int main()
+&#123;
+    cin &amp;gt;&amp;gt; n;
+    for (int i = 1; i &amp;lt;= n; i++)
+    &#123;
+        int x
         </a>
       </p>
 
@@ -283,8 +305,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2018-11-06 15:16" pubdate>
-              2018-11-06
+            <time datetime="2019-04-18 22:18" pubdate>
+              2019-04-18
             </time>
           </div>
         
@@ -300,22 +322,19 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2018/11/05/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay%EF%BC%93%E3%80%91%E9%9D%92%E6%98%A5%E6%9C%9F%E7%8C%AA%E5%A4%B4%E5%B0%91%E5%B9%B4%E4%B8%8D%E4%BC%9A%E5%8F%96%EF%BC%82%E8%86%9C%EF%BC%82/" target="_self">
-          【考前冲刺Day３】青春期猪头少年不会取＂膜＂
+        <a href="/2019/04/18/%E4%B9%8B%E5%89%8D%E4%BB%A3%E7%A0%81%E4%B8%80%E7%9B%B4%E6%98%AF%E6%88%91%E7%9A%84%E6%AF%92%E7%98%A4%E7%A0%81%E9%A3%8E%E7%9C%9F%E7%9A%84%E5%BE%88%E6%8A%B1%E6%AD%89QAQ/" target="_self">
+          之前代码一直是我的毒瘤码风真的很抱歉QAQ
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2018/11/05/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay%EF%BC%93%E3%80%91%E9%9D%92%E6%98%A5%E6%9C%9F%E7%8C%AA%E5%A4%B4%E5%B0%91%E5%B9%B4%E4%B8%8D%E4%BC%9A%E5%8F%96%EF%BC%82%E8%86%9C%EF%BC%82/" target="_self">
+        <a href="/2019/04/18/%E4%B9%8B%E5%89%8D%E4%BB%A3%E7%A0%81%E4%B8%80%E7%9B%B4%E6%98%AF%E6%88%91%E7%9A%84%E6%AF%92%E7%98%A4%E7%A0%81%E9%A3%8E%E7%9C%9F%E7%9A%84%E5%BE%88%E6%8A%B1%E6%AD%89QAQ/" target="_self">
           
           
             
           
-          T1 海龟
-题目大意：给你ｎ个点，依次连接形成一条折线，问这条折线经过了多少个整点真的不是刀剑里的那个海龟
+          以后题解代码都是格式化过的啦！
 
-考试的时候写了两个程序，一个是枚举矩阵里的点带进函数，一个是枚举ｘ算出ｙ，后者写挂了，但是对拍的时候考试用的电脑没法用ｆｃ，人工对比耗费了不少时间而且还没对比出来，于是把两个程序混合起来只有６０分
-想法很简单，每次枚举一条线段覆盖的最小矩阵的所有点，带进直线方程看看在不在直线上，用ｂｏｏｌ
         </a>
       </p>
 
@@ -323,8 +342,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2018-11-05 14:51" pubdate>
-              2018-11-05
+            <time datetime="2019-04-18 22:10" pubdate>
+              2019-04-18
             </time>
           </div>
         
@@ -340,22 +359,24 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2018/11/04/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay2%E3%80%91%E9%AA%97%E5%88%86%E4%B9%8B%E6%97%85/" target="_self">
-          【考前冲刺Day2】骗分之旅
+        <a href="/2019/04/18/%5BSHOI2001%5D%E5%B0%8F%E7%8B%97%E6%95%A3%E6%AD%A5%EF%BC%88%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%EF%BC%89/" target="_self">
+          [SHOI2001]小狗散步（最大匹配）
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2018/11/04/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay2%E3%80%91%E9%AA%97%E5%88%86%E4%B9%8B%E6%97%85/" target="_self">
+        <a href="/2019/04/18/%5BSHOI2001%5D%E5%B0%8F%E7%8B%97%E6%95%A3%E6%AD%A5%EF%BC%88%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%EF%BC%89/" target="_self">
           
           
             
           
-          T1 x今天唯一一道没有用骗分方法的题目,然而还是由于一个小细节写挂了orz
-显然的是,如果两个数不互质,显然他们必须在一个集合里,于是我们可以将不互质的数连边,最后看有多少个联通块,答案就是[latex]2^{s}-2[/latex]其中s就是联通块的个数.如果用暴力的方法来实现的话,时间复杂度是[latex]O(n^2)[/latex]的.
-我们可以只枚举每个数的质因子,来降低这一复杂度.
+          
+题目链接
 
-
+题解把人走的点当作左部节点，🐕走的当作右部对于每个人走的节点，如果他与下一个节点的距离的两倍大于某个从当前节点走到右部节点+右部节点走到下一节点的距离，即可连边输出方案的话，注意到如果右部节点被匹配，match[i]就是匹配它的左部节点，存起来输出即可
+代码#include&amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+cons
         </a>
       </p>
 
@@ -363,8 +384,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2018-11-04 15:13" pubdate>
-              2018-11-04
+            <time datetime="2019-04-18 21:32" pubdate>
+              2019-04-18
             </time>
           </div>
         
@@ -380,27 +401,30 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2018/11/03/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay1%E3%80%91%E9%BB%91%E7%BA%A2%E6%A0%91/" target="_self">
-          【考前冲刺Day1】黑红树
+        <a href="/2019/04/18/%5BZJOI2007%5D%E7%9F%A9%E9%98%B5%E6%B8%B8%E6%88%8F%EF%BC%88%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%EF%BC%89/" target="_self">
+          [ZJOI2007]矩阵游戏（最大匹配）
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2018/11/03/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay1%E3%80%91%E9%BB%91%E7%BA%A2%E6%A0%91/" target="_self">
+        <a href="/2019/04/18/%5BZJOI2007%5D%E7%9F%A9%E9%98%B5%E6%B8%B8%E6%88%8F%EF%BC%88%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%EF%BC%89/" target="_self">
           
           
             
           
           
-题面
+题目链接
 
-
-题解转自zhber的这篇文章,本人对部分公式做了LaTex处理,如需转载请注明原作者
-
-zhb原创出品，改编自高一暑假数学作业必修三那章最后一题
-这是这套题唯一会比较防ak的题了
-首先题目我写了一大堆，就是要把你搞晕的
-题意是有两个人进行游戏，其中第一个人在每局中获胜的概率是[latex]\frac{p}{q}[/latex]，如果有一个人比另一个人多赢两局，则游戏结束。现在给出T个询
+题解两眼题
+考虑每一行，如果当前列为1，则行与列连边
+于是我们左部是每一行，右部是列，可以发现，如果有解，当且仅当每一列都有行与之匹配
+跑匈牙利即可
+代码#include&amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+const int MAXN=40003;
+int match[MAXN];
+bool vis[MAXN];
+in
         </a>
       </p>
 
@@ -408,8 +432,8 @@ zhb原创出品，改编自高一暑假数学作业必修三那章最后一题
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2018-11-03 19:17" pubdate>
-              2018-11-03
+            <time datetime="2019-04-18 17:58" pubdate>
+              2019-04-18
             </time>
           </div>
         
@@ -425,21 +449,26 @@ zhb原创出品，改编自高一暑假数学作业必修三那章最后一题
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2018/11/03/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay1%E3%80%91%E5%A4%A9%E7%A5%9E%E4%B8%8B%E5%87%A1/" target="_self">
-          【考前冲刺Day1】天神下凡
+        <a href="/2019/04/17/%5BCF1139E%5DMaximize%20Mex%EF%BC%88%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%EF%BC%89/" target="_self">
+          [CF1139E]Maximize Mex（二分图最大匹配）
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2018/11/03/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay1%E3%80%91%E5%A4%A9%E7%A5%9E%E4%B8%8B%E5%87%A1/" target="_self">
+        <a href="/2019/04/17/%5BCF1139E%5DMaximize%20Mex%EF%BC%88%E4%BA%8C%E5%88%86%E5%9B%BE%E6%9C%80%E5%A4%A7%E5%8C%B9%E9%85%8D%EF%BC%89/" target="_self">
           
           
             
           
           
-题面
+题目链接
 
-我们先来看看样例：首先一开始就有一个区域；一般来说，一个圆对答案的贡献为1，无论它是在外面还是在其他圆的里面。但是，如果一个圆它的一条直径上所有的点都被覆盖了的话，它对答案的贡献就为2了由于只能在x轴上安放，覆盖的情况我们也只要考虑x轴上的，所以就可以把这个问题抽象为一个线段覆盖问题。首先将所有的线段离散化一下，再根据长度排序，对于每条线段，先查询它是不是被全部覆盖了，再用它来更新覆盖的
+题目大意有 $n$ 个学生 $m$ 个社团，每个学生有一个能力值 $p_i$ 属于 $c_i$ 社团，接下来的 $d$ 天里，每天由校长钦点一个学生滚蛋，然后由你从每个社团选一个人（没人就不选），对于每天，求这些人 $p_i$ 的 $mex$ 的最大值
+$mex$ 即为序列中最小的非负整数
+题解考虑二分图匹配
+左部为学生的能力值，右部为社团。
+将学生的能力值与其社团连边。
+从最后一天
         </a>
       </p>
 
@@ -447,8 +476,8 @@ zhb原创出品，改编自高一暑假数学作业必修三那章最后一题
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2018-11-03 16:23" pubdate>
-              2018-11-03
+            <time datetime="2019-04-17 21:59" pubdate>
+              2019-04-17
             </time>
           </div>
         
@@ -464,29 +493,30 @@ zhb原创出品，改编自高一暑假数学作业必修三那章最后一题
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2018/11/02/11.2%20DP%E4%B8%93%E9%A2%98%E2%80%94%E2%80%94%E5%92%8CDP%E6%89%93%E6%88%90%E4%B8%80%E7%89%87%E9%A2%98%E8%A7%A3/" target="_self">
-          11.2 DP专题——和DP打成一片题解
+        <a href="/2019/04/15/%5BCF1153E%5DServal%20and%20Snake%EF%BC%88%E4%BA%8C%E5%88%86%EF%BC%89/" target="_self">
+          [CF1153E]Serval and Snake（二分）
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2018/11/02/11.2%20DP%E4%B8%93%E9%A2%98%E2%80%94%E2%80%94%E5%92%8CDP%E6%89%93%E6%88%90%E4%B8%80%E7%89%87%E9%A2%98%E8%A7%A3/" target="_self">
+        <a href="/2019/04/15/%5BCF1153E%5DServal%20and%20Snake%EF%BC%88%E4%BA%8C%E5%88%86%EF%BC%89/" target="_self">
           
           
             
           
-          T1 求三角形的最大面积
-题目大意：给你一个由多个三角形组成的大三角形，其中有些三角形缺失了，求出剩下部分最大的三角形。
+          
+题目链接
 
-毒瘤题，dp很好想，被特殊情况坑了。首先上三角和下三角都要算一遍（其实就是反过来再找一遍）就拿上三角来说，我们很容易就知道它的高度就是min(左，右)+1，但是实际上还要考虑一些特殊情况
-比如下面这种情况：输入的时候是这样的
-3
-#---#
- #-#
-  #
-0
+题解人生第一道交互题，感觉很神奇（还好并不难）考虑以下情况：
 
-所以在更新
+如果我们没有框中头尾，势必有一条“进入”矩形的边，就有一条“出去”的边。
+如果我们只框中头或尾，肯定少一条“进入”或“出去”的边。
+如果我们同时框中了头尾，肯定少两条“进入”或“出去”的边。
+
+综上，当ask的答案为奇数时，我们框中了头或尾，为偶数时可能同时框中，可能同时没框中。
+可以先确定头尾是否在同一列
+
+不在同一列
         </a>
       </p>
 
@@ -494,8 +524,8 @@ zhb原创出品，改编自高一暑假数学作业必修三那章最后一题
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2018-11-02 14:45" pubdate>
-              2018-11-02
+            <time datetime="2019-04-15 21:12" pubdate>
+              2019-04-15
             </time>
           </div>
         
@@ -511,22 +541,29 @@ zhb原创出品，改编自高一暑假数学作业必修三那章最后一题
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2018/11/01/11.1%E4%B8%8D%E8%83%BD%E4%B8%8EDP%E5%A5%BD%E5%A5%BD%E7%9B%B8%E5%A4%84%E9%A2%98%E8%A7%A3/" target="_self">
-          11.1不能与DP好好相处题解
+        <a href="/2019/04/14/%5BCF1153C%5DServal%20and%20Parenthesis%20Sequence(%E8%B4%AA%E5%BF%83)/" target="_self">
+          [CF1153C]Serval and Parenthesis Sequence(贪心)
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2018/11/01/11.1%E4%B8%8D%E8%83%BD%E4%B8%8EDP%E5%A5%BD%E5%A5%BD%E7%9B%B8%E5%A4%84%E9%A2%98%E8%A7%A3/" target="_self">
+        <a href="/2019/04/14/%5BCF1153C%5DServal%20and%20Parenthesis%20Sequence(%E8%B4%AA%E5%BF%83)/" target="_self">
           
           
             
           
-          T1 不老的传说
-题目大意：有n个石头环成一圈，每次染色能染1-k个连续石头，问多最少多少次能染成目标状态
+          
+题目链接
 
-这道题真的是各种既视感，环的话直接变成两倍的链就OK了，之后就是区间dp[latex]f[i][j][/latex]表示(i,j)对i,j一段染色的最少次数
-初始化就是[latex]f[i][j]=\begin{cases}1&amp;i=j\ 0&amp;i&gt;j\ \infty&a
+题解贪心大水题，然后比赛的时候就被疯狂hack，至少现在下面的策略是能过的。
+
+首先n要是偶数才有解
+最左边是左括号，最右边是右括号（如果是问号直接变成对应的括号）
+如果有解，肯定是左括号数目=右括号数目的，于是扫一遍字符串计数，当左括号没满足数目上限的时候一直填左括号
+
+就这样~
+代码#include&amp;lt;bits/stdc++.h&amp;gt;
+using names
         </a>
       </p>
 
@@ -534,8 +571,8 @@ zhb原创出品，改编自高一暑假数学作业必修三那章最后一题
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2018-11-01 16:45" pubdate>
-              2018-11-01
+            <time datetime="2019-04-14 23:01" pubdate>
+              2019-04-14
             </time>
           </div>
         
@@ -551,25 +588,26 @@ zhb原创出品，改编自高一暑假数学作业必修三那章最后一题
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2018/10/26/NOIP2018%E5%80%92%E8%AE%A1%E6%97%B6/" target="_self">
-          NOIP2018倒计时
+        <a href="/2019/04/13/%5BCF817F%5D%20MEX%20Queries%20(%E7%BA%BF%E6%AE%B5%E6%A0%91+%E7%A6%BB%E6%95%A3%E5%8C%96)/" target="_self">
+          [CF817F] MEX Queries (线段树+离散化)
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2018/10/26/NOIP2018%E5%80%92%E8%AE%A1%E6%97%B6/" target="_self">
+        <a href="/2019/04/13/%5BCF817F%5D%20MEX%20Queries%20(%E7%BA%BF%E6%AE%B5%E6%A0%91+%E7%A6%BB%E6%95%A3%E5%8C%96)/" target="_self">
           
           
             
           
-          最近教练安排得比较紧，没时间更新博客了，最后10多天好好努力吧！不要让自己后悔！
+          
+题目链接
 
-
-
-「同じ世界に、立っていたんだ」と“在同一个世界 站起来了”「同じ未来に、立っているんだ」と“也会站在同一个未来”
-
-距离NOIP2018还剩[wpcdt-countdown id=”415”]
-
+题解一道线段树模板题，离散化需要注意下，居然交了10次，丢人……
+细节还是很多的，最近都在写平衡树，一开始把线段树写成和权值树那样的分治方法了orz
+代码#include&amp;lt;bits/stdc++.h&amp;gt;
+#define lt p&amp;lt;&amp;lt;1
+#define rt p&amp;lt;&amp;lt;1|1
+using namespace 
         </a>
       </p>
 
@@ -577,8 +615,8 @@ zhb原创出品，改编自高一暑假数学作业必修三那章最后一题
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2018-10-26 19:14" pubdate>
-              2018-10-26
+            <time datetime="2019-04-13 21:07" pubdate>
+              2019-04-13
             </time>
           </div>
         
@@ -592,7 +630,7 @@ zhb原创出品，改编自高一暑假数学作业必修三那章最后一题
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/4/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/#board">6</a><a class="extend next" rel="next" href="/page/6/#board"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/page/4/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/#board">6</a><a class="page-number" href="/page/7/#board">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/#board">17</a><a class="extend next" rel="next" href="/page/6/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 

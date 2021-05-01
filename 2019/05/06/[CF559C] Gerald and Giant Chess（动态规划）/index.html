@@ -1,0 +1,502 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>[CF559C] Gerald and Giant Chess（动态规划） - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="[CF559C] Gerald and Giant Chess（动态规划）">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-05-06 17:38" pubdate>
+        2019年5月6日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      816 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      12
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">[CF559C] Gerald and Giant Chess（动态规划）</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.luogu.org/problemnew/show/CF559C">题目链接</a></p>
+</blockquote>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>先介绍一个东西：多重集(multiset)的全排列（这里是特殊情况，即选的元素个数不超过任意集合中元素个数的情况）<br>我们定义集合的集合为多重集，比如我有 $a_1$ 个 $1$ ， $a_2$ 个 $2$ …… $a_n$ 个 $n$ 。<br>那么写成多重集就是 [latex]\left{\left{a_1·1\right},\left{a_2·2\right},\cdots,\left{a_n·n\right}\right}[/latex]<br>如果我们要从中取 $k$ 个数（上面说了，$k$ 不大于 $a_i$），那么有多少种方案呢？</p>
+<p>具体证明请移步至<kbd><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Multiset">维基百科</a></kbd>，这里直接给出结论：<br><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/3085c625fdc63db0b0cf48f07516a78a87109a56" srcset="/img/loading.gif" lazyload alt="multiset"><br>也就是 $C_{n+k-1}^{n+1}$  </p>
+<p>那么这题其实如果我们把每一行看成一个集合，元素个数就是列数-1（因为我们最终目标是走到右下角，而如果走到了右侧，再走到右下角的方案已经确定，随意等价于走到右侧），如果没有黑格子的话，我们要选的元素个数也是列数-1，答案就是 $C_{H+W-2}^{H-1}$</p>
+<p>而如果有黑格子，我们可以统计出不合法的方案数减去即可。</p>
+<p>所谓不合法，就是在路径上走到过黑格子，为了避免重复，我们设 $f[i]$ 为只经过第 $i$ 个黑格子的方案数，对于它的求法，可以把它当成右下角，求贡献，对于区域内的黑格子，根据乘法原理，它们产生的不合法的方案数为 $f[j]\times C_{x_i-x_j+y_i-y_j}^{x_i-x_j}$ 即原点到他的方案数乘上以第 $j$ 个黑格子为左上角，第 $i$ 个黑格子为右下角的子矩阵的方案数。</p>
+<p>具体实现时可以按照坐标排个序，减少枚举量，设右下角为第 $n+1$ 个黑格子，方便计算答案，还有就是不要弄混横纵坐标。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="cpp">#include&amp;lt;bits/stdc++.h&amp;gt;
+#define x first
+#define y second
+using namespace std;
+typedef long long ll;
+const int MOD=1e9+7;
+int h,w,n,ans; 
+pair&amp;lt;int,int&amp;gt;node[2003];
+ll fact[200003];
+ll inv[200003];
+ll f[2003];
+
+ll qpow(ll a,ll b,ll p)&#123;
+    ll ans=1;
+    while(b)&#123;
+        if(b&amp;amp;1)ans=ans*a%p;
+        a=a*a%p;
+        b&amp;gt;&amp;gt;=1;
+    &#125;
+    return ans;
+&#125;
+
+void pre(int n)&#123;
+    fact[0]=1;
+    for(int i=1;i&amp;lt;=n;i++)&#123;
+        fact[i]=fact[i-1]*i%MOD;
+    &#125;
+    inv[n]=qpow(fact[n],MOD-2,MOD);
+    for(int i=n-1;i&amp;gt;=0;i--)&#123;
+        inv[i]=inv[i+1]*(i+1)%MOD;
+    &#125;
+&#125;
+
+int C(int n,int m)&#123;
+    if(n==m)return 1; 
+    return fact[n]*inv[m]%MOD*inv[n-m]%MOD;
+&#125;
+
+int main()&#123;
+    cin&amp;gt;&amp;gt;h&amp;gt;&amp;gt;w&amp;gt;&amp;gt;n;
+    for(int i=1;i&amp;lt;=n;i++)&#123;
+        cin&amp;gt;&amp;gt;node[i].x&amp;gt;&amp;gt;node[i].y;
+    &#125;
+    pre(200000);
+    node[n+1].x=h,node[n+1].y=w;
+    sort(node+1,node+2+n);
+    for(int i=1;i&amp;lt;=n+1;i++)&#123;
+        f[i]=C(node[i].x+node[i].y-2,node[i].x-1);
+        for(int j=1;j&amp;lt;i;j++)&#123;
+            if(node[i].x&amp;lt;node[j].x||node[i].y&amp;lt;node[j].y)continue;
+            f[i]=(f[i]-(ll)f[j]*C(node[i].y-node[j].y+node[i].x-node[j].x,node[i].x-node[j].x)%MOD)%MOD;
+        &#125;
+        while(f[i]&amp;lt;0)f[i]+=MOD;
+    &#125;
+    cout&amp;lt;&amp;lt;f[n+1]&amp;lt;&amp;lt;endl;
+    return 0;
+&#125;
+</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/05/07/%5BP5343%5D%E3%80%90XR-1%E3%80%91%E5%88%86%E5%9D%97%EF%BC%88%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%EF%BC%89/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[P5343]【XR-1】分块（矩阵快速幂）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/05/05/%5BHAOI2016%5D%E6%89%BE%E7%9B%B8%E5%90%8C%E5%AD%97%E7%AC%A6%EF%BC%88%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84%EF%BC%89/">
+                        <span class="hidden-mobile">[HAOI2016]找相同字符（后缀数组）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

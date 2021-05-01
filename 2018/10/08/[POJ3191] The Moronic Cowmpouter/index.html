@@ -1,0 +1,530 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>[POJ3191] The Moronic Cowmpouter - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="[POJ3191] The Moronic Cowmpouter">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2018-10-08 18:52" pubdate>
+        2018年10月8日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      873 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      14
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">[POJ3191] The Moronic Cowmpouter</h1>
+            
+            <div class="markdown-body">
+              <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Inexperienced in the digital arts, the cows tried to build a calculating engine (yes, it’s a cowmpouter) using binary numbers (base 2) but instead built one based on base negative 2! They were quite pleased since numbers expressed in base -2 do not have a sign bit.</p>
+<p>You know number bases have place values that start at 1 (base to the 0 power) and proceed right-to-left to base^1, base^2, and so on. In base -2, the place values are 1, -2, 4, -8, 16, -32, … (reading from right to left). Thus, counting from 1 goes like this: 1, 110, 111, 100, 101, 11010, 11011, 11000, 11001, and so on.</p>
+<p>Eerily, negative numbers are also represented with 1’s and 0’s but no sign. Consider counting from -1 downward: 11, 10, 1101, 1100, 1111, and so on.</p>
+<p>Please help the cows convert ordinary decimal integers (range -2,000,000,000 .. 2,000,000,000) to their counterpart representation in base -2.</p>
+<h2 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h2><h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>A single integer to be converted to base -2</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>A single integer with no leading zeroes that is the input integer converted to base -2. The value 0 is expressed as 0, with exactly one 0.</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><h3 id="输入样例1"><a href="#输入样例1" class="headerlink" title="输入样例1:"></a>输入样例1:</h3><pre><code>-13
+</code></pre>
+<h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><pre><code>110111
+</code></pre>
+<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p>Hint<br>Explanation of the sample:<br>Reading from right-to-left:<br>1*1 + 1*-2 + 1*4 + 0*-8 +1*16 + 1*-32 = -13</p>
+<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>输入一个十进制[latex]N(−2,000,000,000≤N≤2,000,000,000)[/latex]，输出它的[latex]−2[/latex]进制数</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>平常我们很少会涉及到负进制，按照提示所给内容，我们应该很快能想到第一种做法，<br>第一种想法，我们去枚举每一个负二进制数，对于每一个负二进制数，我们将它转换成十进制数，看看是不是一样。<br>代码如下：</p>
+<pre><code class="cpp">#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;cstdio&amp;gt;
+using namespace std;
+int n;
+long long p[32];
+ 
+void init()&#123;
+    cin&amp;gt;&amp;gt;n;
+    p[0]=1;
+    for(int i=1;i&amp;lt;=31;i++)&#123;
+        p[i]=p[i-1]*-2;
+    &#125;
+&#125;
+ 
+inline bool jud(int num)&#123;
+    int res=0,cnt=0;
+    while(num)&#123;
+        if(num&amp;amp;1)res+=p[cnt];
+        ++cnt;
+        num&amp;gt;&amp;gt;=1;
+    &#125;
+    if(res==n)return 1;
+    return 0;
+&#125;
+ 
+void out(int num)&#123;
+    int tmp[200],t=0;
+    while(num)&#123;
+        if(num&amp;amp;1)tmp[++t]=1;
+        else tmp[++t]=0;
+        num&amp;gt;&amp;gt;=1;
+    &#125;
+    for(int i=t;i&amp;gt;=1;i--)printf(&amp;quot;%d&amp;quot;,tmp[i]);
+&#125;
+ 
+int main()&#123;
+    init();
+    for(long long i=1;i&amp;lt;=2000000000LL;i++)&#123;
+        if(jud(i))&#123;
+            // cout&amp;lt;&amp;lt;&amp;quot;!!&amp;quot;&amp;lt;&amp;lt;i&amp;lt;&amp;lt;endl;
+            out(i);
+            break;
+        &#125;
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<p>然而上面的做法会T，那么我们能不能直接从十进制算到负二进制呢？<br>这个需要好好观察一下提示，<br>我们发现如果要确定当前位是0还是1，只要对下一个为1时取余就知道了，如果余数为0，那么当前这个数自然是后面位的倍数了，取0，否则就取1.</p>
+<p>然后减去当前还剩的数，继续往后走。</p>
+<p>最后减到0就可以了。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="cpp">#include &amp;lt;cstdio&amp;gt;
+#include &amp;lt;iostream&amp;gt;
+using namespace std;
+const int MAXN=1e5+7;
+const int inf =1e9;
+int ans[1000];
+long long n;
+long long pw(int a,int b)&#123;//很普通的快速幂
+    long long sum=1;
+    long long base=a;
+    while(b)&#123;
+        if(b&amp;amp;1)sum*=base;
+        base*=base;
+        b&amp;gt;&amp;gt;=1;
+    &#125;
+    return sum;
+&#125;
+int main()&#123;
+    scanf(&amp;quot;%lld&amp;quot;,&amp;amp;n);
+    int top=0;
+    if(!n)ans[top++]=0;//0的时候特判
+    while(n)&#123;
+        if(n%(pw(-2,top+1)))ans[top]=1;
+        else ans[top]=0;
+        n-=ans[top]*pw(-2,top);//相当于不断把n这个10进制数拆分成-2进制数
+        top++;
+    &#125;
+    while(top)printf(&amp;quot;%d&amp;quot;,ans[--top]);
+    return 0;
+&#125;
+</code></pre>
+<p>另外，这里还有一道题和这个几乎一样<br><kbd><a target="_blank" rel="noopener" href="https://www.luogu.org/problemnew/show/UVA11121">UVA11121 Base -2</a></kbd></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/10/08/%E3%80%90%E7%95%99%E8%A8%80%E6%9D%BF%E3%80%91/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">【留言板】</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/10/08/%5BLOJ10022%5D%E5%9F%83%E5%8F%8A%E5%88%86%E6%95%B0/">
+                        <span class="hidden-mobile">[LOJ10022]埃及分数</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

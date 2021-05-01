@@ -1,0 +1,504 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>[LOJ10172]涂抹果酱 - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="[LOJ10172]涂抹果酱">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2018-10-04 23:54" pubdate>
+        2018年10月4日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      961 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      13
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">[LOJ10172]涂抹果酱</h1>
+            
+            <div class="markdown-body">
+              <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Tyvj 两周年庆典要到了，Sam 想为 Tyvj 做一个大蛋糕。蛋糕俯视图是一个 N×M的矩形，它被划分成 N×M个边长为 1×1的小正方形区域（可以把蛋糕当成 N 行 M 列的矩阵）。蛋糕很快做好了，但光秃秃的蛋糕肯定不好看！所以，Sam 要在蛋糕的上表面涂抹果酱。果酱有三种，分别是红果酱、绿果酱、蓝果酱，三种果酱的编号分别为 1,2,3。为了保证蛋糕的视觉效果，Admin 下达了死命令：相邻的区域严禁使用同种果酱。但 Sam 在接到这条命令之前，已经涂好了蛋糕第 K 行的果酱，且无法修改。<br>现在 Sam 想知道：能令 Admin 满意的涂果酱方案有多少种。请输出方案数 [latex] mod 10^6[/latex]<br>若不存在满足条件的方案，请输出 0。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入共三行。<br>第一行：N,M；<br>第二行：K；<br>第三行：M 个整数，表示第 K 行的方案。<br>字母的详细含义见题目描述，其他参见样例。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出仅一行，为可行的方案总数。</p>
+<h2 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h2><h3 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h3><pre><code>2 2 
+1 
+2 3
+</code></pre>
+<h3 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h3><pre><code>3
+</code></pre>
+<h3 id="样例说明"><a href="#样例说明" class="headerlink" title="样例说明"></a>样例说明</h3><p><img src="http://bubbleioa.top/wp-content/uploads/2018/10/TIM%E6%88%AA%E5%9B%BE20181004235342.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="数据范围和提示"><a href="#数据范围和提示" class="headerlink" title="数据范围和提示"></a>数据范围和提示</h2><p>对于 30% 的数据，1≤N×M≤20；<br>对于 60% 的数据，1≤N≤1000,1≤M≤3；<br>对于 100% 的数据，1≤N≤10000,1≤M≤5。</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>一开始拿到这道题目发现不就是状态压缩嘛，而且是相邻不重复的计数问题，这种题目早就已经轻车熟路了。<br>但是仔细看了才发现不简单，不是普通的二进制状压，而是三进制状压。  </p>
+<p>但是进制本质上都是一样的，我们一边参照二进制状压，一边实现三进制状压。  </p>
+<p>首先是左移右移，实际上二进制的左移右移就是[latex]\times 2[/latex]还有/2，既然是三进制，当然是*3还有/3</p>
+<p>还有就是实现状态合法判定，具体的在check函数和judge函数的注释里，这两个函数稍微有点不同。</p>
+<p>状态转移的话就是上一行的所有合法状态之和（这个和二进制状压是一样的）</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="cpp">#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;cstdio&amp;gt;
+using namespace std;
+const int MAXN=10004,mod=1000000;
+int n,m,k,pos;
+int ban,ans=0;
+int can[1005],tot=0;
+int f[MAXN][1005];
+
+inline bool check(int x)&#123;//自身合法性判断，每次弹出最末尾的一个数，存起来，看看和下一个数是不是一样
+    int tmp=0x3f;
+    for(int i=1;i&amp;lt;=m;++i)&#123;
+        if(tmp==x%3)return false;
+        tmp=x%3,x/=3;
+    &#125;
+    return true;
+&#125;
+
+inline bool judge(int a,int b)&#123;//相互合法性判断，就是按位比对
+    for(int i=1;i&amp;lt;=m;++i)&#123;
+        if(a%3==b%3)return false;
+        a/=3,b/=3;
+    &#125;
+    return true;
+&#125;
+
+int main()&#123;
+    cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;m&amp;gt;&amp;gt;k;
+    int in=1;
+    for(int i=0;i&amp;lt;m;i++)in*=3;
+    for(int i=0;i&amp;lt;in;++i)if(check(i))can[++tot]=i;
+    for(int i=1;i&amp;lt;=m;++i)&#123;
+        int tmp;
+        scanf(&amp;quot;%d&amp;quot;,&amp;amp;tmp);
+        ban=ban*3+tmp-1;
+    &#125;
+    for(int i=1;i&amp;lt;=tot;++i)if(ban==can[i])&#123;pos=i;break;&#125;
+    if(!pos)&#123;cout&amp;lt;&amp;lt;0;return 0;&#125;
+    for(int i=1;i&amp;lt;=n;++i)&#123;
+        if(i==k)&#123;
+            if(i==1)f[i][pos]=1;
+            else for(int j=1;j&amp;lt;=tot;++j)if(judge(can[pos],can[j]))(f[i][pos]+=f[i-1][j])%=mod;
+        &#125;
+        else for(int j=1;j&amp;lt;=tot;++j)&#123;
+            if(i==1)f[i][j]=1;
+            else for(int k=1;k&amp;lt;=tot;++k)if(judge(can[j],can[k]))(f[i][j]+=f[i-1][k])%=mod;
+        &#125;
+    &#125;
+    for(int i=1;i&amp;lt;=tot;++i)(ans+=f[n][i])%=mod;
+    cout&amp;lt;&amp;lt;ans;
+    return 0;
+&#125;
+</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/10/05/%5BBZOJ1041%5DHAOI2008%E5%9C%86%E4%B8%8A%E7%9A%84%E6%95%B4%E7%82%B9/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[BZOJ1041]HAOI2008圆上的整点</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/10/03/%5BCF776B%5DSherlock%20and%20his%20girlfriend/">
+                        <span class="hidden-mobile">[CF776B]Sherlock and his girlfriend</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

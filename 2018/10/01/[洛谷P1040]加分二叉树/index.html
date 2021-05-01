@@ -1,0 +1,490 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>[洛谷P1040]加分二叉树 - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="[洛谷P1040]加分二叉树">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2018-10-01 18:03" pubdate>
+        2018年10月1日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      16
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">[洛谷P1040]加分二叉树</h1>
+            
+            <div class="markdown-body">
+              <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>设一个n个节点的二叉树tree的中序遍历为（l,2,3,…,n），其中数字1,2,3,…,n为节点编号。每个节点都有一个分数（均为正整数），记第j个节点的分数为di，tree及它的每个子树都有一个加分，任一棵子树subtree（也包含tree本身）的加分计算方法如下：<br>    subtree的左子树的加分× subtree的右子树的加分＋subtree的根的分数。若某个子树为空 ，规定其加分为1，叶子的加分就是叶节点本身的分数。不考虑它的空  子树。<br>    试求一棵符合中序遍历为（1,2,3,…,n）且加分最高的二叉树tree。要求输出；<br>    （1）tree的最高加分<br>    （2）tree的前序遍历  </p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第1行：一个整数n（n＜30），为节点个数。</p>
+<p> 第2行：n个用空格隔开的整数，为每个节点的分数（分数＜100）。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>第1行：一个整数，为最高加分（结果不会超过4,000,000,000）。</p>
+<p>第2行：n个用空格隔开的整数，为该树的前序遍历。</p>
+<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><pre><code>5
+5 7 1 2 10
+</code></pre>
+<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h2><pre><code>145
+3 1 2 4 5
+</code></pre>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>一道入门的区间dp，当然，根据写法不同你还可以把它归类为树形dp或者记忆化搜索，其实都无所谓啦。<br>作为一道入门题，我们完全可以“显然”地做出来，但是在这里还是想和大家回顾下动态规划以及区间动规。  </p>
+<p>Q：dp特点是什么？<br>A：dp把原问题视作若干个<strong>重叠</strong>的子问题的逐层递进，每个子问题的求解过程都会构成一个“阶段”，在完成一个阶段后，才会执行下一个阶段。<br>Q：dp要满足无后效性，什么叫无后效性？<br>A：已经求解的子问题不受后续阶段的影响。</p>
+<p>有人觉得dp很抽象，那是因为没有一步一步来想，直接听别人的结论，我们在这里以这道题为例，一步一步来推导。</p>
+<p>首先，我们要做的就是<strong>设计状态</strong>，其实就是设计dp数组的含义，它要满足无后效性。<br>关注这个  <em>左子树*右子树+根</em> 我只要知道左子树分数和右子树分数和根的分数（已给出），不就可以了吗？管他子树长什么样！<br>所以，我们[latex]f[/latex]数组存的就是最大分数，怎么存呢？<br>我们发现：子树是一个或多个节点的集合。<br>那么我们可不可以开一个[latex]f[i][j][/latex]来表示节点i到节点j成树的最大加分呢？可以先保留这个想法（毕竟暂时也想不到更好的了）。 </p>
+<p>如果这样话，我们就来设计状态转移方程。<br>按照刚刚的设计来说的话，我们的答案就是[latex]f[1][n][/latex]了，那么我们可以从小的子树开始，也就是len，区间长度。有了区间长度我们就要枚举区间起点，i为区间起点，然后就可以算出区间终点j。<br>通过加分二叉树的式子我们可以知道，二叉树的分取决于谁是根，于是我们就在区间内枚举根k。<br>特别的，[latex]f[i][i]=a[i][/latex]其中a[i]为第i个节点的分数。<br>因为是要求最大值，所以我们就可以设计出<br>$$f[i][j]=MAX(f[i][k-1]*f[k+1][j]+f[k][k])$$<br>于是乎，我们就自己设计出了一个dp过程，因为是顺着来的，所以很少有不成立的。  </p>
+<p>至于输出前序遍历，我们再设计一个状态[latex]root[i][j][/latex]来表示节点i到节点j成树的最大加分所选的根节点。<br>所以我们按照[latex]根-&gt;左-&gt;右[/latex]的顺序递归输出即可。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="cpp">#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;cstdio&amp;gt;
+#include&amp;lt;cstring&amp;gt;
+using namespace std;
+const int MAXN = 50;
+typedef long long ll;
+ll n;
+ll f[MAXN][MAXN], root[MAXN][MAXN];
+
+void print(ll l, ll r) &#123;
+    if (l &amp;gt; r)return;
+    printf(&amp;quot;%lld &amp;quot;, root[l][r]);
+    if (l == r)return;
+    print(l, root[l][r] - 1);
+    print(root[l][r]+1,r);
+&#125;
+
+int main() &#123;
+    scanf(&amp;quot;%lld&amp;quot;, &amp;amp;n);
+    for (int i = 1; i &amp;lt;= n; i++)scanf(&amp;quot;%lld&amp;quot;, &amp;amp;f[i][i]),f[i][i-1]=1, root[i][i] = i;
+    for (int len = 1; len &amp;lt; n; ++len) &#123;
+        for (int i = 1; i + len &amp;lt;= n; ++i) &#123;
+            int j = i + len;
+            f[i][j] = f[i + 1][j] + f[i][i];//默认它的左子树为空，如果有的话，这肯定不是最优解
+            root[i][j] = i;//默认从起点选根
+            for (int k = i + 1; k &amp;lt; j; ++k) &#123;
+                if (f[i][j] &amp;lt; f[i][k - 1] * f[k + 1][j] + f[k][k]) &#123;
+                    f[i][j] = f[i][k - 1] * f[k + 1][j] + f[k][k];
+                    root[i][j] = k;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+    cout &amp;lt;&amp;lt; f[1][n] &amp;lt;&amp;lt; endl;
+    print(1, n);
+    return 0;
+&#125;
+</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/10/01/%5B%E5%9B%BD%E9%99%85%E4%BF%A1%E6%81%AF%E5%AD%A6%E5%A5%A5%E8%B5%9B2018%5D%E5%AE%98%E6%96%B9%E8%A7%86%E9%A2%91%E6%90%AC%E8%BF%90/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[国际信息学奥赛2018]官方视频搬运</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/10/01/%5B%E6%B4%9B%E8%B0%B7P1771%5D%20%E6%96%B9%E7%A8%8B%E7%9A%84%E8%A7%A3/">
+                        <span class="hidden-mobile">[洛谷P1771] 方程的解</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -1,0 +1,553 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>[CF1155 Educational Codeforces Round 63]题解合集 - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="[CF1155 Educational Codeforces Round 63]题解合集">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-04-24 19:18" pubdate>
+        2019年4月24日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      925 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      15
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">[CF1155 Educational Codeforces Round 63]题解合集</h1>
+            
+            <div class="markdown-body">
+              <p>2小时6道题，所以请记住，对于cf比赛，<strong>犹豫就会败北，果断就会白给</strong></p>
+<h1 id="CF1155A-Reverse-a-Substring"><a href="#CF1155A-Reverse-a-Substring" class="headerlink" title="CF1155A Reverse a Substring"></a><a target="_blank" rel="noopener" href="https://www.luogu.org/problemnew/show/CF1155A">CF1155A Reverse a Substring</a></h1><p>如果字符大小非严格单增，显然无解，如果出现前面字符大于后面的字符的情况，输出它们的位置即可。</p>
+<pre><code class="cpp">#include&amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+int n;string str;
+
+int main()&#123;
+    cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;str;char last=str[0];int pos=0;
+    for(int i=1;i&amp;lt;str.length();i++)&#123;
+        if(last==str[i])&#123;pos=i;continue;&#125;
+        if(last&amp;lt;str[i])&#123;last=str[i];pos=i;&#125;
+        else &#123;
+            printf(&amp;quot;YES\n%d %d&amp;quot;,pos+1,i+1);
+            return 0;
+        &#125;
+    &#125;
+    printf(&amp;quot;NO&amp;quot;);
+    return 0;
+&#125;
+</code></pre>
+<h1 id="CF1155B-Game-with-Telephone-Numbers"><a href="#CF1155B-Game-with-Telephone-Numbers" class="headerlink" title="CF1155B Game with Telephone Numbers"></a><a target="_blank" rel="noopener" href="https://www.luogu.org/problemnew/show/CF1155B">CF1155B Game with Telephone Numbers</a></h1><p>一开始还以为是博弈论（<del>我傻了</del>）……结果一个简单的贪心就OK了</p>
+<p>一轮游戏会将数字取到只剩11个，如果序列中前 $n-10$ 个元素中，8的数量大于其他的数量，那么显然先手会把其中不是8的取完，先手必胜。如果不大于，后手会把所有的8取完，先手必败。</p>
+<pre><code class="cpp">#include&amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+int n;int a[100005]; 
+
+int main()&#123;
+    cin&amp;gt;&amp;gt;n;int cnt=0;
+    for(int i=1;i&amp;lt;=n;i++)scanf(&amp;quot;%1d&amp;quot;,&amp;amp;a[i]);
+    for(int i=1;i&amp;lt;=n-10;i++)&#123;
+         if(a[i]==8)cnt++;
+         else cnt--;
+    &#125;
+    if(cnt&amp;gt;0)printf(&amp;quot;YES\n&amp;quot;);
+    else
+        printf(&amp;quot;NO\n&amp;quot;);
+    return 0;
+&#125;
+</code></pre>
+<h1 id="CF1155C-Alarm-Clocks-Everywhere"><a href="#CF1155C-Alarm-Clocks-Everywhere" class="headerlink" title="CF1155C Alarm Clocks Everywhere"></a><a target="_blank" rel="noopener" href="https://www.luogu.org/problemnew/show/CF1155C">CF1155C Alarm Clocks Everywhere</a></h1><p>我们要找到一个 x和d 使得 $x+kd = a_i$  k为正整数</p>
+<p>如果我们的时间累积到 $a_i$ 了，那么我们其实就是要满足 $a_i+kd=a_{i+1}$ 即 $a_{i+1}-a_i=kd$</p>
+<p>所以我们就是要用一个间隔来遍历到所有时间点，这个间隔显然是所有相邻时间间隔的gcd，记为d</p>
+<p>然后看看第二行里面有没有d的约数，有的话就输出</p>
+<pre><code class="cpp">#include&amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+const int MAXN=300003;
+int n,m;
+ll x,d,z;
+
+ll gcd(ll a,ll b)&#123;
+    return b?gcd(b,a%b):a;
+&#125;
+
+int main()&#123;
+    scanf(&amp;quot;%d%d&amp;quot;,&amp;amp;n,&amp;amp;m);
+    scanf(&amp;quot;%lld&amp;quot;,&amp;amp;x);
+    for (int i=1;i&amp;lt;n;i++) &#123;
+        scanf(&amp;quot;%lld&amp;quot;, &amp;amp;z);
+        d=gcd(d,abs(z-x));
+    &#125;
+    for(int i=1;i&amp;lt;=m;i++)&#123;
+        ll p;cin&amp;gt;&amp;gt;p;
+        if(d%p==0)&#123;
+            printf(&amp;quot;YES\n%lld %d&amp;quot;,x,i);
+            return 0;
+        &#125;
+    &#125;
+    printf(&amp;quot;NO&amp;quot;);
+    return 0;
+&#125;
+</code></pre>
+<h1 id="CF1155D-Beautiful-Array"><a href="#CF1155D-Beautiful-Array" class="headerlink" title="CF1155D Beautiful Array"></a><a target="_blank" rel="noopener" href="https://www.luogu.org/problemnew/show/CF1155D">CF1155D Beautiful Array</a></h1><p>其实就是最长连续子串的变形。</p>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>变量作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>$s$</td>
+<td>$s_i$ 表示整个序列乘上 $x$ 后的前缀和</td>
+</tr>
+<tr>
+<td>$L$</td>
+<td>$L_i$ 表示 $i$ 位置<strong>往前</strong>的最大连续子串和</td>
+</tr>
+<tr>
+<td>$R$</td>
+<td>$R_i$ 表示 $i$ 位置<strong>往后</strong>的最大连续子串和</td>
+</tr>
+</tbody></table>
+<p>假如我们选择了 $i$ 到 $j$ ($j\le i$) 这一段乘上 $x$ 那么答案就为 $$s[i]-s[j-1]+R[i+1]+L[j-1]$$</p>
+<p>我们可以枚举 $s[i]+R[i+1]$ ，用 $max(L[j-1]-s[j-1])$ 来更新答案</p>
+<pre><code class="cpp">#include&amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+typedef long long ll;
+ll a[300005];
+ll s[300005],L[300005],R[300005];
+
+int main() &#123;
+    int n;ll x;
+    cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;x;
+    ll ans=0;
+    for (int i=1; i&amp;lt;=n; i++) &#123;cin&amp;gt;&amp;gt;a[i];ans+=a[i];s[i]=x*a[i];s[i]+=s[i-1];&#125;
+    ans=max(ans,0LL);
+    for (int i=1; i&amp;lt;=n; i++) L[i]=max(L[i-1]+a[i],0LL);
+    for (int i=n; i&amp;gt;=1; i--) R[i]=max(R[i+1]+a[i],0LL);
+    ll mx=-1LL&amp;lt;&amp;lt;62;
+    for (int i=1; i&amp;lt;=n; i++) &#123;
+        mx=max(mx,L[i-1]-s[i-1]);
+        ans=max(ans,R[i+1]+s[i]+mx);
+    &#125;
+    cout&amp;lt;&amp;lt;ans&amp;lt;&amp;lt;endl;
+    return 0;
+&#125;
+</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/04/28/%E6%BC%A9%E6%B6%A1/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">漩涡</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/04/19/OSU%E4%B8%89%E8%BF%9E%EF%BC%81%EF%BC%88%E6%9C%9F%E6%9C%9B%EF%BC%89/">
+                        <span class="hidden-mobile">OSU三连！（期望）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

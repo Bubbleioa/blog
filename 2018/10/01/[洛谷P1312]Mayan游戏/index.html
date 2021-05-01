@@ -1,0 +1,580 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>[洛谷P1312]Mayan游戏 - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="[洛谷P1312]Mayan游戏">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2018-10-01 17:47" pubdate>
+        2018年10月1日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      24
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">[洛谷P1312]Mayan游戏</h1>
+            
+            <div class="markdown-body">
+              <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Mayan puzzle是最近流行起来的一个游戏。游戏界面是一个 7 行 ×5 列的棋盘，上面堆放着一些方块，方块不能悬空堆放，即方块必须放在最下面一行，或者放在其他方块之上。游戏通关是指在规定的步数内消除所有的方块，消除方块的规则如下：</p>
+<p>1 、每步移动可以且仅可以沿横向（即向左或向右）拖动某一方块一格：当拖动这一方块时，如果拖动后到达的位置（以下称目标位置）也有方块，那么这两个方块将交换位置（参见输入输出样例说明中的图 6  到图 7 ）；如果目标位置上没有方块，那么被拖动的方块将从原来的竖列中抽出，并从目标位置上掉落（直到不悬空，参见下面图1 和图2）；<br><img src="https://cdn.luogu.org/upload/pic/103.png" srcset="/img/loading.gif" lazyload><br>2 、任一时刻，如果在一横行或者竖列上有连续三个或者三个以上相同颜色的方块，则它们将立即被消除（参见图1 到图3）。<br><img src="https://cdn.luogu.org/upload/pic/102.png" srcset="/img/loading.gif" lazyload><br>注意：</p>
+<p>a) 如果同时有多组方块满足消除条件，几组方块会同时被消除（例如下面图 4 ，三个颜色为 1 的方块和三个颜色为 2 的方块会同时被消除，最后剩下一个颜色为 2 的方块）。</p>
+<p>b) 当出现行和列都满足消除条件且行列共享某个方块时，行和列上满足消除条件的所有方块会被同时消除（例如下面图5 所示的情形，5 个方块会同时被消除）。</p>
+<p>3 、方块消除之后，消除位置之上的方块将掉落，掉落后可能会引起新的方块消除。注意：掉落的过程中将不会有方块的消除。</p>
+<p>上面图1 到图 3 给出了在棋盘上移动一块方块之后棋盘的变化。棋盘的左下角方块的坐标为（0, 0 ），将位于（3, 3 ）的方块向左移动之后，游戏界面从图 1 变成图 2 所示的状态，此时在一竖列上有连续三块颜色为4 的方块，满足消除条件，消除连续3 块颜色为4 的方块后，上方的颜色为3 的方块掉落，形成图 3 所示的局面。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>共 6 行。</p>
+<p>第一行为一个正整数 n，表示要求游戏通关的步数。</p>
+<p>接下来的 5行，描述7×5 的游戏界面。每行若干个整数，每两个整数之间用一个空格隔开，每行以一个 0 结束，自下向上表示每竖列方块的颜色编号（颜色不多于 10 种，从 1 开始顺序编号，相同数字表示相同颜色）。</p>
+<p>输入数据保证初始棋盘中没有可以消除的方块。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>如果有解决方案，输出 n 行，每行包含 3 个整数 x,y,g，表示一次移动，每两个整数之间用一个空格隔开，其中 (x ,y)表示要移动的方块的坐标， g 表示移动的方向， 1 表示向右移动， −1 表示向左移动。注意：多组解时，按照 x 为第一关健字， y 为第二关健字， 1 优先于 −1 ，给出一组字典序最小的解。游戏界面左下角的坐标为 (0 ,0) 。</p>
+<p>如果没有解决方案，输出一行，包含一个整数 -1 。</p>
+<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><pre><code>3
+1 0
+2 1 0
+2 3 4 0
+3 1 0
+2 4 3 4 0
+</code></pre>
+<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><pre><code>2 1 1
+3 1 1
+3 0 1
+</code></pre>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>【输入输出样例说明】</p>
+<p>按箭头方向的顺序分别为图 6 到图 11<br><img src="https://cdn.luogu.org/upload/pic/104.png" srcset="/img/loading.gif" lazyload><br>样例输入的游戏局面如上面第一个图片所示，依次移动的三步是：(2,1) 处的方格向右移动，(3,1) 处的方格向右移动,(3,0)处的方格向右移动，最后可以将棋盘上所有方块消除。</p>
+<p>【数据范围】</p>
+<p>对于 30% 的数据，初始棋盘上的方块都在棋盘的最下面一行；</p>
+<p>对于 100% 的数据，0&lt;n≤5。</p>
+<p>noip2011提高组day1第3题</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="cpp">#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;cstdio&amp;gt;
+#include&amp;lt;cstring&amp;gt;
+#include&amp;lt;stack&amp;gt;
+#define scanf scanf_s
+using namespace std;
+int a[5][7],tag[5][7],cnt[10];
+int n;
+struct Node&#123;
+    int x,y,z;
+&#125;;
+stack&amp;lt;Node&amp;gt;ans;
+
+bool emp(void)&#123;
+    for(int i=0;i&amp;lt;5;++i)
+        for(int j=0;j&amp;lt;7;++j) 
+            if(a[i][j])return 0;
+    return 1;
+&#125;
+
+void drop(int x,int y)&#123;
+    int p=y-1;
+    while(p&amp;gt;=0&amp;amp;&amp;amp;!a[x][p])--p;
+    swap(a[x][y],a[x][p+1]);
+&#125;
+
+bool check()&#123;//消去
+    memset(tag,0,sizeof(tag));//先把要消的标记起来，不能直接删除
+    bool flag=0;//有没有消去
+    for(int i=0;i&amp;lt;5;i++)&#123;
+        for(int j=0;j&amp;lt;7;j++)&#123;
+            if(!a[i][j])continue;
+            if(i+2&amp;lt;5&amp;amp;&amp;amp;a[i][j]==a[i+1][j]&amp;amp;&amp;amp;a[i+1][j]==a[i+2][j])//横着消
+                tag[i][j]=tag[i+1][j]=tag[i+2][j]=1;
+            if(j+2&amp;lt;7&amp;amp;&amp;amp;a[i][j]==a[i][j+1]&amp;amp;&amp;amp;a[i][j+1]==a[i][j+2])//竖着消
+                tag[i][j]=tag[i][j+1]=tag[i][j+2]=1;
+        &#125;
+    &#125;
+    for(int i=0;i&amp;lt;5;++i)//消除
+        for(int j=0;j&amp;lt;7;++j) 
+            if(tag[i][j])&#123;
+                flag=1;
+                a[i][j]=0;
+            &#125;
+    for(int i=0;i&amp;lt;5;++i)//下落
+        for(int j=1;j&amp;lt;7;++j) 
+            if(a[i][j]&amp;amp;&amp;amp;(!a[i][j-1])) drop(i,j);
+    return flag;
+&#125;
+
+void move(int x,int y,int z)&#123;//移动
+    int nx=x+z,ny=y;
+    swap(a[x][y],a[nx][ny]);
+    drop(nx,ny);
+    while(++y&amp;lt;7&amp;amp;&amp;amp;a[x][y])drop(x,y);
+    while(check());
+&#125;
+
+bool dfs(int p)&#123;
+    int tmp[5][7];
+    bool ok=emp();
+    if(ok&amp;amp;&amp;amp;p==n+1)return 1;
+    else if(ok||p==n+1)return 0;
+    memcpy(tmp,a,sizeof(a));
+    for(int i=0;i&amp;lt;5;i++)&#123;
+        for(int j=0;j&amp;lt;7;j++)&#123;
+            if(a[i][j])&#123;
+                if(i!=4&amp;amp;&amp;amp;a[i][j]!=a[i+1][j])&#123;//不在最右边并且和右边的颜色不同
+                    move(i,j,1);
+                    if(dfs(p+1))&#123;
+                        Node o=&#123;i,j,1&#125;;
+                        ans.push(o);
+                        return 1;
+                    &#125;
+                    memcpy(a,tmp,sizeof(a));//回溯
+                &#125;
+                if(i!=0&amp;amp;&amp;amp;a[i][j]!=a[i-1][j]&amp;amp;&amp;amp;a[i-1][j]==0)&#123;
+                    move(i,j,-1);
+                    if(dfs(p+1))&#123;
+                        Node o=&#123;i,j,-1&#125;;
+                        ans.push(o);
+                        return 1;
+                    &#125;
+                    memcpy(a,tmp,sizeof(a));
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+    return 0;
+&#125;
+
+
+int main()&#123;
+    cin&amp;gt;&amp;gt;n;
+    for(int i=0;i&amp;lt;5;i++)&#123;
+        int b=1;
+        int cnt=0;
+        while(b!=0)&#123;
+            scanf(&amp;quot;%d&amp;quot;,&amp;amp;b);
+            a[i][cnt++]=b;
+        &#125;
+    &#125;
+    check();
+    dfs(1);
+    Node t;
+    int cnt=0;
+    if(ans.empty())cout&amp;lt;&amp;lt;&amp;quot;-1&amp;quot;;
+    while(!ans.empty())&#123;
+        t=ans.top();
+        ans.pop();
+        printf(&amp;quot;%d %d %d\n&amp;quot;,t.x,t.y,t.z);
+    &#125;
+    return 0;
+&#125;
+
+</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/10/01/%5BUVA1330%5DCity%20Game/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[UVA1330]City Game</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/10/01/%5BBZOJ4195%5D%5BNoi2015%5D%E7%A8%8B%E5%BA%8F%E8%87%AA%E5%8A%A8%E5%88%86%E6%9E%90/">
+                        <span class="hidden-mobile">[BZOJ4195][Noi2015]程序自动分析</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

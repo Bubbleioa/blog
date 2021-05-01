@@ -1,0 +1,724 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="The LTS version of ioa's blog.">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/10/18/%5BNOIP2012%5D%E7%96%AB%E6%83%85%E6%8E%A7%E5%88%B6/" target="_self">
+          [NOIP2012]疫情控制
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/10/18/%5BNOIP2012%5D%E7%96%AB%E6%83%85%E6%8E%A7%E5%88%B6/" target="_self">
+          
+          
+            
+          
+          题目描述H 国有 n个城市，这 n 个城市用 n−1条双向道路相互连通构成一棵树，1号城市是首都，也是树中的根节点。
+H国的首都爆发了一种危害性极高的传染病。当局为了控制疫情，不让疫情扩散到边境城市（叶子节点所表示的城市），决定动用军队在一些城市建立检查点，使得从首都到边境城市的每一条路径上都至少有一个检查点，边境城市也可以建立检查点。但特别要注意的是，首都是不能建立检查点的。
+现在，在 H 国的
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-10-18 08:12" pubdate>
+              2018-10-18
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/10/16/%5BP1979%5D%5BNOIP2013%5D%E5%8D%8E%E5%AE%B9%E9%81%93/" target="_self">
+          [P1979][NOIP2013]华容道
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/10/16/%5BP1979%5D%5BNOIP2013%5D%E5%8D%8E%E5%AE%B9%E9%81%93/" target="_self">
+          
+          
+            
+          
+          
+样例输入3 4 2
+0 1 1 1
+0 1 1 0
+0 1 0 0
+3 2 1 2 2 2
+1 2 2 2 3 2
+
+样例输出2
+-1
+
+
+题解
+算法分析摘自《2013全国信息学奥林匹克年鉴》
+
+算法分析这道题主要考察同学们对最短路算法的理解。（我考试的时候怎么没看出来orz）本题是一个很典型的最短路模型的题目。假设我们把棋盘的局面当作结点，若A局面能通过一步变成B局面则将A局面和B局面对应的结
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-10-16 16:33" pubdate>
+              2018-10-16
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/10/14/%5BNOIP2012%5D%E5%9B%BD%E7%8E%8B%E6%B8%B8%E6%88%8F/" target="_self">
+          [NOIP2012]国王游戏
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/10/14/%5BNOIP2012%5D%E5%9B%BD%E7%8E%8B%E6%B8%B8%E6%88%8F/" target="_self">
+          
+          
+            
+          
+          
+题解
+内容摘自李煜东所著《算法竞赛进阶指南》由于本题输出过大，要用高进度，但是这里主要讨论贪心，请先无视高精度  
+
+按照每个大臣左、右手上的数的乘积从小到大排序，就是最优排队方案。这个贪心算法可以使用微扰（临项交换）证明。对于任意一种排序，设[latex]n[/latex]名大臣左、右手上的数分别是[latex]A[1][/latex]到[latex]A[n][/latex]与[latex]B
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-10-14 21:12" pubdate>
+              2018-10-14
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/10/14/%5B%E7%9C%8B%E8%A7%81%E7%BB%9F%E8%AE%A1%5D%E4%B8%80%E4%B8%AA%E8%B6%85%E8%B5%9E%E7%9A%84%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/" target="_self">
+          [看见统计]一个超赞的交互式学习网站
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/10/14/%5B%E7%9C%8B%E8%A7%81%E7%BB%9F%E8%AE%A1%5D%E4%B8%80%E4%B8%AA%E8%B6%85%E8%B5%9E%E7%9A%84%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/" target="_self">
+          
+          
+            
+          
+          我说的再好也不如大家自己去体会一下：  
+网站链接
+支持中文！！！  
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-10-14 17:22" pubdate>
+              2018-10-14
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/10/14/%5BBZOJ1857%5D%5BScoi2010%5D%E4%BC%A0%E9%80%81%E5%B8%A6/" target="_self">
+          [BZOJ1857][Scoi2010]传送带
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/10/14/%5BBZOJ1857%5D%5BScoi2010%5D%E4%BC%A0%E9%80%81%E5%B8%A6/" target="_self">
+          
+          
+            
+          
+          Description在一个2维平面上有两条传送带，每一条传送带可以看成是一条线段。两条传送带分别为线段AB和线段CD。Lxp在AB上的移动速度为P，在CD上的移动速度为Q，在平面上的移动速度R。现在Lxp想从A点走到D点，他想知道最少需要走多长时间
+Input输入数据第一行是4个整数，表示A和B的坐标，分别为Ax，Ay，Bx，By 第二行是4个整数，表示C和D的坐标，分别为Cx，Cy，Dx，Dy
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-10-14 16:22" pubdate>
+              2018-10-14
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/10/14/%5BNOI1999%5D%5BPOJ1190%5D%E7%94%9F%E6%97%A5%E8%9B%8B%E7%B3%95/" target="_self">
+          [NOI1999][POJ1190]生日蛋糕
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/10/14/%5BNOI1999%5D%5BPOJ1190%5D%E7%94%9F%E6%97%A5%E8%9B%8B%E7%B3%95/" target="_self">
+          
+          
+            
+          
+          Description7月17日是Mr.W的生日，ACM-THU为此要制作一个体积为Nπ的M层生日蛋糕，每层都是一个圆柱体。设从下往上数第i(1 &lt;= i &lt;= M)层蛋糕是半径为Ri, 高度为Hi的圆柱。当i &lt; M时，要求Ri &gt; Ri+1且Hi &gt; Hi+1。由于要在蛋糕上抹奶油，为尽可能节约经费，我们希望蛋糕外表面（最下一层的下底面除外）的面积Q最小。令Q =
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-10-14 16:06" pubdate>
+              2018-10-14
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/10/13/%5BBZOJ2469%5D%5B%E4%B8%AD%E5%B1%B1%E5%B8%82%E9%80%892010%5D%E7%AE%80%E5%8D%95%E6%95%B0%E8%B0%9C/" target="_self">
+          [BZOJ2469][中山市选2010]简单数谜
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/10/13/%5BBZOJ2469%5D%5B%E4%B8%AD%E5%B1%B1%E5%B8%82%E9%80%892010%5D%E7%AE%80%E5%8D%95%E6%95%B0%E8%B0%9C/" target="_self">
+          
+          
+            
+          
+          Description很多人都曾经听说过数独，但你是否听说过数谜（Karuro）呢？实际上，数谜是数独的更大（且更难）的兄弟问题，而且在日本也是非常受欢迎的。数谜问题和填字游戏类似，不过它要填的不是文字而是数字。数谜游戏的目标是用1-9填满所有空格，且这些数字相加的和满足相应的要求（或者称为“提示”），且在同一栏（“栏”是指一些水平或者竖直的连续的空格，用于提示的格子不算空格）不能填重复的数字。当
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-10-13 10:57" pubdate>
+              2018-10-13
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/10/12/%5BUSACO17OPEN%5DModern%20Art/" target="_self">
+          [USACO17OPEN]Modern Art
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/10/12/%5BUSACO17OPEN%5DModern%20Art/" target="_self">
+          
+          
+            
+          
+          题目题目描述Art critics worldwide have only recently begun to recognize the creative genius behind the great bovine painter, Picowso.
+Picowso paints in a very particular way. She starts with an N \times NN×
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-10-12 09:13" pubdate>
+              2018-10-12
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/10/11/%5BUSACO17OPEN%5DModern%20Art%202/" target="_self">
+          [USACO17OPEN]Modern Art 2
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/10/11/%5BUSACO17OPEN%5DModern%20Art%202/" target="_self">
+          
+          
+            
+          
+          题目题目背景小TY的同学HF也想创作艺术
+HF只有一块长条状的画布(画条)，所以每一次涂色只能涂上连续几个单位的颜料，同样新的颜料可以完全覆盖旧的颜料
+由于他的颜料同样非常傲娇，每次涂完要等上1day才能完全干，只有旧颜料干了以后才能用新颜料覆盖
+现在小HF用了2017个年头终于画出了一个大作品，自己非常满意
+现在他想复制这份作品
+题目描述Having become bored with stan
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-10-11 21:02" pubdate>
+              2018-10-11
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/10/11/%5B%E6%B4%9B%E8%B0%B7P1967%5D%5BNOIP2013%5D%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/" target="_self">
+          [洛谷P1967][NOIP2013]货车运输
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/10/11/%5B%E6%B4%9B%E8%B0%B7P1967%5D%5BNOIP2013%5D%E8%B4%A7%E8%BD%A6%E8%BF%90%E8%BE%93/" target="_self">
+          
+          
+            
+          
+          题目题目描述A国有n座城市，编号从1到n，城市之间有m条双向道路。每一条道路对车辆都有重量限制，简称限重。现在有q 辆货车在运输货物，司机们想知道每辆车在不超过车辆限重的情况下，最多能运多重的货物。
+输入输出格式输入格式：第一行有两个用一个空格隔开的整数n,m表示A国有n座城市和m条道路。
+接下来m行每行3个整数 x, y, z每两个整数之间用一个空格隔开，表示从x号城市到y号城市有一条限重为z的
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-10-11 15:24" pubdate>
+              2018-10-11
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/10/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/#board">9</a><a class="page-number" href="/page/10/#board">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/#board">12</a><a class="page-number" href="/page/13/#board">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/#board">17</a><a class="extend next" rel="next" href="/page/12/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -1,0 +1,639 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>[P1979][NOIP2013]华容道 - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="[P1979][NOIP2013]华容道">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2018-10-16 16:33" pubdate>
+        2018年10月16日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      35
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">[P1979][NOIP2013]华容道</h1>
+            
+            <div class="markdown-body">
+              <p><img src="http://bubbleioa.top/wp-content/uploads/2018/10/%E5%8D%8E%E5%AE%B9%E9%81%931.png" srcset="/img/loading.gif" lazyload><br><img src="http://bubbleioa.top/wp-content/uploads/2018/10/%E5%8D%8E%E5%AE%B9%E9%81%932.png" srcset="/img/loading.gif" lazyload><br><img src="http://bubbleioa.top/wp-content/uploads/2018/10/%E5%8D%8E%E5%AE%B9%E9%81%933.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h3><pre><code>3 4 2
+0 1 1 1
+0 1 1 0
+0 1 0 0
+3 2 1 2 2 2
+1 2 2 2 3 2
+</code></pre>
+<h3 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h3><pre><code>2
+-1
+</code></pre>
+<p><img src="http://bubbleioa.top/wp-content/uploads/2018/10/%E5%8D%8E%E5%AE%B9%E9%81%934.png" srcset="/img/loading.gif" lazyload><br><img src="http://bubbleioa.top/wp-content/uploads/2018/10/%E5%8D%8E%E5%AE%B9%E9%81%935.png" srcset="/img/loading.gif" lazyload></p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><blockquote>
+<p>算法分析摘自<kbd>《2013全国信息学奥林匹克年鉴》</kbd></p>
+</blockquote>
+<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p>这道题主要考察同学们对最短路算法的理解。（我考试的时候怎么没看出来orz）<br>本题是一个很典型的最短路模型的题目。<br>假设我们把棋盘的局面当作结点，若A局面能通过一步变成B局面则将A局面和B局面对应的结点连上一条边权为1的边。那么问题就成了求这样建成的图中从初始局面对应的结点到达指定移动格在目标位置的局面对应的那些结点的最短路。也就是求边权都为1的途中的一个单源最短路，用BFS就可以解决这个问题了。具体做法如下：   </p>
+<hr>
+<p>用(EX,EY,MX,MY)表示空白格在(EX,EY)，指定移动格在(MX,MY)的局面所对应的结点。   </p>
+<ol>
+<li>将(EX,EY,SX,SY)进队，将Distance(EX,EY,SX,SY)设为0。</li>
+<li>若队为空，则输出无解，算法结束。</li>
+<li>将队首元素取出，设为(EX,EY,MX,MY)。</li>
+</ol>
+<ul>
+<li>若(MX,MY)等于(TX,TY)，则Distance(EX,EY,MX,MY)即为所求答案，算法结束。  </li>
+<li>否则，设由(EX,EY,MX,MY)能到达的局面(EX’,EY’,MX’,MY’)，且(EX’,EY’,MX’,MY’)从未进队过，则将(EX’,EY’,MX’,MY’)进队，将Distance(EX’,EY’,MX’,MY’)设Distance(EX,EY,MX,MY)+1，然后跳至步骤2.</li>
+</ul>
+<p>可以知道，一个局面由空白格的位置和指定移动格的位置唯一确定，所以局面的数量是[latex]O((nm)^2)[/latex]的，也就是说建成的图的结点数是[latex]O((nm)^2)[/latex]的。由于每个局面只可能通过空格和上下左右的移动格交换来变成另外一个局面，所以建成的图中的边数也是[latex]O((nm)^2)[/latex]的。因此求一次最短路的时间复杂度就为[latex]O(V+E)[/latex]，即[latex]O((nm)^2)[/latex]。但是询问有q次，所以总的时间复杂度为[latex]O(q(nm)^2)[/latex]。</p>
+<p>我们发现之间bfs不能满足题目的要求，所以算法还需要优化。</p>
+<p>进一步分析可以发现，指定移动格只有当空白格在它附近才能移动，所以游戏的过程可以看成将空白格先移动到指定移动格附近（此处不考虑初始位置和目标位置相同的情况），然后指定移动格和空白格交换，再将空白格移动到指定移动格附近，然后再将空白格移动到指定移动格附近，然后再将指定移动格和空白格交换……如此循环下去，直至指定移动格达到目标位置。</p>
+<p>如果只考虑空白格在指定移动格附近的局面，那这样的局面数显然是[latex]O(nm)[/latex]的。而局面之间的转移我们只考虑两种，一种是交换指定移动格附近的位置（比如由上方移动到右方）。第一种转移只需要一步，而第二种转移所需的步数就等于固定指定移动格后将空白格移动所需的最小步数，这个步数可以bfs求出，且由于这样的bfs只有[latex]O(nm)[/latex]种，且每种所需的时间是[latex]O(nm)[/latex]，所以我们可以在[latex]O((nm)^2)[/latex]的时间内预处理出来(或者像标程一样采用记忆化的方法)。</p>
+<p>两种转移总共最多能转移到5个新的局面，所以暗张这样的局面来建图，点数和边数都是[latex]O(nm)[/latex]的，但是边权就不是全为1了，所以需要用dijsktra算法来求最短路，时间复杂度为[latex]O(nm\times log(nm))[/latex]。加上预处理，总的时间复杂度为[latex]O((nm)^2+nm\times log(nm))[/latex]</p>
+<p>至此，本题就完美地解决了。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>代码来自@<a target="_blank" rel="noopener" href="https://www.luogu.org/space/show?uid=13091">ghj1222</a></p>
+<pre><code class="cpp">#include &amp;lt;bits/stdc++.h&amp;gt;
+#define inf 0x3f3f3f3f
+using namespace std;
+
+//方向数组 
+const int dx[] = &#123;0, 0, 1, -1&#125;, dy[] = &#123;1, -1, 0, 0&#125;;
+
+//mp是读入的地图，tt[i][j][d1][d2]是不经过(i,j)的情况下，(i,j)的d1方向转移到 (i,j)的d2方向的最短距离
+//d是广搜求距离用到的d数组，di是dijkstra时用到的d数组 v是dijkstra时用到的标记数组 
+int mp[32][32], tt[32][32][4][4], d[32][32], di[32][32][4];
+bool v[32][32][4];
+int n, m, q;//如题 
+
+//dijkstra过程中用到的状态结构体 
+struct st
+&#123;
+    int x, y, d, dis;
+    st(int x = 0, int y = 0, int d = 0, int dis = 0) : x(x), y(y), d(d), dis(dis)
+    &#123;
+        //构造函数 
+    &#125;
+    friend bool operator&amp;gt;(const st &amp;amp;a, const st &amp;amp;b);
+&#125;;
+
+//获取当前方向与dir相反的方向 
+int rev(int dir)
+&#123;
+//  printf(&amp;quot;(%d,%d) - &amp;gt; (%d,%d)\n&amp;quot;, dx[dir], dy[dir], dx[dir ^ 1], dy[dir ^ 1]);
+    return dir ^ 1;
+&#125;
+
+//因为要使用小根堆，所以这里重载了大于号 
+bool operator&amp;gt;(const st &amp;amp;a, const st &amp;amp;b)
+&#123;
+    return a.dis &amp;gt; b.dis;
+&#125;
+
+//判断一个点是否合法(是否能够走到) 
+bool valid(int x, int y)
+&#123;
+    return x &amp;gt;= 1 &amp;amp;&amp;amp; x &amp;lt;= n &amp;amp;&amp;amp; y &amp;gt;= 1 &amp;amp;&amp;amp; y &amp;lt;= m &amp;amp;&amp;amp; mp[x][y] == 1;
+&#125;
+
+//利用bfs算法求出(x1,y1)到(x2,y2)的距离 
+int dis(int x1, int y1, int x2, int y2)
+&#123;
+//  printf(&amp;quot;求出(%d,%d)到(%d,%d)的距离\n&amp;quot;, x1, y1, x2, y2); 
+    if(x1 == x2 &amp;amp;&amp;amp; y1 == y2)
+        return 0;
+    memset(d, 0x3f, sizeof(d));
+    queue&amp;lt;int&amp;gt; qx, qy;//队列 
+    qx.push(x1);
+    qy.push(y1);
+    d[x1][y1] = 0;
+    while (!qx.empty())
+    &#123;
+        int x = qx.front(), y = qy.front();
+        qx.pop();
+        qy.pop();
+        for (int i = 0; i &amp;lt;= 3; i++)
+        &#123;
+            int nx = x + dx[i], ny = y + dy[i];
+            if(valid(nx, ny) &amp;amp;&amp;amp; d[nx][ny] &amp;gt;= inf)//当前方块合法且没有被搜索 
+            &#123;
+                d[nx][ny] = d[x][y] + 1;
+                if(nx == x2 &amp;amp;&amp;amp; ny == y2)//到了终点 
+                &#123;
+//                  printf(&amp;quot;(%d,%d)到(%d,%d)的距离为%d\n&amp;quot;, x1, y1, x2, y2, d[nx][ny]); 
+                    return d[nx][ny];
+                &#125;
+                qx.push(nx);
+                qy.push(ny);
+            &#125;
+        &#125;
+    &#125;
+    return inf;
+&#125;
+
+void prework()
+&#123;
+    int x1, y1, x2, y2;
+    for (int i = 1; i &amp;lt;= n; i++)
+        for (int j = 1; j &amp;lt;= m; j++)
+            if (mp[i][j] == 1)
+            &#123;
+                mp[i][j] = 0;//暂时将(i,j)标记为不可以动的方块 
+                for (int src = 0; src &amp;lt;= 3; src++)//枚举d1 
+                    if (valid(x1 = i + dx[src], y1 = j + dy[src]))//d1方向的块合法 
+                        for (int dest = 0; dest &amp;lt;= 3; dest++)//枚举d2 
+                            if (valid(x2 = i + dx[dest], y2 = j + dy[dest]))//d2方向的块合法 
+                                tt[i][j][src][dest] = dis(x1, y1, x2, y2);//求两个块间的距离 
+                mp[i][j] = 1;//还原标记 
+            &#125;
+&#125;
+
+void work()
+&#123;
+    int ex, ey, sx, sy, tx, ty;//如题 
+    priority_queue&amp;lt;st, vector&amp;lt;st&amp;gt;, greater&amp;lt;st&amp;gt; &amp;gt;pq;//小根堆 
+    scanf(&amp;quot;%d%d%d%d%d%d&amp;quot;, &amp;amp;ex, &amp;amp;ey, &amp;amp;sx, &amp;amp;sy, &amp;amp;tx, &amp;amp;ty);
+    if(sx == tx &amp;amp;&amp;amp; sy == ty)//他本来就在目标位置 
+    &#123;
+        printf(&amp;quot;0\n&amp;quot;);
+        return;
+    &#125;
+    memset(di, 0x3f, sizeof(di));//初始化距离数组 
+    memset(v, 0, sizeof(v));//初始化 
+    mp[sx][sy] = 0;///注意要把指定可移动块标记为不可移动 
+    for (int i = 0; i &amp;lt;= 3; i++)//枚举空白格子去指定可移动块的那个方向 
+    &#123;
+        int nx = sx + dx[i], ny = sy + dy[i];
+        if (valid(nx, ny))//这个位置合法 
+        &#123;
+            int ds = dis(ex, ey, nx, ny);//计算距离 
+            pq.push(st(sx, sy, i, ds));//扔进小根堆，dij用 
+            di[sx][sy][i] = ds;//更新dijkstra的di数组 
+        &#125;
+    &#125;
+    mp[sx][sy] = 1;//把指定可移动块不可移动的标记还原 
+    while (!pq.empty())//dijkstra的套路 
+    &#123;
+        st now = pq.top();
+        pq.pop();
+//      printf(&amp;quot;迪杰斯特拉 %d %d (%d,%d) %d\n&amp;quot;, now.x, now.y, dx[now.d], dy[now.d], now.dis); 
+        if (v[now.x][now.y][now.d] == 1)
+            continue;
+        v[now.x][now.y][now.d] = 1;
+        int &amp;amp;x = now.x, &amp;amp;y = now.y; 
+        for (int i = 0; i &amp;lt;= 3; i++)
+        &#123;
+            int nx = x + dx[i], ny = y + dy[i];//让空白块移动到(nx,ny)然后让指定可移动块移动到空白块位置 
+//          printf(&amp;quot;下一个为(%d,%d)\n&amp;quot;, nx, ny); 
+            if (valid(nx, ny))//(nx,ny)是合法的 
+            &#123;
+//              printf(&amp;quot;(%d,%d)合法\n&amp;quot;, nx, ny); 
+                int ds = tt[x][y][now.d][i];//直接从tt数组获取空白格子移动的距离 
+                if (v[nx][ny][rev(i)] == 0 &amp;amp;&amp;amp; now.dis + ds + 1 &amp;lt; di[nx][ny][rev(i)])//dij套路，更新距离 
+                &#123;
+//                  printf(&amp;quot;由(%d,%d,%d,%d,%d)到(%d,%d,%d,%d,%d)\n&amp;quot;, now.x, now.y, dx[now.d], dy[now.d], now.dis, nx, ny, dx[rev(i)], dy[rev(i)], now.dis + ds + 1); 
+                    di[nx][ny][rev(i)] = now.dis + ds + 1;
+                    pq.push(st(nx, ny, rev(i), now.dis + ds + 1));
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+    int mind = inf;
+    for (int i = 0; i &amp;lt;= 3; i++)//枚举目标位置的4个方向的状态更新最小值 
+    &#123;
+        mind = min(mind, di[tx][ty][i]);
+//      printf(&amp;quot;di[%d][%d][%d] = %d\n&amp;quot;, tx, ty, i, di[tx][ty][i]);
+    &#125;
+    if (mind == inf)//最小值没有被更新，说明目标位置不可到达 
+        printf(&amp;quot;-1\n&amp;quot;);
+    else
+        printf(&amp;quot;%d\n&amp;quot;, mind);
+&#125;
+
+//主函数 
+int main()
+&#123;
+    scanf(&amp;quot;%d%d%d&amp;quot;, &amp;amp;n, &amp;amp;m, &amp;amp;q);
+    for (int i = 1; i &amp;lt;= n; i++)
+        for (int j = 1; j &amp;lt;= m; j++)
+            scanf(&amp;quot;%d&amp;quot;, &amp;amp;mp[i][j]);
+    prework();
+    for (int i = 1; i &amp;lt;= q; i++)
+        work();
+    return 0;
+&#125;
+</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/10/18/%5BNOIP2012%5D%E7%96%AB%E6%83%85%E6%8E%A7%E5%88%B6/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[NOIP2012]疫情控制</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/10/14/%5BNOIP2012%5D%E5%9B%BD%E7%8E%8B%E6%B8%B8%E6%88%8F/">
+                        <span class="hidden-mobile">[NOIP2012]国王游戏</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

@@ -182,19 +182,26 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2018/10/25/10.24%E6%97%A5%E8%80%83%E8%AF%95%E5%8F%8D%E6%80%9D/" target="_self">
-          10.24日考试反思
+        <a href="/2019/04/13/%5BTJOI2017%5DDNA%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2+%E5%93%88%E5%B8%8C%EF%BC%89/" target="_self">
+          [TJOI2017]DNA（字符串+哈希）
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2018/10/25/10.24%E6%97%A5%E8%80%83%E8%AF%95%E5%8F%8D%E6%80%9D/" target="_self">
+        <a href="/2019/04/13/%5BTJOI2017%5DDNA%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2+%E5%93%88%E5%B8%8C%EF%BC%89/" target="_self">
           
           
             
           
-          T1：音量调节做过的最简单的省选题目，考场上首先想到了用bool数组来实现“可达性dp”，然后抽象出一个类似背包问题的模型，然而由于做题量太少（太弱了），没遇到过这种题目，不敢用这种想法，于是就用了一个[latex]f[51][2][/latex]数组骗了个40分。
-T2：旅行当时脑子抽了，连骗50分的程序都没想到（曼哈顿距离），结果写了一个随机暴力求期望，本来是想卡在0.9s的时候退出的，结果精
+          
+题目链接
+
+题解题目大意：给两个串，S，T，问S中有多少个子串与T的差异是在3个字符以内的。
+这道题解法有很多，像什么SAM，FFT，NTT之类的，然而我只会哈希orz
+二分找它们的最长公共前缀，最多能跳3次，没了……
+设N为S的长度，M为T的长度时间复杂度 $O((N-M)\times (logM))$
+代码#include&amp;lt;bits/stdc++.h&amp;gt;
+using
         </a>
       </p>
 
@@ -202,8 +209,8 @@ T2：旅行当时脑子抽了，连骗50分的程序都没想到（曼哈顿距�
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2018-10-25 14:56" pubdate>
-              2018-10-25
+            <time datetime="2019-04-13 16:40" pubdate>
+              2019-04-13
             </time>
           </div>
         
@@ -219,34 +226,24 @@ T2：旅行当时脑子抽了，连骗50分的程序都没想到（曼哈顿距�
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2018/10/20/%E3%80%90%E8%A7%A3%E7%AD%94%E5%8F%91%E5%B8%83%E3%80%91%E5%91%A8%E5%85%AD%E4%B8%8B%E5%8D%88%E5%AD%A6%E9%95%BF%E7%9A%84%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB%EF%BC%81%EF%BC%81/" target="_self">
-          【解答发布】周六下午学长的经验分享！！
+        <a href="/2019/04/07/%5BCF533F%5DEncoding(%E5%93%88%E5%B8%8C)/" target="_self">
+          [CF533F]Encoding(哈希)
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2018/10/20/%E3%80%90%E8%A7%A3%E7%AD%94%E5%8F%91%E5%B8%83%E3%80%91%E5%91%A8%E5%85%AD%E4%B8%8B%E5%8D%88%E5%AD%A6%E9%95%BF%E7%9A%84%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB%EF%BC%81%EF%BC%81/" target="_self">
+        <a href="/2019/04/07/%5BCF533F%5DEncoding(%E5%93%88%E5%B8%8C)/" target="_self">
           
           
             
           
-          Q1:编译器是什么版本
-by Chen_Xi
+          
+题目链接
 
-玄学，windows上应该都是MinGW5.x
-Q2:可以提前进机房嘛？
-by Chen_Xi
-
-好像是可以提前半个小时进去的。
-Q3:看不懂题目怎么办？
-by 匿名
-
-建议学好语文。
-Q4:关于SPFA已死怎么看？
-by hzy
-
-用于判断负环还是挺有效的，不过这种题目也挺少的吧。个人最短路径偏爱写Dijkstra，确实挺少会用到SPFA。
-Q5:
+题解哈希真的是个好东西,在O(N)预处理之后,能在O(1)的时间内枚举任意子串.这道题我们可以考虑对每种字母进行哈希.具体来讲,hash1[i][c]存储的是字母c的哈希值(位置)
+这样处理之后,就在S串里面枚举长度为T串的子串,再枚举两种字母,如果26个字母哈希值能够相等,那么这样的变化是没问题的
+时间复杂度 $O(N\times 26\times 26)$
+这里进制为131,模数
         </a>
       </p>
 
@@ -254,8 +251,8 @@ Q5:
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2018-10-20 14:20" pubdate>
-              2018-10-20
+            <time datetime="2019-04-07 16:58" pubdate>
+              2019-04-07
             </time>
           </div>
         
@@ -271,33 +268,24 @@ Q5:
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2018/10/02/%E4%B8%80%E4%B8%AA%E6%96%B0%E5%85%B4%E7%9A%84%E4%B8%9C%E6%96%B9%E5%90%8C%E9%9F%B3%E7%A4%BE%E5%9B%A2%E2%80%94%E2%80%94%E7%BA%BD%E7%BA%A6%E8%8A%B1%E6%AE%8B%E6%9C%88%E4%B9%90%E5%9B%A2/" target="_self">
-          一个新兴的东方同音社团——纽约花残月乐团
+        <a href="/2019/04/06/%5BCF611D%5DNew%20Year%20and%20Ancient%20Prophecy(%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92)/" target="_self">
+          [CF611D]New Year and Ancient Prophecy(动态规划)
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2018/10/02/%E4%B8%80%E4%B8%AA%E6%96%B0%E5%85%B4%E7%9A%84%E4%B8%9C%E6%96%B9%E5%90%8C%E9%9F%B3%E7%A4%BE%E5%9B%A2%E2%80%94%E2%80%94%E7%BA%BD%E7%BA%A6%E8%8A%B1%E6%AE%8B%E6%9C%88%E4%B9%90%E5%9B%A2/" target="_self">
+        <a href="/2019/04/06/%5BCF611D%5DNew%20Year%20and%20Ancient%20Prophecy(%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92)/" target="_self">
           
           
             
           
           
-繁花分落的四月
-旧城，都市，樱瓣流舞
-天际微凉，点点微光照耀着的
-是北极星的残象
-幽风起，皎月将落未落
-此处，即梦开始的地方……
-这里是纽约花残月乐团
-一个新兴的东方同音社团
-愿天籁之音，奏响于此时。
-各位好，这里是纽约花残月乐团。
-[latex]NewYork\ HKT\ Studio[/latex]
+题目链接
 
-
-
-今年8月份刚刚建立起的一个东方同人音乐社团～在2019年的2月份，我们将会推出第一张专
+题解$f[i][j]$ 表示 当前串为第j个位置到第i个位置的串的方案数
+$O(n^3)$ 做法$ f[i][j]=\sum_{j-k&lt; i-j}f[j][k]$   
+若 $s(k+1,j)&lt; s(j+1,i),j-k=i-j$ 则 $f[i][j]+=f[j][k]$
+$O(n^2)$ 做法考虑 $O(1)$ check $s(k+1,j)&lt;s(j+1,i)$ 
         </a>
       </p>
 
@@ -305,8 +293,8 @@ Q5:
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2018-10-02 21:56" pubdate>
-              2018-10-02
+            <time datetime="2019-04-06 21:07" pubdate>
+              2019-04-06
             </time>
           </div>
         
@@ -322,31 +310,26 @@ Q5:
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2018/10/01/%E4%B8%AA%E4%BA%BAdp%E5%B0%8F%E7%BB%93/" target="_self">
-          个人dp小结
+        <a href="/2019/04/06/%5BNOI2018%5D%E5%B1%A0%E9%BE%99%E5%8B%87%E5%A3%AB/" target="_self">
+          [NOI2018]屠龙勇士
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2018/10/01/%E4%B8%AA%E4%BA%BAdp%E5%B0%8F%E7%BB%93/" target="_self">
+        <a href="/2019/04/06/%5BNOI2018%5D%E5%B1%A0%E9%BE%99%E5%8B%87%E5%A3%AB/" target="_self">
           
           
             
           
           
-前言：最近做了很多动态规划题，但是每次遇到新的题目的时候还是做不出来，于是就像做一个小结，梳理下近些天做的题目，从中获取经验。
+题目链接
 
-第零节：DP的基础概念动态规划和其他某些算法具有一定的相似度，都是利用问题的可划分性以及子问题的相似性来进行归纳，降低时间复杂度。来说说动态规划的几个基本条件：
+题目大意中国剩余定理”裸题”
 
+这就当是我对(扩展)中国剩余定理的总结吧,还有好多细节的方面的归纳.
 
-
-条件
-解释
-
-
-
-无后效性
-已求解的子问题不受后续阶段的影响[latex]^{[1]}[/latex
+中国剩余定理(CRT)用途就是解出这类问题我们可以先考虑模数两两互质的情况下的做法.我们想构造出一个合式使得 $x= r_1+r_2+r_3+\cdots +r_n$ 其中 $m_i$ 可以整除除了第i项的其他项  
+于是我们可以通过一下做法达到我们的目的:我们先开一个变量lcm来
         </a>
       </p>
 
@@ -354,8 +337,8 @@ Q5:
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2018-10-01 18:32" pubdate>
-              2018-10-01
+            <time datetime="2019-04-06 16:23" pubdate>
+              2019-04-06
             </time>
           </div>
         
@@ -371,18 +354,23 @@ Q5:
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2018/10/01/%E5%AE%9C%E6%98%A5%E4%B8%AD%E5%AD%A6%E5%9B%A2%E5%A7%94%E6%8B%9B%E6%96%B0%E5%95%A6%EF%BC%81%EF%BC%81/" target="_self">
-          宜春中学团委招新啦！！
+        <a href="/2019/04/02/%5BCF616E%5DSum%20of%20Remainders/" target="_self">
+          [CF616E]Sum of Remainders
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2018/10/01/%E5%AE%9C%E6%98%A5%E4%B8%AD%E5%AD%A6%E5%9B%A2%E5%A7%94%E6%8B%9B%E6%96%B0%E5%95%A6%EF%BC%81%EF%BC%81/" target="_self">
+        <a href="/2019/04/02/%5BCF616E%5DSum%20of%20Remainders/" target="_self">
           
           
             
           
-          在宜中学子中，有这样一群人他们是众多校园活动的策划者，他们协助宜春中学各个社团管理社团事务，他们能带着小牌子穿梭于各项活动，他们常年以学生身份出现于行政楼、科技楼之中他们是谁！——宜春中学团委学生干部可爱的新高一学弟学妹们：加入朝气蓬勃的宜春中学团委吧！在这里，你能培养、锻炼管理能力、组织能力、应变能力；在这里，你能得到展现自我，提升自我的机会；在这里，你能感受到组织浓浓的凝聚力；在这里，你能参与
+          其实和余数求和是同一道题…但是范围加大取模就有点容易载坑
+还是说一下思路吧
+首先我们要求的是:
+$$\displaystyle\sum_{i=1}^m n\ mod \ i$$
+其实取模操作特殊在没有什么特殊性基本上看到这种形式就会想到 $n\ mod\ i=n-  \left\lfloor\frac{n}{i}\right\rfloor\times i$
+于是我们其实就是要求$$n\times 
         </a>
       </p>
 
@@ -390,8 +378,8 @@ Q5:
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2018-10-01 17:24" pubdate>
-              2018-10-01
+            <time datetime="2019-04-02 21:38" pubdate>
+              2019-04-02
             </time>
           </div>
         
@@ -407,28 +395,26 @@ Q5:
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2018/10/01/ISLAND%E4%B8%80%E5%91%A8%E7%9B%AE%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" target="_self">
-          ISLAND一周目通关感想
+        <a href="/2019/03/26/%5BZJOI2007%5D%E6%8A%A5%E8%A1%A8%E7%BB%9F%E8%AE%A1/" target="_self">
+          [ZJOI2007]报表统计
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2018/10/01/ISLAND%E4%B8%80%E5%91%A8%E7%9B%AE%E9%80%9A%E5%85%B3%E6%84%9F%E6%83%B3/" target="_self">
+        <a href="/2019/03/26/%5BZJOI2007%5D%E6%8A%A5%E8%A1%A8%E7%BB%9F%E8%AE%A1/" target="_self">
           
           
             
           
           
-***可能包含严重剧透***
-本来有很多游戏内部短片可以通过B站外链嵌入这里的，但奈何全被封了  
+题目链接
 
-
-10.1更新：现在已经解禁，而且游戏已上架streamStream上的ISLAND
-
-
-
-
-序言这里要先感谢夜鸮的树洞汉化组带来的汉化，真的是很棒了，ISLAND最近也会上架steam，到时候会补票。本来是在同学的推荐下看了一集ISLAND，一开始我是抵触的，后面发现凛音的人设不错，声优是田村
+题解又是一道题一晚上系列(数据结构一生之敌)
+调了很久的原因其实是写错了一个变量,其实还是很简单的
+这里用的平衡树是Treap
+你可以把原始数列看成n个链表,首尾相连的那种,但是我们要分段存用vector就很舒服
+然后对于第三个操作,其实只要每次进入平衡树的元素查找下前驱后继与它本身作差取最小值即可(这里的前驱后继是非严格的)
+对于第二个操作,每次插入一个元素,总会创造两个差值关系并
         </a>
       </p>
 
@@ -436,8 +422,8 @@ Q5:
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2018-10-01 17:17" pubdate>
-              2018-10-01
+            <time datetime="2019-03-26 22:28" pubdate>
+              2019-03-26
             </time>
           </div>
         
@@ -453,19 +439,31 @@ Q5:
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2018/10/01/2018NOI%E5%AF%BC%E5%88%8A%E8%A2%AB%E8%99%90%E8%AE%B0/" target="_self">
-          2018NOI导刊被虐记
+        <a href="/2019/03/25/%5BZJOI2006%5D%E4%B9%A6%E6%9E%B6/" target="_self">
+          [ZJOI2006]书架
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2018/10/01/2018NOI%E5%AF%BC%E5%88%8A%E8%A2%AB%E8%99%90%E8%AE%B0/" target="_self">
+        <a href="/2019/03/25/%5BZJOI2006%5D%E4%B9%A6%E6%9E%B6/" target="_self">
           
           
             
           
-          序言结束以来已经过了很久了，终于有时间填坑，写这篇博客的目的就是想要保存这份回忆，无论今后怎么也好，当下才是最重要的。
-过程Day0好像我是比较晚和大家在火车站集合的，为了一个舒适的路程，特意买的是高铁票（为此还放弃了直达票）路程大概是宜春-&gt;杭州-&gt;常州-&gt;嘉兴-&gt;宜春正好宜春这边有暴雨，赶紧逃！高铁上还是比较舒适的，有电有网有吃，十几个人把电脑打开，俨然一个高档网吧（误
+          
+题目链接
+
+题解这道题一开始用的是Treap写的,死活调不出来,题解又全是指针的
+然后就用splay来写,发现思路自然了许多
+引用自FlierKing
+
+平衡树，需支持五个操作：
+
+
+将某元素置顶：将元素旋到根，然后将左子树合并到该元素的后继
+将某元素置底：将元素旋到根，然后将右子树合并到该元素的前驱
+将某元素提前/滞后1位：直接与该元素的前驱/后继交换位置及信息
+询问指定元素排名：将元素旋到根
         </a>
       </p>
 
@@ -473,8 +471,8 @@ Q5:
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2018-10-01 17:13" pubdate>
-              2018-10-01
+            <time datetime="2019-03-25 21:54" pubdate>
+              2019-03-25
             </time>
           </div>
         
@@ -490,18 +488,24 @@ Q5:
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2018/09/30/%E5%85%AD%E5%BA%A6%E7%A9%BA%E9%97%B4/" target="_self">
-          六度空间
+        <a href="/2019/03/25/%5BCQOI2014%5D%E6%8E%92%E5%BA%8F%E6%9C%BA%E6%A2%B0%E8%87%82/" target="_self">
+          [CQOI2014]排序机械臂
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2018/09/30/%E5%85%AD%E5%BA%A6%E7%A9%BA%E9%97%B4/" target="_self">
+        <a href="/2019/03/25/%5BCQOI2014%5D%E6%8E%92%E5%BA%8F%E6%9C%BA%E6%A2%B0%E8%87%82/" target="_self">
           
           
             
           
-          题目题目描述“六度空间”理论又称作“六度分隔（Six Degrees of Separation）”理论。这个理论可以通俗地阐述为：“你和任何一个陌生人之间所间隔的人不会超过六个，也就是说，最多通过五个人你就能够认识任何一个陌生人。”如下图所示。六度空间”理论虽然得到广泛的认同，并且正在得到越来越多的应用。但是数十年来，试图验证这个理论始终是许多社会学家努力追求的目标。然而由于历史的原因，这样的研
+          
+题目链接
+
+题解这道题坑了我好久,其实不难,就是有个地方与模板不一样导致错误(死背模板的后果)
+考虑用splay维护区间翻转,每次的翻转左边界是确定的,而右边界则是第i小的数所在位置
+输入存在a数组里,按高度排序,每次我们就取出a[i].id,它的位置作为右边界,每次输出它的size
+由于每次都单独地splay(a[i].id,rt) ,所以旋转的时候也要下放标记,其实以后都可以这样写,应该也不
         </a>
       </p>
 
@@ -509,8 +513,8 @@ Q5:
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2018-09-30 02:16" pubdate>
-              2018-09-30
+            <time datetime="2019-03-25 20:52" pubdate>
+              2019-03-25
             </time>
           </div>
         
@@ -526,18 +530,28 @@ Q5:
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2018/09/30/%E4%B8%96%E7%95%8C%EF%BC%8C%E6%82%A8%E5%A5%BD%EF%BC%81/" target="_self">
-          世界，您好！
+        <a href="/2019/03/21/%E8%8B%8F%E5%B9%95%E9%81%AE/" target="_self">
+          苏幕遮
         </a>
       </h1>
 
       <p class="index-excerpt">
-        <a href="/2018/09/30/%E4%B8%96%E7%95%8C%EF%BC%8C%E6%82%A8%E5%A5%BD%EF%BC%81/" target="_self">
+        <a href="/2019/03/21/%E8%8B%8F%E5%B9%95%E9%81%AE/" target="_self">
           
           
             
           
           
+苏幕遮
+
+
+往边关沙塞月胡马嘶风茄鼓吹霜雪一片寒蝉声里咽无限凄凉冷落天涯别
+
+
+举旌旗砺兵器独驾单骑驰骋看山河纵使荆棘长满路砥砺前行微雨沾衣热
+
+这是一首奥赛词然而为了像词所以选了和奥赛没有关系的意象  
+其实上阙是九歌写的，我觉得还满意，于是改了一下就用他的了上阙主要描写NOIP后，几个鬼人就退了（明明考得比我好），还有几个鬼人开学考后就退了，欺骗我感情其实比起凄凉，我对他们的离开更多的是愤怒
         </a>
       </p>
 
@@ -545,8 +559,50 @@ Q5:
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2018-09-30 00:58" pubdate>
-              2018-09-30
+            <time datetime="2019-03-21 17:58" pubdate>
+              2019-03-21
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2019/03/16/%5BP4886%5D%E5%BF%AB%E9%80%92%E5%91%98/" target="_self">
+          [P4886]快递员
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/03/16/%5BP4886%5D%E5%BF%AB%E9%80%92%E5%91%98/" target="_self">
+          
+          
+            
+          
+          
+题目链接
+
+题解这个淀粉质点分治有点意思，与其他的点分治的题目不同的是，这题目并没有让你费劲心思怎么去用log的复杂度进行内层的统计，而是让你想到如何确定当前答案是否最优。（下面不会讨论点分治的具体实现，此题不适合作为点分治入门题）
+在此我们可以将情况分为两种：
+
+点对内如图，我们的树长这样（假设边权全部为1），标红的是一对点对(6,7)，当前的根为1现在的问题是，当前求出来的答案 $ans=4
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-03-16 17:27" pubdate>
+              2019-03-16
             </time>
           </div>
         
@@ -560,7 +616,7 @@ Q5:
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/5/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#board">4</a><a class="page-number" href="/page/5/#board">5</a><span class="page-number current">6</span>
+      <a class="extend prev" rel="prev" href="/page/5/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#board">4</a><a class="page-number" href="/page/5/#board">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/#board">7</a><a class="page-number" href="/page/8/#board">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/#board">17</a><a class="extend next" rel="next" href="/page/7/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 

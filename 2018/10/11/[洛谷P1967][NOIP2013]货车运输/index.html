@@ -1,0 +1,649 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>[洛谷P1967][NOIP2013]货车运输 - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="[洛谷P1967][NOIP2013]货车运输">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2018-10-11 15:24" pubdate>
+        2018年10月11日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      33
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">[洛谷P1967][NOIP2013]货车运输</h1>
+            
+            <div class="markdown-body">
+              <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>A国有n座城市，编号从1到n，城市之间有m条双向道路。每一条道路对车辆都有重量限制，简称限重。现在有q 辆货车在运输货物，司机们想知道每辆车在不超过车辆限重的情况下，最多能运多重的货物。</p>
+<h2 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h2><h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>第一行有两个用一个空格隔开的整数n,m表示A国有n座城市和m条道路。</p>
+<p>接下来m行每行3个整数 x, y, z每两个整数之间用一个空格隔开，表示从x号城市到y号城市有一条限重为z的道路。注意：x不等于y，两座城市之间可能有多条道路 。</p>
+<p>接下来一行有一个整数 q，表示有 q 辆货车需要运货。</p>
+<p>接下来 q 行，每行两个整数 x、y，之间用一个空格隔开，表示一辆货车需要从 x 城市运输货物到 y 城市，注意： x 不等于 y 。</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>共有q 行，每行一个整数，表示对于每一辆货车，它的最大载重是多少。如果货车不能到达目的地，输出−1。</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><h3 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h3><pre><code>4 3
+1 2 4
+2 3 3
+3 1 1
+3
+1 3
+1 4
+1 3
+</code></pre>
+<h3 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h3><pre><code>3
+-1
+3
+</code></pre>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>对于 30%的数据，0 &lt; n &lt; 1,000,0 &lt; m &lt; 10,000,0 &lt; q&lt; 1,000；</p>
+<p>对于 60%的数据，0 &lt; n &lt; 1,000,0 &lt; m &lt; 50,000,0 &lt; q&lt; 1,000；</p>
+<p>对于 100%的数据，0 &lt; n &lt; 10,000,0 &lt; m &lt; 50,000,0 &lt; q&lt; 30,000,0 ≤ z ≤ 100,000</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><blockquote>
+<p>部分内容摘自<kbd>2013年鉴</kbd></p>
+</blockquote>
+<p>其实这道题就是比较简单的图论题（作为最后一天的最后一题来讲）<br>首先对图做最大生成树（方法和最小生成树一样），得到的是一个森林。对于每一辆车，设其起点、终点分别为x,y，如果x,y连通，那么x,y在一棵树上，该火车最多能运送的货物为x,y之间的路径中的最小的边c。因为如果在原图中存在一条路径连接x,y,且所有的边的边权都大于c，那么最大生成树一定求错了（因为将该路径上的边加到生成树中去，必然形成包括c边在内的一个环，此时删除c边可以得到更大的生成树）<br>所以此题变成了求各个点对在树种路径上的最小边。  </p>
+<h3 id="方法一：暴力"><a href="#方法一：暴力" class="headerlink" title="方法一：暴力"></a>方法一：暴力</h3><p>就是去实现上面的步骤，求LCA的时候暴力来求，不用倍增，可以AC（具体见暴力），如果是一条链的话会被卡，然而并没有这种数据。  </p>
+<h3 id="方法二：倍增"><a href="#方法二：倍增" class="headerlink" title="方法二：倍增"></a>方法二：倍增</h3><p>此时我们可以用倍增的子项求某两个点的路径上的最小边。首先纪录每个点向上（向树根）走[latex]v(v=2^0,2^1,\dots)[/latex]步所经过的路径中最小边是多少。对于一个询问x,y，可以求出其最近公共祖先z，然后求x，z之间的最小边和y，z之间的最小边。<br>时间复杂度为[latex]O(mlogm+n+logn)[/latex]</p>
+<h3 id="方法三："><a href="#方法三：" class="headerlink" title="方法三："></a>方法三：</h3><p>标称用的方法并不是倍增法，只需要在最大生成树的里面加一个求解的询问就行。首先用一个数组ans表示最终的答案，ans[i]表示第i个询问最多能运的货物数量。再用kruskal算法中，每将一条边加到最大生成树里面，那么这条边会将连个点集合并到一起。<br>如果某个询问i，他的两个点x，y分别属于这两个点集，那么这个询问的答案就是新加入的这条边的边权（因为此时x,y已经在一棵树中，所以x,y之间有路径。由于Kruskal求最大生成树时是由边权从大到小加入的，所以当前边是路径上边权最小的边）我们只需要在每个电商挂一个询问的链，每次询问时将两个询问的链合并到一起，合并的时候选取询问较少的那个链进行扫描并更新答案。所以对链的操作的时间复杂度为[合并次数+每次合并时扫描的询问个数和]。时间的小号主要在扫描，但是我们可以发现，每次扫描都只扫描了较少的那一部分，设长度为L，并且合并后询问的长度增长到2L以上。所以总的时间复杂度为[latex]O(mlogm+qlogq)[/latex]</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>LCA暴力，代码来自本校神犇<kbd>yanyu</kbd></p>
+<pre><code class="cpp">#include&amp;lt;cstdio&amp;gt;
+#include&amp;lt;cstring&amp;gt;
+#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;algorithm&amp;gt;
+using namespace std;
+const int maxn=11000;
+const int maxm=51000;
+int head[maxn],Next[maxm&amp;lt;&amp;lt;1],ver[maxm&amp;lt;&amp;lt;1],weigh[maxm&amp;lt;&amp;lt;1];
+int f[maxn],fa[maxn],dis[maxn],deep[maxn];
+int n,m,q,tot;
+struct node&#123;
+    int x,y,weigh;
+&#125;edge[maxm&amp;lt;&amp;lt;1];
+ 
+inline void add(int x,int y,int w)&#123;
+    ver[++tot]=y;weigh[tot]=w;Next[tot]=head[x];head[x]=tot;
+&#125;
+ 
+bool cmp(node a,node b)&#123;
+    return a.weigh &amp;gt; b.weigh;    
+&#125;
+ 
+int find(int x)&#123;
+    return fa[x]==x?x:fa[x]=find(fa[x]);
+&#125;
+ 
+void dfs(int x)&#123;
+    for(int i=head[x];i;i=Next[i])&#123;
+        int y=ver[i];
+        if(deep[y]==0)&#123;
+            dis[y]=weigh[i];
+            deep[y]=deep[x]+1;
+            f[y]=x;
+            dfs(y);
+        &#125;
+    &#125;
+&#125;
+ 
+int lca(int x,int y)&#123;
+    int ans=1&amp;lt;&amp;lt;30;
+    if(deep[x]&amp;gt;deep[y]) swap(x,y);
+    while(deep[x]!=deep[y])&#123;
+        ans=min(ans,dis[y]);
+        y=f[y];
+    &#125;
+    while(x!=y)&#123;
+        ans=min(ans,min(dis[x],dis[y]));
+        x=f[x],y=f[y];
+    &#125;
+    return ans;
+&#125;
+ 
+int main()&#123;
+    scanf(&amp;quot;%d%d&amp;quot;,&amp;amp;n,&amp;amp;m);
+    for(int i=1;i&amp;lt;=n;i++) fa[i]=i;
+    for(int i=1;i&amp;lt;=m;i++)
+        scanf(&amp;quot;%d%d%d&amp;quot;,&amp;amp;edge[i].x,&amp;amp;edge[i].y,&amp;amp;edge[i].weigh);
+    sort(edge+1,edge+m+1,cmp);
+    for(int i=1;i&amp;lt;=m;i++)&#123;
+        int fx=find(edge[i].x);
+        int fy=find(edge[i].y);
+        if(fx!=fy)&#123;
+            fa[fx]=fy;
+            add(edge[i].x,edge[i].y,edge[i].weigh);
+            add(edge[i].y,edge[i].x,edge[i].weigh);
+        &#125;
+    &#125;
+    for(int i=1;i&amp;lt;=n;i++)
+        if(deep[i]==0) dfs(i);
+    scanf(&amp;quot;%d&amp;quot;,&amp;amp;q);
+    for(int i=1,x,y;i&amp;lt;=q;i++)&#123;
+        scanf(&amp;quot;%d%d&amp;quot;,&amp;amp;x,&amp;amp;y);
+        if(find(x)!=find(y)) printf(&amp;quot;-1\n&amp;quot;);
+        else printf(&amp;quot;%d\n&amp;quot;,lca(x,y));
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<p>倍增</p>
+<pre><code class="cpp">#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;cstdio&amp;gt;
+#include&amp;lt;algorithm&amp;gt;
+using namespace std;
+const int MAXN =50005;
+int dep[MAXN];
+int n,m;
+struct node&#123;
+    int x,y,w;
+&#125;edge[MAXN];
+int fa[MAXN];
+int Nt[MAXN],Head[MAXN],wight[MAXN],to[MAXN],tot;
+int f[20005][21],w[20005][21];
+
+void add(int x,int y,int v)&#123;
+    Nt[++tot]=Head[x];
+    to[tot]=y;
+    wight[tot]=v;
+    Head[x]=tot;
+&#125;
+
+int Find(int x)&#123;
+    if(fa[x]!=x)fa[x]=Find(fa[x]);
+    return fa[x]; 
+&#125;
+
+bool cmp(node a,node b)&#123;
+    return a.w&amp;gt;b.w;
+&#125;
+
+void dfs(int x)&#123;
+    for(int i=Head[x];i;i=Nt[i])&#123;
+        int y=to[i];
+        if(dep[y])continue;
+        dep[y]=dep[x]+1;
+        f[y][0]=x;
+        w[y][0]=wight[i];
+        dfs(y);
+    &#125;
+&#125;
+
+void kruskal()&#123;
+    sort(edge+1,edge+m+1,cmp);
+    for(int i=1;i&amp;lt;=n;i++)fa[i]=i;
+    for(int i=1;i&amp;lt;=m;i++)&#123;
+        int fa_x=Find(edge[i].x),fa_y=Find(edge[i].y);
+        if(fa_x==fa_y)continue;
+        fa[fa_x]=fa_y;
+        add(edge[i].x,edge[i].y,edge[i].w);
+        add(edge[i].y,edge[i].x,edge[i].w);
+    &#125;
+&#125;
+
+int lca(int x,int y)&#123;
+    if(Find(x)!=Find(y)) return -1;
+    int ans=1&amp;lt;&amp;lt;30;
+    if(dep[x]&amp;gt;dep[y])swap(x,y);
+    for(int i=20;i&amp;gt;=0;i--)&#123;
+        if(dep[f[y][i]]&amp;gt;=dep[x])&#123;
+            ans=min(ans,w[y][i]);
+            y=f[y][i];
+        &#125;
+    &#125;
+    if(x==y)return ans;
+    for(int i=20;i&amp;gt;=0;i--)&#123;
+        if(f[x][i]!=f[y][i])&#123;
+            ans=min(ans,min(w[x][i],w[y][i]));
+            y=f[y][i];
+            x=f[x][i];
+        &#125;
+    &#125;
+    ans=min(ans, min(w[x][0], w[y][0]));
+    return ans;
+&#125;
+
+int main()&#123;
+    cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;m;
+    for(int i=1;i&amp;lt;=m;i++)&#123;
+        scanf(&amp;quot;%d%d%d&amp;quot;,&amp;amp;edge[i].x,&amp;amp;edge[i].y,&amp;amp;edge[i].w);
+    &#125;
+    kruskal();
+    int q;
+    cin&amp;gt;&amp;gt;q;
+    for(int i=1;i&amp;lt;=n;i++)&#123;
+        if(!dep[i])&#123;
+            dep[i]=1;
+            dfs(i);
+            f[i][0]=i;
+            w[i][0]=1&amp;lt;&amp;lt;30;
+        &#125;
+    &#125;
+    for(int i=1;i&amp;lt;=20;i++)&#123;
+        for(int j=1;j&amp;lt;=n;j++)&#123;
+            f[j][i]=f[f[j][i-1]][i-1];
+            w[j][i]=min(w[j][i-1],w[f[j][i-1]][i-1]);
+        &#125;
+    &#125;
+    for(int i=1;i&amp;lt;=q;i++)&#123;
+        int x,y;
+        scanf(&amp;quot;%d%d&amp;quot;,&amp;amp;x,&amp;amp;y);
+        printf(&amp;quot;%d\n&amp;quot;,lca(x,y));
+    &#125;
+    return 0;
+&#125; 
+</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/10/11/%5BUSACO17OPEN%5DModern%20Art%202/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[USACO17OPEN]Modern Art 2</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/10/09/%5Bvijos1056%5D%E5%9B%BE%E5%BD%A2%E9%9D%A2%E7%A7%AF/">
+                        <span class="hidden-mobile">[vijos1056]图形面积</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

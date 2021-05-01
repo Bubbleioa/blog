@@ -1,0 +1,545 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>[Spoj GSS3]Can you answer these queries III - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="[Spoj GSS3]Can you answer these queries III">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2018-09-30 19:37" pubdate>
+        2018年9月30日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      20
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">[Spoj GSS3]Can you answer these queries III</h1>
+            
+            <div class="markdown-body">
+              <p>阅读量：[views]</p>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定长度为N的数列A，以及M条指令 (N≤500000, M≤100000)，每条指令可能是以下两种之一：<br>“2 x y”，把 [latex]A[x][/latex] 改成 [latex]y[/latex]。<br>“1 x y”，查询区间 [latex][x,y][/latex] 中的最大连续子段和，即 [latex]max(x≤l≤r≤y)⁡ { \sum_{l\le i \le r} A[i] }[/latex]。<br>对于每个询问，输出一个整数表示答案。</p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>第一行两个整数N,M</p>
+<p>第二行N个整数Ai</p>
+<p>接下来M行每行3个整数k,x,y，k=1表示查询（此时如果x&gt;y，请交换x,y），k=2表示修改</p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>对于每个询问输出一个整数表示答案。</p>
+<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><pre><code>5 3
+1 2 -3 4 5
+1 2 3
+2 2 -1
+1 3 2
+</code></pre>
+<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><pre><code>2
+-1
+</code></pre>
+<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p>数据范围与约定</p>
+<p>对于100%的数据: N≤500000, M≤100000, |Ai|&lt;=1000</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="树存储空间大小"><a href="#树存储空间大小" class="headerlink" title="树存储空间大小"></a>树存储空间大小</h2><p>这道题与原题略微有点区别，数据输入顺序不一样，以及范围更大了，但是稍微改一下就可以过了。<br>第一个问题，为什么树要开到4*N？<br>首先，我们构造的线段树有可能是完全二叉树（最好情况），叶子节点存储的就是我们每一个点的数据，而我们可以分析下完全二叉树的图。<br><img src="https://s1.ax1x.com/2018/06/15/Cj5EIU.png" srcset="/img/loading.gif" lazyload><br>不难发现，我们设节点有n个，那么二叉树的层数为[latex] log_2(n+1) [/latex]<br>而设叶子节点有k个，那么就得到一个k与n的关系：[latex] k(1-(1/2)^n)=2n [/latex]<br>n随k的变化关系曲线为<br><img src="https://s1.ax1x.com/2018/06/15/CjHwUx.png" srcset="/img/loading.gif" lazyload><br>当k趋于无穷大，[latex]n=2k[/latex]</p>
+<p>而对于最坏情况，请参见<a target="_blank" rel="noopener" href="https://blog.csdn.net/gl486546/article/details/78243098?locationNum=9&fps=1">这篇文章</a><br>对于最坏的情况我们要开4n的空间来存储。</p>
+<h2 id="树存储方式"><a href="#树存储方式" class="headerlink" title="树存储方式"></a>树存储方式</h2><p>第二个问题，我们要存树，这里可以开一个结构体，里面有四个变量  </p>
+<p>| 变量名称 | 变量作用 |<br>|-|:-:|-|<br>| data | 储存该区间内的最大连续子段和 |<br>| ldata | 储存该区间从左端开始的最大和 |<br>| rdata | 储存该区间从右端开始的最大和 |<br>| sum | 储存该区间内的所有数的和 |</p>
+<p>这些就够了，不必纪录左子树和右子树。</p>
+<h2 id="建树"><a href="#建树" class="headerlink" title="建树"></a>建树</h2><p>对于每个叶子节点（r==l），我们给他们赋值，而其他节点我们就需要来分析情况了。</p>
+<h3 id="sum的值"><a href="#sum的值" class="headerlink" title="sum的值"></a>sum的值</h3><p>sum的值还用说吗，就是左子树的sum+右子树的sum</p>
+<h3 id="data的值"><a href="#data的值" class="headerlink" title="data的值"></a>data的值</h3><p>data是该区间内的最大连续子段和，所以对于data就有几种可能，而我们要做的就是取最大的：<br>1.data=左子树data<br>2.data=右子树data<br>3.data=左子树rdata+右子树ldata  </p>
+<h3 id="ldata和rdata的值"><a href="#ldata和rdata的值" class="headerlink" title="ldata和rdata的值"></a>ldata和rdata的值</h3><p>ldata储存该区间从左端开始的最大和，所以：<br>1.ldata=左子树ldata<br>2.ldata=左子树sum+右子树rdata<br>rdata同理</p>
+<h2 id="改变值"><a href="#改变值" class="headerlink" title="改变值"></a>改变值</h2><p>改变值其实就是建树，只不过因为只改变一个值，所以分治时要么是左子树，要么是右子树，改变完后要注意重新维护其他点的值。</p>
+<h2 id="查询值"><a href="#查询值" class="headerlink" title="查询值"></a>查询值</h2><p>查询值较为复杂，但我们也可以把它看成一个建树的过程。<br>首先，对于我们要查询的范围，如果这个范围大于等于我们分治下去的范围，那么就返回这个范围的值。（实际上就是我们建树时存在这个范围的点）<br>如果这个范围没有点满足，那么我们可以用叶子节点建树来建成我们想要的范围的点。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="cpp">#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;cstdio&amp;gt;
+#include&amp;lt;cstring&amp;gt;
+using namespace std;
+#define MAXN 500000
+struct Ttree&#123;
+    int data;
+    int ldata,rdata;
+    int sum; 
+&#125;t[MAXN*4],tmp0;
+int n,m;
+
+void push_up(int l,int r,int k)&#123;
+    t[k].sum=t[k*2].sum+t[k*2+1].sum;
+    t[k].data=max(t[k*2].data,t[k*2+1].data);
+    t[k].data=max(t[k*2].rdata+t[k*2+1].ldata,t[k].data);
+    t[k].ldata=max(t[k*2].ldata,t[k*2].sum+t[k*2+1].ldata);
+    t[k].rdata=max(t[k*2+1].rdata,t[k*2+1].sum+t[k*2].rdata);
+    return;
+&#125;
+
+void make(int l,int r,int k)&#123;
+    if(l==r)&#123;
+        scanf(&amp;quot;%d&amp;quot;,&amp;amp;t[k].data);
+        t[k].ldata=t[k].rdata=t[k].sum=t[k].data;
+        return;
+    &#125;
+    int mid=(l+r)/2;
+    make(l,mid,k*2);
+    make(mid+1,r,k*2+1);
+    push_up(l,r,k);
+    return;
+&#125;
+
+Ttree ask(int L,int R,int l,int r,int k)&#123;
+    if(L&amp;lt;=l&amp;amp;&amp;amp;r&amp;lt;=R)return t[k];
+    int mid=(l+r)/2;
+    Ttree res1;
+    if(L&amp;lt;=mid)res1=ask(L,R,l,mid,k*2);
+    else res1=tmp0;/*目前分治的点的左子树不包含要查询的左端范围，不参与建树，tmp0初始化很小，在取最大值的时候含有它的情况会被忽略掉，但是tmp0.sum初始化还是0*/
+    Ttree res2;
+    if(R&amp;gt;mid)res2=ask(L,R,mid+1,r,k*2+1);
+    else res2=tmp0;//同理
+    Ttree res=&#123;0&#125;;
+    res.sum=res1.sum+res2.sum;
+    res.data=max(res1.data,res2.data);
+    res.data=max(res1.rdata+res2.ldata,res.data);
+    res.ldata=max(res1.ldata,res1.sum+res2.ldata);
+    res.rdata=max(res2.rdata,res2.sum+res1.rdata);
+    return res;
+&#125;
+
+void change(int x,int y,int l,int r,int k)&#123;
+    if(l==r)&#123;
+        t[k].data=y;
+        t[k].ldata=t[k].rdata=t[k].sum=t[k].data;
+        return;
+    &#125;
+    int mid=(r+l)/2;
+    if(x&amp;lt;=mid)change(x,y,l,mid,k*2);
+    else change(x,y,mid+1,r,k*2+1);
+    push_up(l,r,k);
+    return;
+&#125;
+
+int main()&#123;
+    tmp0.data=tmp0.ldata=tmp0.rdata=-1e9;
+    scanf(&amp;quot;%d%d&amp;quot;,&amp;amp;n,&amp;amp;m);
+    make(1,n,1);
+    for(int i=1;i&amp;lt;=m;i++)&#123;
+        int k,x,y;
+        scanf(&amp;quot;%d%d%d&amp;quot;,&amp;amp;k,&amp;amp;x,&amp;amp;y);
+        if(k==1)&#123;
+            if(x&amp;gt;y)swap(x,y);
+            printf(&amp;quot;%d\n&amp;quot;,ask(x,y,1,n,1).data);
+        &#125;else&#123;
+            change(x,y,1,n,1);
+        &#125;
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/10/01/%5B%E6%B4%9B%E8%B0%B7P2820%5D%E5%B1%80%E5%9F%9F%E7%BD%91/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[洛谷P2820]局域网</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/09/30/%5BYZOJ1370%5D%E6%97%A0%E8%81%8A%E7%9A%84%E9%94%A4%E9%94%A4/">
+                        <span class="hidden-mobile">[YZOJ1370]无聊的锤锤</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

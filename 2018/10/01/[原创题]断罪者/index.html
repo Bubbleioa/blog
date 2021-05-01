@@ -1,0 +1,724 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>[原创题]断罪者 - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="[原创题]断罪者">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2018-10-01 17:26" pubdate>
+        2018年10月1日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      37
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">[原创题]断罪者</h1>
+            
+            <div class="markdown-body">
+              <p><a target="_blank" rel="noopener" href="https://www.luogu.org/problemnew/show/T46939">题目</a></p>
+<h1 id="比赛描述不是我写的！！！！"><a href="#比赛描述不是我写的！！！！" class="headerlink" title="比赛描述不是我写的！！！！"></a>比赛描述不是我写的！！！！</h1><p>回过神来发现就公开赛已经已经过审了orz  </p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>这道题目有一个思维陷阱，那就是题目过分强调了<strong>集合</strong>的概念，导致大家一拿到这个题目就会往并查集上面去向，不过稍微玩过数据之后就会发现，这其实就是一道简单的维护最大值的题目。</p>
+<p>因为本次比赛的题目原本是OI赛制，在我们学校内部考的，所以这道题给了几个梯度，顺着梯度来是很好想到正解的，但是想要实现还是要有不错的代码功底。（为了防止网络赛的复制模板的行为，特意复杂化了题目）</p>
+<h2 id="优先队列——期望得分30"><a href="#优先队列——期望得分30" class="headerlink" title="优先队列——期望得分30"></a>优先队列——期望得分30</h2><p>观察约定我们发现，有6个点是既满足没有单点修改（清零），又满足单点插入（合并）的性质，很容易想到用优先队列维护。<br>优先队列里存的是一个二元组，分别是该点的值以及编号。<br>但是优先队列有个问题就是没办法单点修改，这时候就要我们手写堆。</p>
+<pre><code class="cpp">#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;cstdio&amp;gt;
+#include&amp;lt;cstring&amp;gt;
+#include&amp;lt;queue&amp;gt;
+using namespace std;
+const int MAXN=2000001;
+long long m,n,w,k,t;
+priority_queue&amp;lt;pair&amp;lt;long long,int&amp;gt; &amp;gt;s[MAXN];
+int set[MAXN];//i点在哪个优先队列里，并查集实现
+bool v[MAXN];//确保每个集合只贡献一次答案
+
+inline long long read() &#123;
+    char ch = getchar(); long long x = 0, f = 1; 
+    while(ch &amp;lt; &amp;#039;0&amp;#039; || ch &amp;gt; &amp;#039;9&amp;#039;) &#123;
+        if(ch == &amp;#039;-&amp;#039;) f = -1;
+        ch = getchar();
+    &#125; while(&amp;#039;0&amp;#039; &amp;lt;= ch &amp;amp;&amp;amp; ch &amp;lt;= &amp;#039;9&amp;#039;) &#123;
+        x = x * 10 + ch - &amp;#039;0&amp;#039;;
+        ch = getchar();
+    &#125; return x * f;
+&#125;
+
+void clear()&#123;//每组输入要重置
+    memset(set,0,sizeof(set));
+    memset(v,0,sizeof(v));
+&#125;
+
+int main()&#123;
+    cin&amp;gt;&amp;gt;t&amp;gt;&amp;gt;w&amp;gt;&amp;gt;k;
+    while(t--)&#123;
+        clear();
+        n=read(),m=read();
+        for(int i=1;i&amp;lt;=n;i++)&#123;
+            while(s[i].size())s[i].pop();//这里会比较慢 
+            long long a;
+            a=read();
+            set[i]=i;
+            s[i].push(make_pair(a,i));
+        &#125;
+        while(m--)&#123;
+            long long way,a,b;
+            way=read();
+            if(way==2)a=read();//不管2操作
+            else if(way==3)&#123;//由于优先队列是只读的，所以要先取出来再弄进去
+                a=read(),b=read();
+                a=set[a];
+                pair&amp;lt;long long,int&amp;gt; tmp=s[a].top();
+                s[a].pop();
+                tmp.first-=b;
+                if(tmp.first&amp;lt;0)tmp.first=0;
+                s[a].push(tmp);
+            &#125;
+            else&#123;//将小的集合并入大的集合
+                a=read(),b=read();
+                if(a==b)continue;
+                int sa=set[a],sb=set[b];
+                if(s[sb].size()==1)swap(sa,sb);
+                s[sb].push(s[sa].top());
+                set[s[sa].top().second]=sb;
+                s[sa].pop();
+            &#125;
+        &#125;
+        long long sum=0,mx=0;
+        for(int i=1;i&amp;lt;=n;i++)&#123;
+            if(v[set[i]])continue;
+            v[set[i]]=1;
+            sum+=s[set[i]].top().first;
+            mx=max(mx,s[set[i]].top().first);
+        &#125;
+        if(w==2)sum-=mx;
+        if(w==3)sum+=mx;
+        if(sum==0)printf(&amp;quot;Gensokyo 0\n&amp;quot;);
+        else if(sum&amp;lt;=k)printf(&amp;quot;Heaven %lld\n&amp;quot;,sum);
+        else printf(&amp;quot;Hell %lld\n&amp;quot;,sum);
+    &#125; 
+    return 0;
+&#125;
+</code></pre>
+<h2 id="大根堆——期望得分60"><a href="#大根堆——期望得分60" class="headerlink" title="大根堆——期望得分60"></a>大根堆——期望得分60</h2><p>按照刚刚优先队列的思路，要想单点修改，还得自己写堆。<br>但是因为不确定每个堆的大小，所以不能直接开2000000个堆，所以得用链表实现，或者用数组模拟，这样子就能过掉所有有特殊约定的点。<br>对于不满足约定①的数据，当然也可以将两个堆合并，说不定还能多过一两个点。</p>
+<h2 id="左偏树（或者其他可并堆）——期望得分100"><a href="#左偏树（或者其他可并堆）——期望得分100" class="headerlink" title="左偏树（或者其他可并堆）——期望得分100"></a>左偏树（或者其他可并堆）——期望得分100</h2><p>普通的堆的合并时间复杂度都是[latex]O(n^2)[/latex]的，而对于不满足约定①的数据，我们显然需要一种数据结构，来实现快速合并，通过上面两种方法的引导，我们可以采用可并堆（这里用的是左偏树，最简单的可并堆），合并两个堆的时间复杂度为[latex]O(nlogn)[/latex]</p>
+<p>如果你不清楚左偏树做这道题，在思维的过程中，也应该体会到了左偏树的用法。</p>
+<p>左偏树在维护了堆的性质的同时，还用[latex]dis[/latex]来维护一个距离值，具体是说，节点i的**距离(dis(i))**是节点i到它的子树中，最近的叶子节点所经过的边数。</p>
+<p>两个基本性质：</p>
+<p><strong>[性质1 堆] 节点的键值小于或等于它的左右子节点的键值。</strong></p>
+<p><strong>[性质2 左偏] 节点的左子节点的距离不小于右子节点的距离。</strong>（在合并操作时起作用）</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ZY_discovery/article/details/52145143">这里有篇文章</a>专门讲左偏树，比较详细</p>
+<p>然后你会发现这是道模板题（<del>不好意思我太弱了orz</del>），就用<kbd>pb_ds</kbd>库给A掉了。</p>
+<p>先贴我的代码，比较丑，没有常数优化（个人不是很喜欢卡常）</p>
+<pre><code class="cpp">#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;cstdio&amp;gt;
+#include&amp;lt;cstring&amp;gt;
+using namespace std;
+const int MAXN=2000000;
+long long m,n,w,k,t;
+int set[MAXN];//并查集
+bool v[MAXN]; 
+struct node&#123;
+    long long l,r,dis,key;
+&#125;tree[MAXN];
+
+namespace LF&#123;
+    int find(int a)&#123;//并查集
+        int root=a;
+        while(root!=set[root])root=set[root];
+        int pa=set[a];
+        while(pa!=root)&#123;
+            set[a]=root;
+            a=pa;
+            pa=set[a];
+        &#125;
+        return root;
+    &#125;
+    int merge(int a,int b)&#123;//合并
+        if(!a)return b;
+        if(!b)return a;
+        if(tree[a].key&amp;lt;tree[b].key)swap(a,b);
+        tree[a].r=merge(tree[a].r,b);
+        set[tree[a].r]=a;
+        if(tree[tree[a].l].dis&amp;lt;tree[tree[a].r].dis)swap(tree[a].l,tree[a].r);
+        if(tree[a].r)tree[a].dis=tree[tree[a].r].dis+1;
+        else tree[a].dis=0;
+        return a;
+    &#125;
+    int pop(int a)&#123;
+        int l=tree[a].l;
+        int r=tree[a].r;
+        set[l]=l;
+        set[r]=r;
+        tree[a].l=tree[a].r=tree[a].dis=0;
+        return merge(l,r);
+    &#125;
+&#125;
+
+void clear()&#123;//初始化
+    memset(set,0,sizeof(set));
+    memset(v,0,sizeof(v));
+&#125;
+
+int main()&#123;
+    cin&amp;gt;&amp;gt;t&amp;gt;&amp;gt;w&amp;gt;&amp;gt;k;
+    while(t--)&#123;
+        clear(); 
+        scanf(&amp;quot;%lld%lld&amp;quot;,&amp;amp;n,&amp;amp;m);
+        for(int i=1;i&amp;lt;=n;i++)&#123;
+            scanf(&amp;quot;%d&amp;quot;,&amp;amp;tree[i].key);
+            set[i]=i;//并查集初始化
+            tree[i].r=tree[i].l=tree[i].dis=0;
+        &#125;
+        while(m--)&#123;
+            int way;
+            scanf(&amp;quot;%d&amp;quot;,&amp;amp;way);
+            if(way==2)&#123;
+                int x;
+                scanf(&amp;quot;%d&amp;quot;,&amp;amp;x);
+                tree[x].key=0;
+                int tmp=LF::pop(x);
+                LF::merge(x,tmp);
+            &#125;
+            else if(way==3)&#123;
+                int a,b,ra;
+                scanf(&amp;quot;%d%d&amp;quot;,&amp;amp;a,&amp;amp;b);
+                ra=LF::find(a);
+                tree[ra].key-=b;
+                if(tree[ra].key&amp;lt;0)tree[ra].key=0;
+                int tmp=LF::pop(ra);
+                LF::merge(tmp,ra);
+            &#125;
+            else &#123;
+                int a,b,ra,rb;
+                scanf(&amp;quot;%d%d&amp;quot;,&amp;amp;a,&amp;amp;b);
+                if(a==b)continue;
+                ra=LF::find(a),rb=LF::find(b);
+                LF::merge(ra,rb);
+            &#125;
+        &#125;
+           long long sum=0,mx=0;
+        for(int j=1;j&amp;lt;=n;j++)&#123;
+            int i=LF::find(j);
+            if(v[set[i]])continue;
+            v[set[i]]=1;
+            int root=LF::find(i);
+            mx=max(mx,(long long)tree[root].key);
+            sum+=tree[root].key;
+        &#125;
+        if(w==2)sum-=mx;
+        if(w==3)sum+=mx;
+        if(sum==0)printf(&amp;quot;Gensokyo 0\n&amp;quot;);
+        else if(sum&amp;lt;=k)printf(&amp;quot;Heaven %lld\n&amp;quot;,sum);
+        else printf(&amp;quot;Hell %lld\n&amp;quot;,sum);
+    &#125;
+    return 0;
+&#125; 
+</code></pre>
+<p>这个是@<a target="_blank" rel="noopener" href="https://www.luogu.org/space/show?uid=106642">Ajsoabk</a>大佬写的，短小精悍，加了快读都比我短。</p>
+<pre><code class="cpp">#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;cstdio&amp;gt;
+using namespace std;
+const int N=2000000+5;
+
+struct Node&#123;
+    int val,disx,lson,rson;
+&#125;nod[N];
+int fa[N],t,w,n,m,typ,A,B,tem;
+bool vis[N];
+long long k;
+
+inline void read(int &amp;amp;num)&#123;
+    char ch;
+    while(!isdigit(ch=getchar()));
+    num=ch-&amp;#039;0&amp;#039;;
+    while(isdigit(ch=getchar()))num=num*10+ch-&amp;#039;0&amp;#039;;
+&#125;
+
+int merge(int a,int b)&#123;//合并
+    if(a==0)return b;
+    if(b==0)return a;
+    if(nod[a].val&amp;lt;nod[b].val)swap(a,b);
+    fa[nod[a].rson=merge(nod[a].rson,b)]=a;
+    nod[a].disx=(nod[a].rson==0)?0:nod[nod[a].rson].disx+1;
+    if(nod[nod[a].lson].disx&amp;lt;nod[nod[a].rson].disx)swap(nod[a].lson,nod[a].rson);
+    return a;
+&#125;
+
+int find(const int &amp;amp;a)&#123;//并查集
+    return (a==fa[a])?a:find(fa[a]);
+&#125;
+
+inline void decline(const int &amp;amp;A,const int &amp;amp;val,bool fla)&#123;
+    nod[A].val-=val;
+    if(nod[A].val&amp;lt;0)nod[A].val=0;
+    fa[nod[A].lson]=nod[A].lson;
+    fa[nod[A].rson]=nod[A].rson;
+    int l=nod[A].lson,r=nod[A].rson;
+    nod[A].lson=nod[A].rson=nod[A].disx=0;
+    tem=merge(l,r);
+    if(fla)merge(find(A),tem);
+    else merge(tem,A);
+&#125;
+
+int main()&#123;
+    read(t),read(w);
+    cin&amp;gt;&amp;gt;k;
+    while(t--)&#123;
+        read(n),read(m);
+        for(int i=1;i&amp;lt;=n;++i)fa[i]=i,read(nod[i].val),vis[i]=0,nod[i].lson=nod[i].rson=nod[i].disx=0;
+        for(int i=1;i&amp;lt;=m;++i)&#123;
+            read(typ),read(A);
+            switch(typ)&#123;
+                case 2:
+                    decline(A,nod[A].val,1);
+                    break;
+                case 3:
+                    read(B);
+                    decline(find(A),B,0);
+                    break;
+                case 4:
+                    read(B);
+                    merge(find(A),find(B));
+                    break;
+            &#125;
+        &#125;
+        B=0;
+        typ=0;
+        for(int i=1;i&amp;lt;=n;++i)&#123;
+            A=find(i);
+            if(!vis[A])&#123;
+                vis[A]=true;
+                B=max(B,nod[A].val);
+                typ+=nod[A].val;
+            &#125;
+        &#125;
+        if(w==2)typ-=B;
+        else if(w==3)typ+=B;
+        if(typ==0)printf(&amp;quot;Gensokyo &amp;quot;);
+        else if((long long)typ&amp;lt;=k)printf(&amp;quot;Heaven &amp;quot;);
+        else printf(&amp;quot;Hell &amp;quot;);
+        printf(&amp;quot;%d\n&amp;quot;,typ);
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<h2 id="写在后面"><a href="#写在后面" class="headerlink" title="写在后面"></a>写在后面</h2><p>其实这道题目一开始还更难，后面就变成了一道模板题</p>
+<p>数据是随机生成的，可能这一点比较坑吧，只要有点微小的差错就会WA（我反省）</p>
+<p>其实数据挺弱的，set+并查集，暴力合并，都只超时1个点</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/10/01/%5BBZOJ4195%5D%5BNoi2015%5D%E7%A8%8B%E5%BA%8F%E8%87%AA%E5%8A%A8%E5%88%86%E6%9E%90/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[BZOJ4195][Noi2015]程序自动分析</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/10/01/%E5%AE%9C%E6%98%A5%E4%B8%AD%E5%AD%A6%E5%9B%A2%E5%A7%94%E6%8B%9B%E6%96%B0%E5%95%A6%EF%BC%81%EF%BC%81/">
+                        <span class="hidden-mobile">宜春中学团委招新啦！！</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

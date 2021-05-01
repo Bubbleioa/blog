@@ -1,0 +1,549 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>[USACO17OPEN]Modern Art - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="[USACO17OPEN]Modern Art">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2018-10-12 09:13" pubdate>
+        2018年10月12日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      22
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">[USACO17OPEN]Modern Art</h1>
+            
+            <div class="markdown-body">
+              <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Art critics worldwide have only recently begun to recognize the creative genius behind the great bovine painter, Picowso.</p>
+<p>Picowso paints in a very particular way. She starts with an N \times NN×N blank canvas, represented by an N \times NN×N grid of zeros, where a zero indicates an empty cell of the canvas. She then draws N^2N<br>2<br>  rectangles on the canvas, one in each of N^2N<br>2<br>  colors (conveniently numbered 1 \ldots N^21…N<br>2<br> ). For example, she might start by painting a rectangle in color 2, giving this intermediate canvas:</p>
+<p>2 2 2 0</p>
+<p>2 2 2 0</p>
+<p>2 2 2 0</p>
+<p>0 0 0 0</p>
+<p>She might then paint a rectangle in color 7:</p>
+<p>2 2 2 0</p>
+<p>2 7 7 7</p>
+<p>2 7 7 7</p>
+<p>0 0 0 0</p>
+<p>And then she might paint a small rectangle in color 3:</p>
+<p>2 2 3 0</p>
+<p>2 7 3 7</p>
+<p>2 7 7 7</p>
+<p>0 0 0 0</p>
+<p>Each rectangle has sides parallel to the edges of the canvas, and a rectangle could be as large as the entire canvas or as small as a single cell. Each color from 1 \ldots N^21…N<br>2<br>  is used exactly once, although later colors might completely cover up some of the earlier colors.</p>
+<p>Given the final state of the canvas, please count how many of the N^2N<br>2<br>  colors could have possibly been the first to be painted.</p>
+<p>小TY突然想画画，他有独特的艺术风格，他从N×N空白画布开始，其中0表示画布的空单元格。然后他会在画布上绘制恰好矩形，每个颜色是1到N×N中的一个。他每次可以选择任意一种未使用过的颜色进行绘画。例如，他可以从颜色2的矩形开始，画出这样的画布：</p>
+<p>2 2 2 0</p>
+<p>2 2 2 0</p>
+<p>2 2 2 0</p>
+<p>0 0 0 0</p>
+<p>然后他可以用颜色7绘制一个矩形：</p>
+<p>2 2 2 0</p>
+<p>2 7 7 7</p>
+<p>2 7 7 7</p>
+<p>0 0 0 0</p>
+<p>然后他可以在颜色3上绘制一个小矩形：</p>
+<p>2 2 3 0</p>
+<p>2 7 3 7</p>
+<p>2 7 7 7</p>
+<p>0 0 0 0</p>
+<p>每个矩形都平行于画布边缘，而且矩形可以与整个画布一样大或者像一个单元一样小。每个颜色从1到正好使用一次，后来的颜色可能完全覆盖一些较早画上的颜色。</p>
+<p>现在已知画布的最终状态，请计算有多少种颜色可能被第一个被画。</p>
+<h2 id="输入输出格式"><a href="#输入输出格式" class="headerlink" title="输入输出格式"></a>输入输出格式</h2><h3 id="输入格式："><a href="#输入格式：" class="headerlink" title="输入格式："></a>输入格式：</h3><p>The first line of input contains NN, the size of the canvas (1 \leq N \leq 10001≤N≤1000).</p>
+<p>The next NN lines describe the final picture of the canvas, each containing NN integers that are in the range 0 \ldots N^20…N<br>2<br> . The input is guaranteed to have been drawn as described above, by painting successive rectangles in different colors.</p>
+<h3 id="输出格式："><a href="#输出格式：" class="headerlink" title="输出格式："></a>输出格式：</h3><p>Please output a count of the number of colors that could have been drawn first.</p>
+<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><h3 id="输入样例-1："><a href="#输入样例-1：" class="headerlink" title="输入样例#1："></a>输入样例#1：</h3><pre><code>4
+2 2 3 0
+2 7 3 7
+2 7 7 7
+0 0 0 0
+</code></pre>
+<h3 id="输出样例-1："><a href="#输出样例-1：" class="headerlink" title="输出样例#1："></a>输出样例#1：</h3><pre><code>14
+</code></pre>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>In this example, color 2 could have been the first to be painted. Color 3 clearly had to have been painted after color 7, and color 7 clearly had to have been painted after color 2. Since we don’t see the other colors, we deduce that they also could have been painted first.</p>
+<p>感谢@ yhf_2015 的翻译</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>似乎没人写差分的代码，我这里就稍微介绍一下。<br>首先呢，这道题目很毒瘤，我花了好大功夫才读懂题目，无论它给你的矩阵里面有多少种颜色，它一共还是有[latex]N^2[/latex]种颜色，所以显然我们找不合法的颜色就行。<br>观察样例我们可以发现，2颜色的矩阵显然被7的覆盖了一部分，7肯定不能第一个涂，3又把7给覆盖掉了，3也不能第一个涂。<br>那么我们可以把问题转化成，有x个矩形（有些被覆盖了的矩形左上角右下角还是可以算到的），求重叠部分上面的矩形的颜色总数。  </p>
+<p>当然用暴力就可以莽过去，但是遇到类似的问题用二维前缀和+二维差分显然是更优的。<br>参照一维差分的思想，我们可以在一个矩形的左上角+1，右下角+1，右边-1,下边-1<br>样例的差分数组：</p>
+<pre><code> 1  0  0 -1
+ 0  1  0  0
+ 0  0 -1  1
+-1 -1  1  0
+</code></pre>
+<p>这样子统计前缀和后，每个点的前缀和的值就是该点被覆盖的次数。<br>细节见代码注释。  </p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="cpp">#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;cstdio&amp;gt;
+#include&amp;lt;cstring&amp;gt;
+using namespace std;
+const int MAXN=1005,inf=0x7fffffff;
+
+int pos[MAXN*MAXN][4],ma[MAXN][MAXN],col,ans,sum[MAXN][MAXN],cnt;
+bool fla[MAXN*MAXN];
+
+int main()&#123;
+    int n;
+    cin&amp;gt;&amp;gt;n;
+    for(int i=0;i&amp;lt;=n*n;i++)&#123;//初始化
+        pos[i][0]=pos[i][1]=inf,pos[i][2]=pos[i][3]=0;
+    &#125;
+    for(int i=1;i&amp;lt;=n;i++)&#123;
+        for(int j=1;j&amp;lt;=n;j++)&#123;
+            cin&amp;gt;&amp;gt;col;
+            ma[i][j]=col;
+            if(col)&#123;//非0
+                if(pos[col][2]==0)cnt++;
+                if(i&amp;lt;pos[col][0])pos[col][0]=i;//矩形上边边界
+                if(j&amp;lt;pos[col][1])pos[col][1]=j;//矩形左边边界
+                if(i+1&amp;gt;pos[col][2])pos[col][2]=i+1;//矩形下边边界+1
+                if(j+1&amp;gt;pos[col][3])pos[col][3]=j+1;//矩形右边边界+1
+            &#125;
+        &#125;
+    &#125;
+    for(int i=1;i&amp;lt;=n*n;i++)&#123;
+        if(pos[i][0]==inf||pos[i][2]==0)continue;//枚举出现过的颜色
+        sum[pos[i][0]][pos[i][1]]++;//上面说的
+        sum[pos[i][2]][pos[i][3]]++;
+        sum[pos[i][0]][pos[i][3]]--;
+        sum[pos[i][2]][pos[i][1]]--;
+    &#125;
+    //前缀和
+    for(int i=1;i&amp;lt;=n;i++)&#123;
+        for(int j=1;j&amp;lt;=n;j++)&#123;
+            sum[i][j]+=sum[i][j-1];
+        &#125;
+    &#125;
+    for(int j=1;j&amp;lt;=n;j++)&#123;
+        for(int i=1;i&amp;lt;=n;i++)&#123;
+            sum[i][j]+=sum[i-1][j];
+        &#125;
+    &#125;
+    for(int i=1;i&amp;lt;=n;i++)&#123;
+        for(int j=1;j&amp;lt;=n;j++)&#123;
+            if(ma[i][j]&amp;amp;&amp;amp;sum[i][j]&amp;gt;1&amp;amp;&amp;amp;fla[ma[i][j]]==0)&#123;//每种颜色只能贡献一次答案
+                ans++,fla[ma[i][j]]=1;
+            &#125;
+        &#125;
+    &#125;
+    if(n!=1&amp;amp;&amp;amp;cnt==1)ans++;
+    printf(&amp;quot;%d\n&amp;quot;,n*n-ans);
+    return 0;
+&#125; 
+</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/10/13/%5BBZOJ2469%5D%5B%E4%B8%AD%E5%B1%B1%E5%B8%82%E9%80%892010%5D%E7%AE%80%E5%8D%95%E6%95%B0%E8%B0%9C/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[BZOJ2469][中山市选2010]简单数谜</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/10/11/%5BUSACO17OPEN%5DModern%20Art%202/">
+                        <span class="hidden-mobile">[USACO17OPEN]Modern Art 2</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

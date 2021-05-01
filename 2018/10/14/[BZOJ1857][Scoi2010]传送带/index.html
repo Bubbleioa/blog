@@ -1,0 +1,546 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>[BZOJ1857][Scoi2010]传送带 - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="[BZOJ1857][Scoi2010]传送带">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2018-10-14 16:22" pubdate>
+        2018年10月14日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      853 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      15
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">[BZOJ1857][Scoi2010]传送带</h1>
+            
+            <div class="markdown-body">
+              <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>在一个2维平面上有两条传送带，每一条传送带可以看成是一条线段。两条传送带分别为线段AB和线段CD。Lxp在AB上的移动速度为P，在CD上的移动速度为Q，在平面上的移动速度R。现在Lxp想从A点走到D点，他想知道最少需要走多长时间</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>输入数据第一行是4个整数，表示A和B的坐标，分别为Ax，Ay，Bx，By 第二行是4个整数，表示C和D的坐标，分别为Cx，Cy，Dx，Dy 第三行是3个整数，分别是P，Q，R</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>输出数据为一行，表示Lxp从A点走到D点的最短时间，保留到小数点后2位</p>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><pre><code>0 0 0 100
+100 0 100 100
+2 2 1
+</code></pre>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><pre><code>136.60
+</code></pre>
+<h2 id="HINT"><a href="#HINT" class="headerlink" title="HINT"></a>HINT</h2><p>对于100%的数据，1&lt;= Ax，Ay，Bx，By，Cx，Cy，Dx，Dy&lt;=1000<br>1&lt;=P，Q，R&lt;=10</p>
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="cpp">#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;cstdio&amp;gt;
+#include&amp;lt;cstdlib&amp;gt;
+#include&amp;lt;ctime&amp;gt;
+#include&amp;lt;cmath&amp;gt;
+using namespace std;
+const double R=0.98,Exp=1e-3,times=50;
+
+inline double dis(double X1,double Y1,double X2,double Y2)&#123;
+    return sqrt((X1-X2)*(X1-X2)+(Y1-Y2)*(Y1-Y2));
+&#125;
+
+int main()&#123;
+    srand((unsigned)time(0));
+    double ax,ay,bx,by,cx,cy,dx,dy;
+    int p,q,r;
+    scanf(&amp;quot;%lf%lf%lf%lf&amp;quot;,&amp;amp;ax,&amp;amp;ay,&amp;amp;bx,&amp;amp;by);
+    scanf(&amp;quot;%lf%lf%lf%lf&amp;quot;,&amp;amp;cx,&amp;amp;cy,&amp;amp;dx,&amp;amp;dy);
+    scanf(&amp;quot;%d%d%d&amp;quot;,&amp;amp;p,&amp;amp;q,&amp;amp;r);
+    double ab,cd,ac,bc,ad,bd;
+    ab=dis(ax,ay,bx,by);
+    cd=dis(cx,cy,dx,dy);
+    ac=dis(ax,ay,cx,cy);
+    bc=dis(bx,by,cx,cy);
+    ad=dis(ax,ay,dx,dy);
+    bd=dis(bx,by,dx,dy);
+    double ans=min(ad/r,min(ab/p+bd/r,min(ab/p+bc/r+cd/q,ac/r+cd/q)));
+    for(int i=1;i&amp;lt;=times;i++)&#123;
+        double tx=ax,ty=ay,px=bx,py=by,mx,my,T=20070831;
+        while(dis(tx,ty,px,py)&amp;gt;Exp)&#123;//走AB，中途直接前往D
+            mx=(tx+px)/2,my=(ty+py)/2;
+            double fu=dis(mx,my,ax,ay)/p+dis(mx,my,dx,dy)/r;
+            if(fu&amp;lt;ans)&#123;
+                ans=fu;
+                if(rand()%2) tx=mx,ty=my;
+                else px=mx,py=my;
+            &#125;
+            else &#123;
+                if(rand()&amp;lt;T) &#123;
+                    if(rand()%2)tx=mx,ty=my;
+                    else px=mx,py=my;
+                    T*=R;
+                &#125;
+            &#125;
+        &#125;
+        tx=cx,ty=cy,px=dx,py=dy,mx,my,T=20070831;
+        while(dis(tx,ty,px,py)&amp;gt;Exp)&#123;//A直接走到CD某点上
+            mx=(tx+px)/2,my=(ty+py)/2;
+            double fu=dis(mx,my,ax,ay)/r+dis(mx,my,dx,dy)/q;
+            if(fu&amp;lt;ans)&#123;
+                ans=fu;
+                if(rand()%2) tx=mx,ty=my;
+                else px=mx,py=my;
+            &#125;
+            else &#123;
+                if(rand()&amp;lt;T) &#123;
+                    if(rand()%2)tx=mx,ty=my;
+                    else px=mx,py=my;
+                    T*=R;
+                &#125;
+            &#125;
+        &#125;
+        tx=ax,ty=ay,px=bx,py=by,mx,my,T=20070831;
+        while(dis(tx,ty,px,py)&amp;gt;Exp)&#123;//走AB，中途前往CD
+            mx=(tx+px)/2,my=(ty+py)/2;
+            double fu=dis(mx,my,ax,ay)/p+dis(mx,my,cx,cy)/r+cd/q;
+            if(fu&amp;lt;ans)&#123;
+                ans=fu;
+                if(rand()%2) tx=mx,ty=my;
+                else px=mx,py=my;
+            &#125;
+            else &#123;
+                if(rand()&amp;lt;T) &#123;
+                    if(rand()%2)tx=mx,ty=my;
+                    else px=mx,py=my;
+                    T*=R;
+                &#125;
+            &#125;
+        &#125;
+        tx=cx,ty=cy,px=dx,py=dy,mx,my,T=20070831;
+        while(dis(tx,ty,px,py)&amp;gt;Exp)&#123;//走完AB再前往CD
+            mx=(tx+px)/2,my=(ty+py)/2;
+            double fu=dis(mx,my,bx,by)/r+dis(mx,my,dx,dy)/q+ab/p;
+            if(fu&amp;lt;ans)&#123;
+                ans=fu;
+                if(rand()%2) tx=mx,ty=my;
+                else px=mx,py=my;
+            &#125;
+            else &#123;
+                if(rand()&amp;lt;T) &#123;
+                    if(rand()%2)tx=mx,ty=my;
+                    else px=mx,py=my;
+                    T*=R;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+    printf(&amp;quot;%.2lf&amp;quot;,ans);
+    return 0;
+&#125;
+</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/10/14/%5B%E7%9C%8B%E8%A7%81%E7%BB%9F%E8%AE%A1%5D%E4%B8%80%E4%B8%AA%E8%B6%85%E8%B5%9E%E7%9A%84%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%BD%91%E7%AB%99/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">[看见统计]一个超赞的交互式学习网站</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/10/14/%5BNOI1999%5D%5BPOJ1190%5D%E7%94%9F%E6%97%A5%E8%9B%8B%E7%B3%95/">
+                        <span class="hidden-mobile">[NOI1999][POJ1190]生日蛋糕</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
