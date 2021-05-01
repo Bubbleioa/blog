@@ -182,92 +182,6 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
-        <a href="/2019/04/13/%5BTJOI2017%5DDNA%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2+%E5%93%88%E5%B8%8C%EF%BC%89/" target="_self">
-          [TJOI2017]DNA（字符串+哈希）
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2019/04/13/%5BTJOI2017%5DDNA%EF%BC%88%E5%AD%97%E7%AC%A6%E4%B8%B2+%E5%93%88%E5%B8%8C%EF%BC%89/" target="_self">
-          
-          
-            
-          
-          
-题目链接
-
-题解题目大意：给两个串，S，T，问S中有多少个子串与T的差异是在3个字符以内的。
-这道题解法有很多，像什么SAM，FFT，NTT之类的，然而我只会哈希orz
-二分找它们的最长公共前缀，最多能跳3次，没了……
-设N为S的长度，M为T的长度时间复杂度 $O((N-M)\times (logM))$
-代码#include&amp;lt;bits/stdc++.h&amp;gt;
-using
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2019-04-13 16:40" pubdate>
-              2019-04-13
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2019/04/07/%5BCF533F%5DEncoding(%E5%93%88%E5%B8%8C)/" target="_self">
-          [CF533F]Encoding(哈希)
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2019/04/07/%5BCF533F%5DEncoding(%E5%93%88%E5%B8%8C)/" target="_self">
-          
-          
-            
-          
-          
-题目链接
-
-题解哈希真的是个好东西,在O(N)预处理之后,能在O(1)的时间内枚举任意子串.这道题我们可以考虑对每种字母进行哈希.具体来讲,hash1[i][c]存储的是字母c的哈希值(位置)
-这样处理之后,就在S串里面枚举长度为T串的子串,再枚举两种字母,如果26个字母哈希值能够相等,那么这样的变化是没问题的
-时间复杂度 $O(N\times 26\times 26)$
-这里进制为131,模数
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2019-04-07 16:58" pubdate>
-              2019-04-07
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
         <a href="/2019/04/06/%5BCF611D%5DNew%20Year%20and%20Ancient%20Prophecy(%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92)/" target="_self">
           [CF611D]New Year and Ancient Prophecy(动态规划)
         </a>
@@ -612,11 +526,96 @@ $$\displaystyle\sum_{i=1}^m n\ mod \ i$$
     </article>
   </div>
 
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2019/03/13/%E3%80%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%91%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2(FFT)/" target="_self">
+          【学习笔记】快速傅里叶变换(FFT)
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/03/13/%E3%80%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%91%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2(FFT)/" target="_self">
+          
+          
+            
+          
+          0.0 前言0.1 关于本篇文章本篇文章写作主要有两个目的，一是本人想对这一块的知识进行系统的梳理，还有就是将《算法导论》上的知识写成更适合OIer学习的格式（这本书由于各种原因是真的难啃）
+为了方便阅读理解，在看本篇文章的时候我们规定一些标记：
+
+重点难点强调将以加粗形式标注
+
+长篇幅引用将以如下形式标注：
+
+我是引用内容
+
+
+*(括号斜体)*中内容为原书没有，本人为了方便理解，在不改变意思的情
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-03-13 00:08" pubdate>
+              2019-03-13
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2019/03/06/%E7%9C%81%E9%80%89%E5%80%92%E8%AE%A1%E6%97%B6/" target="_self">
+          省选倒计时
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/03/06/%E7%9C%81%E9%80%89%E5%80%92%E8%AE%A1%E6%97%B6/" target="_self">
+          
+          
+            
+          
+          [wpcdt-countdown id=”719”]
+JXOI2018 考点：游戏： 数学（组合数，逆元），主要考察综合数学能力，会将题目转化为数学计算式，并且进行优化求解守卫： 动态规划，这三题里面最简单的一题排序问题： 数学（期望），贪心，哈希
+JXOI2017 考点：颜色： 统计题（线段树），求点对贡献数列： 动态规划加法： 二分
+JXOI2017整体来讲码量较大，而JXOI2018则思维难
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-03-06 15:57" pubdate>
+              2019-03-06
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/page/5/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#board">4</a><a class="page-number" href="/page/5/#board">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/#board">7</a><a class="page-number" href="/page/8/#board">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/#board">17</a><a class="extend next" rel="next" href="/page/7/#board"><i class="iconfont icon-arrowright"></i></a>
+      <a class="extend prev" rel="prev" href="/page/5/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/#board">4</a><a class="page-number" href="/page/5/#board">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/#board">7</a><a class="page-number" href="/page/8/#board">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/#board">16</a><a class="extend next" rel="next" href="/page/7/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 
