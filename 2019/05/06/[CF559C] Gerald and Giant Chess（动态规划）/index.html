@@ -24,7 +24,7 @@
 
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+  <link  rel="stylesheet" href="/blog/lib/hint/hint.min.css" />
 
   
     
@@ -49,17 +49,17 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
 
 
-<link  rel="stylesheet" href="/css/main.css" />
+<link  rel="stylesheet" href="/blog/css/main.css" />
 
 <!-- 自定义样式保持在最底部 -->
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"bubbleioa.github.io","root":"/blog/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  <script  src="/blog/js/utils.js" ></script>
+  <script  src="/blog/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 
@@ -68,7 +68,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+       href="/blog/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -85,7 +85,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/">
+              <a class="nav-link" href="/blog/">
                 <i class="iconfont icon-home-fill"></i>
                 首页
               </a>
@@ -97,7 +97,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/archives/">
+              <a class="nav-link" href="/blog/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 归档
               </a>
@@ -109,7 +109,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/">
+              <a class="nav-link" href="/blog/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 分类
               </a>
@@ -121,7 +121,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/tags/">
+              <a class="nav-link" href="/blog/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 标签
               </a>
@@ -133,7 +133,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
+              <a class="nav-link" href="/blog/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
               </a>
@@ -158,7 +158,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/img/default.png') no-repeat center center;
+         style="background: url('/blog/img/default.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -232,7 +232,7 @@
 <p><a target="_blank" rel="noopener" href="https://www.luogu.org/problemnew/show/CF559C">题目链接</a></p>
 </blockquote>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>先介绍一个东西：多重集(multiset)的全排列（这里是特殊情况，即选的元素个数不超过任意集合中元素个数的情况）<br>我们定义集合的集合为多重集，比如我有 $a_1$ 个 $1$ ， $a_2$ 个 $2$ …… $a_n$ 个 $n$ 。<br>那么写成多重集就是 [latex]\left{\left{a_1·1\right},\left{a_2·2\right},\cdots,\left{a_n·n\right}\right}[/latex]<br>如果我们要从中取 $k$ 个数（上面说了，$k$ 不大于 $a_i$），那么有多少种方案呢？</p>
-<p>具体证明请移步至<kbd><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Multiset">维基百科</a></kbd>，这里直接给出结论：<br><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/3085c625fdc63db0b0cf48f07516a78a87109a56" srcset="/img/loading.gif" lazyload alt="multiset"><br>也就是 $C_{n+k-1}^{n+1}$  </p>
+<p>具体证明请移步至<kbd><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Multiset">维基百科</a></kbd>，这里直接给出结论：<br><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/3085c625fdc63db0b0cf48f07516a78a87109a56" srcset="/blog/img/loading.gif" lazyload alt="multiset"><br>也就是 $C_{n+k-1}^{n+1}$  </p>
 <p>那么这题其实如果我们把每一行看成一个集合，元素个数就是列数-1（因为我们最终目标是走到右下角，而如果走到了右侧，再走到右下角的方案已经确定，随意等价于走到右侧），如果没有黑格子的话，我们要选的元素个数也是列数-1，答案就是 $C_{H+W-2}^{H-1}$</p>
 <p>而如果有黑格子，我们可以统计出不合法的方案数减去即可。</p>
 <p>所谓不合法，就是在路径上走到过黑格子，为了避免重复，我们设 $f[i]$ 为只经过第 $i$ 个黑格子的方案数，对于它的求法，可以把它当成右下角，求贡献，对于区域内的黑格子，根据乘法原理，它们产生的不合法的方案数为 $f[j]\times C_{x_i-x_j+y_i-y_j}^{x_i-x_j}$ 即原点到他的方案数乘上以第 $j$ 个黑格子为左上角，第 $i$ 个黑格子为右下角的子矩阵的方案数。</p>
@@ -315,7 +315,7 @@ int main()&#123;
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2019/05/07/%5BP5343%5D%E3%80%90XR-1%E3%80%91%E5%88%86%E5%9D%97%EF%BC%88%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%EF%BC%89/">
+                      <a href="/blog/2019/05/07/%5BP5343%5D%E3%80%90XR-1%E3%80%91%E5%88%86%E5%9D%97%EF%BC%88%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82%EF%BC%89/">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">[P5343]【XR-1】分块（矩阵快速幂）</span>
                         <span class="visible-mobile">上一篇</span>
@@ -325,7 +325,7 @@ int main()&#123;
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2019/05/05/%5BHAOI2016%5D%E6%89%BE%E7%9B%B8%E5%90%8C%E5%AD%97%E7%AC%A6%EF%BC%88%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84%EF%BC%89/">
+                      <a href="/blog/2019/05/05/%5BHAOI2016%5D%E6%89%BE%E7%9B%B8%E5%90%8C%E5%AD%97%E7%AC%A6%EF%BC%88%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84%EF%BC%89/">
                         <span class="hidden-mobile">[HAOI2016]找相同字符（后缀数组）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -419,14 +419,14 @@ int main()&#123;
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
+<script  src="/blog/js/events.js" ></script>
+<script  src="/blog/js/plugins.js" ></script>
 
 <!-- Plugins -->
 
 
   
-    <script  src="/js/img-lazyload.js" ></script>
+    <script  src="/blog/js/img-lazyload.js" ></script>
   
 
 
@@ -467,10 +467,10 @@ int main()&#123;
 
 
 
-  <script  src="/js/local-search.js" ></script>
+  <script  src="/blog/js/local-search.js" ></script>
   <script>
     (function () {
-      var path = "/local-search.xml";
+      var path = "/blog/local-search.xml";
       $('#local-search-input').on('click', function() {
         searchFunc(path, 'local-search-input', 'local-search-result');
       });
@@ -495,7 +495,7 @@ int main()&#123;
 
 
 <!-- 主题的启动项 保持在最底部 -->
-<script  src="/js/boot.js" ></script>
+<script  src="/blog/js/boot.js" ></script>
 
 
 </body>
