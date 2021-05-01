@@ -1,0 +1,515 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>漩涡 - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="漩涡">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-04-28 19:38" pubdate>
+        2019年4月28日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      38
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">漩涡</h1>
+            
+            <div class="markdown-body">
+              <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>人们生活在漩涡之中，大多数时候人们会顺着漩涡漂流，但有时会受到不公平的待遇，于是想反抗这漩涡。成败固然重要，但可悲的是，现在很多人都失去了反抗的意志，成为了漩涡的一部分。</p>
+<blockquote>
+<p>“凡是反人性的，不公的，你都可以在你的文章中批判，高考作文如此，平时写文章更可如此” ——CDQZ李老</p>
+</blockquote>
+<p>笔者只是这个世界上的沧海一粟，主要批判的是自己周围发生的一些事情，虽然可能很幼稚，很无逻辑，但是可以肯定的一点是，我批判的对象肯定是反人性的或不公的。</p>
+<h1 id="一"><a href="#一" class="headerlink" title="一"></a>一</h1><p>半期考试结束了，也快省选了，总有一种不好的预感，总觉得要“赔了夫人又折兵”。身边退役的OIer文化课都恢复地不错，yanyu在我们班都rank8了，Linz在奥赛班都rank2去了（虽然现在奥赛班有十多个人都在生物奥赛停课中）。</p>
+<p>“近几年是我们学校最支持奥赛的几年。”今天听到我们班主任的惊人发言，我真的想好好讲讲学校是多么“支持”奥赛的。</p>
+<p>18届，分班的时候奥赛班和A班平均分一样，“合情合理”的，奥赛班在每次考试的要求都是与A班相平，也就是说要让奥赛班的学生每天拥有28个小时或者睡眠效率提高3倍。<br>“大多数”学生都做不到，那怎么办呢？学校觉得奥赛不至于占用这么多时间，充其量就是“锦上添花”的作用，说白了就是给学生一套“时装”，“皮肤”，拿到省二就是“钻石段位”，省一就是“最强王者”。这也说的过去，因为平均每天不到1小时的学习时间，能进省队除非你是卢本伟。</p>
+<p>学校当然也不希望“卢本伟”出现在自己学校，以免“败坏”了学校的名声。<br>于是呢，学奥赛的时间被大幅度打压，就是那种你即使有“外挂”，也用不出来的那种。<br>一周学奥赛的时间大概是： 2h(周1)+2h(周3)+3h(周6)=7h(一周)<br>也就是 1 h/day  </p>
+<p>当然，太过压迫也不好，于是每到联考前，奥赛还允许停一个月的课，这有多久呢？<br>30day，但是我们学校是没有双休的，如果那些有双休的学校每周多拿出1天学奥赛呢？一年就有52day！<br>而且停课30day是会影响文化成绩的，也要花更多时间去补，而每周抽出1天来，对于大多数学生都不会有太大负担（指有双休的学校）</p>
+<p>既然制度上这么不支持，那么财政上呢？</p>
+<p>官方说：“国赛才报销。”</p>
+<p><strong>重大消息！笔者将给第一个前往仙女座的宇航员报销全额费用！</strong></p>
+<p>实际上，联赛和省选也会报销，但是这些钱真的是杯水车薪，尤其是今年年初的破事之后，这些费用真的不贵……</p>
+<p>至于WC/APIO/CTSC，是要全额自费的，当然，如果你有幸获奖，学校也会毫不吝啬地把你的名字挂到喜报上去。</p>
+<p>暑假上奥赛教练的工资甚至还要我们来出……</p>
+<p>好吧好吧，搞奥赛又不是差这些钱，重要的还是学习。那么学校提供的学习环境怎么样呢？</p>
+<p>机房很大，开一个空调完全没感觉的那种。电脑没一个能用，基本上就是把电脑的网线、显示屏、鼠标、键盘拆下来，连到自己的笔记本上用。之前直接向校长提出要奥赛专用机房，结果校长都没记在本子上。</p>
+<hr>
+<p>学校的态度很明显，奥赛是用来自招的，管你是兴趣还是什么奥林匹克精神，奥赛教练和学生都是工具人，干好分内的，不要想有的没的。你上进，吃力不讨好，每天混下日子，也就那么过去了。我们教练多次想去当年级干士，因为带奥赛又辛苦又没好处。之前的奥赛表彰大会上，说什么十个左右省一就是“全面开花”，希望得奖的同学在文化课上“继续努力”。</p>
+<hr>
+<p>好在我们班主任还是很支持的，最近每天晚上都在机房刷题，现在平均每天有4小时左右学奥赛的时间，但是之前落下来的东西太多，我们学校又只有我一个人在准备省选，现在学的也不知道怎么样。</p>
+<p>如果5月省选我没进省队呢？学校不可能去改变政策。尽管我的学弟们很聪明，但是在这种政策下，想进省队是很难的。</p>
+<p>即便进了省队，学校又会有什么很大的改变吗？也不见得。</p>
+<p>能坚持到现在，也是源于自己的喜欢，以及想反抗学校这种迫害奥赛生的行为。</p>
+<p>这里补充一段来自<a target="_blank" rel="noopener" href="http://bubbleioa.top/archives/908">Linz的AFO感言</a>里的内容，部分错别字有修改</p>
+<blockquote>
+<p>终于，复赛后我取得了我们学校第一，江西省19（除去高三）的成绩，顿时觉得省选是有希望的。但文化课落后了很多，就补了一个多月的文化课，奥赛基本上没怎么动过。在这期间，我了解到学校对我们奥赛是多么“重视”，就连补课的事都拖了一个礼拜，甚至有管理层的人竟然还不打算给我们补课，实在是凉透了我们的心。出乎我的意料，我竟然入选了ccf的冬令营。之后，每天又开始拼命地学奥赛。班主任不允许我们在晚自习使用电脑，就连去机房都不行<del>他甚至还让我们不要用电脑，<strong>用纸写代码</strong>（滑稽）[1]</del>。为了学奥赛，我趁自己还坐在最后一排，每天晚自习把电脑放在桌子底下，偷偷看博客学知识，也不怕被抓，还觉得自己赚大发了。就这样过了一段时间，抱着可以逃过一次期末考地想法，我踏上了前往广州的高铁。</p>
+</blockquote>
+<p>[1]：补充一点，xf（我们学校另一位大佬）还去找他们班主任理论，结果被骂哭了。</p>
+<p>虽然很想吐槽这想小学生的作文水平<del>我也好不到哪里去</del>，但是最朴实不加修饰的语言，才能看到最真实的学校。</p>
+<p>10多年前，我们学校还有人靠奥赛保送，成绩也是名列江西省前茅。为什么会变成现在这样呢？这不是我该反思的问题，我只是在这里待3年，而我们学校却存在100年了，我相信学校不是没有这样的能力，而是想不想背负更多的责任和义务。</p>
+<blockquote>
+<p>第一章更新与5月1日</p>
+</blockquote>
+<h1 id="二"><a href="#二" class="headerlink" title="二"></a>二</h1><p>也不知是好消息还是坏消息，五一假期有两天，比往常多了一天。但真正留下来能搞奥赛的时间真的不多，还有省选前最后一场CF(不过Educational R是真的有阴影)</p>
+<p>这两天我可以安排写作业，也可以搞奥赛，但都不能都做，如果有4天的话应该还是游刃有余的。</p>
+<p>我肯定会选择后者，但我相知道为什么我会选后者，这些事是我平常压根不会去想的。</p>
+<hr>
+<p>记得开学的时候,班上讨论得最多的就是《流浪地球》，大部分人围绕着中国科幻电影的角度聊着，某位大佬的讨论引起了我的兴趣（剧透警告）：<del>地球上的人们团结一心想点燃木星大气，失败了，最后还是靠一名宇航员和一个空间站的代价点燃了，那为什么不一开始直接这样做，省的费那么大的力气呢？</del></p>
+<p>其实这个问题应该是看完很久后才会去想的，因为电影里的情节安排不会让你认为这样是不合理的。但是这个问题确实有思考的价值。</p>
+<p><strong>人会坚持自己之前一直所努力做的事情。</strong>说的积极一点是坚持，消极一点是惰性，又或是因为深信着”坚持努力就会有回报“这种鬼话。总之，在当下这个时代，这种品质应该来说是不好的吧。</p>
+<p><strong>人总是会贪心地看问题。</strong>所谓贪心，其实就是目光放的比较近，没那么长远。这里并没有贬义地成分，相反，贪心地去解决问题有时能剩下不少决策时间致使结果朝着更好的方向发展。</p>
+<hr>
+<p>从我们学校重新搞信息学奥赛到我这一届是第三届，之前我们学校有人因为信息学奥赛直接受益吗？没有，Linz的哥哥（已经毕业）去了西安交大，还是靠高校专项降了60（其实裸分也能上，总之和信奥没有直接关系），还有几个学长（快要毕业）只有省一，他们文化成绩都很好，今年名校政策又这样，基本上就是很难发挥自招的作用。</p>
+<p>而我，面对这样的情况，任选择希望。</p>
+<p>这不是深谋远虑的结果，这也不是贪心的结果，这个决定是来源于人类本源的情感，无逻辑的。我并不是没去想选择后者的原因，而是这种情感没有办法用理性的语言所表述罢了。</p>
+<p>人类的历史上从来不缺少希望。面对波斯压倒性的优势，斐力庇第斯还是将马拉松平原的捷报传到雅典。面对德国的铁骑，苏军背靠着莫斯科，守卫着家园。</p>
+<p>我希望我能在奥赛方面取得理想的成绩；我希望学校能改变制度，培养出真正的人才；</p>
+<p>我希望所有读到这篇文章的读者们，对你坚守的，对你喜欢的，对你讨厌的，都抱有希望，不要放弃。</p>
+<p>只要不断前行，道路就会不断延伸下去……</p>
+<blockquote>
+<p>第二章写于5月1日</p>
+</blockquote>
+<h1 id="三"><a href="#三" class="headerlink" title="三"></a>三</h1><p>这里想讲讲我们的奥赛教练，在一个本来没有任何希望的弱省弱校，他为我们付出了很多，能发展成今天这样已经很不容易了（就像初生演替一样）。我们都很喜欢我们的奥赛教练，上个元宵节我们学生还一起商量出钱请教练出去吃饭（在一般的人都退役了的情况下，全员到齐了）。</p>
+<p>但作为教练，他的几种做法我还是不认同的（尽管这里面有些是学校的原因）。</p>
+<p>首先就是太强调天赋。</p>
+<p>如果是前期刚招来学生的时候说说无妨，无非就是劝退那些不是真正想要学奥赛的人。</p>
+<p>但是我们奥赛教练至始至终都在说什么奥赛看天赋，什么生源不够好。这确实是实事，但对学生说这些，能改变什么吗？什么都改变不了！反而会带来消极影响。</p>
+<p>就举个例子来说吧，之前在常州培训（包括在郑州也是）的时候被虐爆，结果大家都觉得是自己天赋比其他人差，其他人学的好是因为天赋好。错！这个结论对了一半，但思考的方向完全错了。我们当时完全没有想过别人强是因为别人比我们多了10倍的刷题量，只是觉得别人比我小开始学，而且比我有天赋。</p>
+<p>当初教练给我们举hzwer的励志故事来告诉我们学奥赛要努力，于是我们把hzwer的800题看成最高标准。孰不知各位dalao一个个都是1k+的恐怖题量，彩虹猫的3k+更是一个天文数字。</p>
+<p>还有一点就是太看重文化成绩。</p>
+<p>如果我们学校有双休，奥赛训练模式和CDQZ，长郡中学一样，我觉得是可以做到两开花的，但在我们学校不行。</p>
+<p>这样的做法，最终落得暑假学了一暑假奥赛文化课还考rank1的dalao（上一届学长），NOIP2017也只有295分（可能记错了，但就在这个分数左右）</p>
+<p>扯远了一点说，在人大的<a target="_blank" rel="noopener" href="https://oi.men.ci/">Menci</a>，高三回归文化课的时候不也只有467，但是高考也很厉害啊。在哈工大的<a target="_blank" rel="noopener" href="http://ruanx.pw/">阮行止</a>，停了两年课，高考不也有630+</p>
+<p>就拿最近的一点来说，linz在班上rank2，yy在班上也有rank8，在奥赛的赛场上经历过风吹雨打的OIer岂是文化课能打倒的？奥赛教练可能也想过这样做，但面临着多方面的压力。</p>
+<p>教练看重文化成绩+家长看重文化成绩+班主任看重文化成绩，在这种情况下，谁能看重奥赛呢？（除非你像我一样头铁）</p>
+<p>我们教练不是一个只想让我们拿个省一就了事的教练，在这样一个小城破校能遇到这样一位教练是我福报（不含贬义），我们教练已经做到了在这个制度下最好的结果，想要有所突破，还需要更多头铁的学生“牺牲”自我来发起“革命”。</p>
+<blockquote>
+<p>第三章写于2019年5月3日，五四运动100周年前一天</p>
+</blockquote>
+<h1 id="四"><a href="#四" class="headerlink" title="四"></a>四</h1><p>开学的时候学校修了一座公园，虽然学生基本不会到那里去，但是毕竟没什么影响，所以大部分人都把它忘了。  </p>
+<p>然后就是原先从来没有收过的空调维护费开始收了（之前只收电费），虽然不知道为什么这种东西隔了4年才开始收，但毕竟大家都用了空调，这钱叫就交吧。</p>
+<p>四月份各大高校自招简章都出来了，可以看出自招正在收紧，我有种不好的预感。</p>
+<p>果然，原本奥赛的联赛和省选都可以报销路费，住宿费的，现在取消了。那学校留给我们的还有什么呢？就信息学奥赛来说，不过是一个遮蔽风雨的房间和电、网罢了。相较之下，九中投入的支持要比我们大得多，OJ用的都是学校官网的服务器。</p>
+<blockquote>
+<p>第四章写于5月6日</p>
+</blockquote>
+<h1 id="五"><a href="#五" class="headerlink" title="五"></a>五</h1><p>咕咕咕<br>关键词 停电</p>
+<h1 id="六"><a href="#六" class="headerlink" title="六"></a>六</h1><p>咕咕咕<br>关键词 wlzbjxb 洋务运动</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/05/03/Linz%E7%9A%84AFO%E6%84%9F%E8%A8%80%EF%BC%88%E8%BD%AC%EF%BC%89/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Linz的AFO感言（转）</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/04/19/OSU%E4%B8%89%E8%BF%9E%EF%BC%81%EF%BC%88%E6%9C%9F%E6%9C%9B%EF%BC%89/">
+                        <span class="hidden-mobile">OSU三连！（期望）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

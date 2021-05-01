@@ -1,0 +1,482 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>【NOI导刊】冲刺NOI2019被虐记 - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="【NOI导刊】冲刺NOI2019被虐记">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-01-25 22:06" pubdate>
+        2019年1月25日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      23
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">【NOI导刊】冲刺NOI2019被虐记</h1>
+            
+            <div class="markdown-body">
+              <h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day -1"></a>Day -1</h1><p>想着明天就要出发了，在机房里有点颓，一个下午+晚上也只敲了两道网络流的题目；<br>明明只是个蒟蒻，在机房里也总是感慨，时间过的真快啊，剩下的时间不多了，这个培训过后，距离省选也就70多天了吧。<br><img src="http://bubbleioa.top/wp-content/uploads/2019/01/IMG_20190120_163325.jpg" srcset="/img/loading.gif" lazyload><br><img src="http://bubbleioa.top/wp-content/uploads/2019/01/IMG_20190120_163341.jpg" srcset="/img/loading.gif" lazyload></p>
+<h1 id="Day-0"><a href="#Day-0" class="headerlink" title="Day 0"></a>Day 0</h1><p>早上7点17的车，尽管昨天已经提早睡了，可还是很困，唯一比较庆幸的一点就是高铁比较空吧<br><img src="http://bubbleioa.top/wp-content/uploads/2019/01/IMG_20190124_071805.jpg" srcset="/img/loading.gif" lazyload><br>在车上看了会《利兹与青鸟》，很难懂（后来才知道要先看《京吹》第二季orz）<br>从火车站到学校这段路是最难过的，深深感受到了郑州空气污染的严重<br><img src="http://bubbleioa.top/wp-content/uploads/2019/01/IMG_20190124_143603.jpg" srcset="/img/loading.gif" lazyload><br>学校还是很棒的，在这个广场上曾经跳过BDF的宅舞接力——《流星群》和《交织together》（视频可以自己去B站搜）<br><img src="http://bubbleioa.top/wp-content/uploads/2019/01/IMG_20190124_155041.jpg" srcset="/img/loading.gif" lazyload><br>拿到了狗牌，座位离老师很近，蛮好。<br><img src="http://bubbleioa.top/wp-content/uploads/2019/01/IMG_20190124_154651.jpg" srcset="/img/loading.gif" lazyload><br>吃完晚饭后就回宾馆里颓了（实在是头晕，后面几天晚上还是有在认真学习的xd）<br>看了几集《摇曳露营Δ》我也要去露营！！！就有鬼了</p>
+<h1 id="Day-1-1"><a href="#Day-1-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>早安，郑州，这里的高中还在上学啊<br><img src="http://bubbleioa.top/wp-content/uploads/2019/01/IMG_20190125_070659.jpg" srcset="/img/loading.gif" lazyload><br>上午考试，垫底，被彩虹猫D飞，果然太弱啦（题解过一会写<br>T1来个什么まんふは函数，直接说是哈夫曼函数不好吗QAQ<br>T2想到了AC自动机，打完模板后就默默地上了暴力（正解居然要用AC自动机+dp）<br>T3居然是网络流，真的属于那种告诉你是网络流，都想不到是网络流的那种题目。<br><img src="http://bubbleioa.top/wp-content/uploads/2019/01/IMG_20190125_183305.jpg" srcset="/img/loading.gif" lazyload><br>明明晚上睡眠更久，中午也好好休息了，但是不知到为什么下午彩虹猫讲课的时候特别想睡觉（北方的暖气tql）<br>后面逼着自己清醒，听完了，晚上赶紧买了杯咖啡喝；</p>
+<h1 id="Day2"><a href="#Day2" class="headerlink" title="Day2"></a>Day2</h1><p>上午考的是8年前国家队训练题……还是垫底orz<br>T1居然n^2的暴力能过，我以为n^2和n^3的分数差别不大，打了一个n^3的就去想正解，结果正解写挂，35垫底<br>正解是线段树+哈希（考场上没人用这种方法A的），还有几个大佬用bitset过了，还挺快<br>T2仙人掌，现场也有人A，tql<br>T3状压dp矩阵加速，很难</p>
+<p>中午点外卖，郑州菜里的肉是真的多，赞（后面几天中午都吃外卖了）</p>
+<p>下午开始飙车，树状数组+线段树+平衡树+树套树+可持久化数据结构+可并堆，3个多小时讲完，虽然有些知识是有基础，但是真的太快了……</p>
+<p>本来晚上想逛下校园的，但吃饭等了蛮久。</p>
+<p>涛哥讲课喜欢叫学生上来讲，虽然学生讲根本听不懂，但至少让课堂没有那么乏味了。<br>发现大佬还是挺多的，%%%%</p>
+<h1 id="Day3"><a href="#Day3" class="headerlink" title="Day3"></a>Day3</h1><p>昨天考试发的大样例居然也放进评测里了，我机智地在最后一分钟特判输出来（结果CE了QAQ）<br>T1是0/1分数规划，了解一下<br>T2是AC自动机/KMP dp<br>T3就是一个恶心线段树</p>
+<p>T1CE了，T2输了个大样例，时间全部花在T3上，调试了半天A了<br>有人用自动AC机拿了290，少给10分怕你骄傲orz</p>
+<p>中午继续外卖，明天要想继续吃就要先去趟银行</p>
+<p>下午好懵，点分治+边分治+树剖+LCT+Hash+AC自动机+后缀数组<br>如果说前面没听懂的可以回宾馆补补，那这个可能要花我一个寒假来消化。</p>
+<p>晚上涛哥喊我上去讲T3，我感觉我在上面口胡，也不知道在讲什么，其实T3真的就是一个恶心一点的线段树，没啥好讲的……</p>
+<p>睡前看了摇曳露营，吹爆！<br>这一集标题是两处露营，两个人眼中的风景<br>看了这一集真的很有感触<br>两处露营一处是一个人@<a target="_blank" rel="noopener" href="https://www.luogu.org/space/show?uid=91499">Linz</a>，一处是一群人@<a target="_blank" rel="noopener" href="https://www.luogu.org/space/show?uid=92770">March_H</a><br>@<a target="_blank" rel="noopener" href="https://www.luogu.org/space/show?uid=112137">aowu</a> @<a target="_blank" rel="noopener" href="https://www.luogu.org/space/show?uid=91985">Antione</a> @<a target="_blank" rel="noopener" href="https://www.luogu.org/space/show?uid=106642">Ajsoabk</a><br>所看到的景象各不相同,交流着各自所看到的景象。<br>广州和郑州又相距多远呢？也就几米吧<br><img src="http://bubbleioa.top/wp-content/uploads/2019/01/yyly1.jpg" srcset="/img/loading.gif" lazyload> <img src="http://bubbleioa.top/wp-content/uploads/2019/01/yyly2.jpg" srcset="/img/loading.gif" lazyload> <img src="http://bubbleioa.top/wp-content/uploads/2019/01/yyly3.jpg" srcset="/img/loading.gif" lazyload></p>
+<h1 id="Day-4"><a href="#Day-4" class="headerlink" title="Day 4"></a>Day 4</h1><p>上午第一次做答案提交题，居然是这种套路！<br>T1线段树，但是要用到三角函数，我猜很多人会被卡（包括我），所以就用前缀和+差分打算拿部分分，结果出来的分数和大部分线段树的一样xd<br>T2是下午讲的二元关系的模型，题目很难读懂，反正我是看了几遍<br>T3是国家集训队的题，第一次接触提交答案题，随便写了6个点上去（居然有6分），后来才知道这种题目光一个程序是基本不可能A的（除非你把几个程序合在一起分情况使用），要观察发下来的数据的特点，真·面向数据编程</p>
+<p>中午和@<a target="_blank" rel="noopener" href="https://www.luogu.org/space/show?uid=106642">Ajsoabk</a>去银行存钱（要不然就没有外卖吃啦！）</p>
+<p><strong>获得成就</strong><br><input checked="" disabled="" type="checkbox"> 在郑州活动范围超过500米</p>
+<p>下午彩虹猫又回来讲课啦，讲的东西没有前面几天难。像是什么平面图最小割= 对偶图最短路、各种上下界流、二元关系、差分约束、最大权闭合子图<br>、最大密度子图……</p>
+<p>发现这几天讲的例题基本都是各省省选和NOI真题，部分POJ和CF上的题……感觉每道题我都要消化至少3小时</p>
+<p>外卖太好吃啦！晚上也在吃外卖（主要是发现了预定的功能）</p>
+<p>晚上要到了彩虹猫的签名，nice！<br><img src="http://bubbleioa.top/wp-content/uploads/2019/01/sign.jpg" srcset="/img/loading.gif" lazyload></p>
+<h1 id="Day-5"><a href="#Day-5" class="headerlink" title="Day 5"></a>Day 5</h1><p>上午毕姥爷（B君）给我们带来了三道良心题（至少在网上都搜不到了），除了第三题不可做以外，前两题都还行</p>
+<p>T1 二维树状数组，我也是这么写的，不过查询效率太低，挂掉了，后来才知道要一开始旋转下矩阵orz<br>T2 扫描线，用离散化水了40分，还行<br>T3 不可做题，不评价</p>
+<p>毕姥爷还是带着和常州时一样的味道，<del>好怀念</del></p>
+<p>中午继续吃外卖，郑州的食物已经俘获了我~</p>
+<p>下午讲课全程懵逼，虽然毕姥爷课程准备一向用心（一天准备了95道例题），但我还是太弱了同不懂orz，果然如同涛哥说的，能坚持20分钟已经不错了<br>又挖了一边贾志鹏的坟，然而还是没听懂QAQ</p>
+<p>吃晚饭的时候出去就感觉难受，空气污染太严重了，赶紧拿了外卖回机房吃</p>
+<p>晚上毕姥爷基本给我们自习，切了道<a target="_blank" rel="noopener" href="http://bubbleioa.top/archives/665">不是很难的题</a><br>从前天开始门卫就要查狗牌，还好这几天都带在身上，不过确实有几个人狗牌放在教室里被拦下来了，希望明天不要是我QAQ</p>
+<p>安利一下<a target="_blank" rel="noopener" href="http://wwwwodddd.com/">毕姥爷的博客</a>，<del>虽然没有什么内容</del></p>
+<h1 id="Day-6"><a href="#Day-6" class="headerlink" title="Day 6"></a>Day 6</h1><p>上午的题目据说比昨天的容易？是严格的还是均摊的还是期望的？<br>感觉是严格的吧，确实更简单，但是T1打的暴力，剩下的时间全部花在T3上了。<br><a target="_blank" rel="noopener" href="http://bubbleioa.top/archives/673">T3题解</a></p>
+<p>没想到毕姥爷评测开O2，早知道写3道暴力交上去<br>今天又有自动AC机，每次都是不想太高调故意不AK</p>
+<p>中午去@<a target="_blank" rel="noopener" href="https://www.luogu.org/space/show?uid=106642">Ajsoabk</a>房间里吃饭，垃圾终于不用我来处理啦~</p>
+<p>下午讲<strong>计 算 几 何</strong>，没有任何基础就讲了一下午例题，感觉整个人都不好了。所以也没有什么可以记下来的。<br>同样的，例题很多</p>
+<p>晚上下了雪，没有吃外卖<br><img src="http://bubbleioa.top/wp-content/uploads/2019/01/IMG_20190130_182907.jpg" srcset="/img/loading.gif" lazyload></p>
+<h1 id="Day-7"><a href="#Day-7" class="headerlink" title="Day 7"></a>Day 7</h1><blockquote>
+<p>这两天的内容是咕了很久才写的，有很多细节记不太清了</p>
+</blockquote>
+<p>今天xmk来讲课，吹爆<br>很腼腆，讲的也比较清晰。</p>
+<h1 id="Day-8"><a href="#Day-8" class="headerlink" title="Day 8"></a>Day 8</h1><p>今天是最后一天，没有考试，上午就是xmk来给我们答疑，具体<a target="_blank" rel="noopener" href="http://bubbleioa.top/archives/687">请看这里</a><br>然后就是带我们看去年noi的题目</p>
+<ul>
+<li>D1T1 xmk看了10分钟直接得出可持久化并查集+反向跑最短路的思路，就是正解%%%tql</li>
+<li>D1T2 也看出是dp，设计了状态和转移方程%%%</li>
+<li>D1T3 看出了是后缀自动机，没想到用线段树（应该是时间问题），直接82pt</li>
+<li>D2T1 把题读了一遍，拓展中国剩余定理</li>
+<li>D2T2和D2T3 虽然没想到正解，暴力还是有些许分的（然而网上要么就是没有题解，要么就是只有出题人的题解和std）</li>
+</ul>
+<p>后面由于火车的关系就提前溜了，好可惜QAQ，还想多膜一下xmk</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/01/31/%E3%80%90%E9%97%AE%E9%A2%98%E5%BE%81%E9%9B%86%E3%80%91%E5%85%B3%E4%BA%8E2%E6%9C%881%E5%8F%B7%E5%AF%B9%E4%BA%8E%E5%BE%90%E8%80%81%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98%E5%BE%81%E9%9B%86/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">【问题征集】关于2月1号对于徐老师提问的问题征集</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/01/09/%E5%85%B3%E4%BA%8E%E6%9C%80%E8%BF%91%E8%BF%9E%E4%B8%8D%E4%B8%8Assr%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E9%97%AE%E9%A2%98/">
+                        <span class="hidden-mobile">关于最近连不上ssr服务器的问题</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

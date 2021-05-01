@@ -1,0 +1,750 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="The LTS version of ioa's blog.">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2019/04/18/%E4%B9%8B%E5%89%8D%E4%BB%A3%E7%A0%81%E4%B8%80%E7%9B%B4%E6%98%AF%E6%88%91%E7%9A%84%E6%AF%92%E7%98%A4%E7%A0%81%E9%A3%8E%E7%9C%9F%E7%9A%84%E5%BE%88%E6%8A%B1%E6%AD%89QAQ/" target="_self">
+          之前代码一直是我的毒瘤码风真的很抱歉QAQ
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/04/18/%E4%B9%8B%E5%89%8D%E4%BB%A3%E7%A0%81%E4%B8%80%E7%9B%B4%E6%98%AF%E6%88%91%E7%9A%84%E6%AF%92%E7%98%A4%E7%A0%81%E9%A3%8E%E7%9C%9F%E7%9A%84%E5%BE%88%E6%8A%B1%E6%AD%89QAQ/" target="_self">
+          
+          
+            
+          
+          以后题解代码都是格式化过的啦！
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-04-18 22:10" pubdate>
+              2019-04-18
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2019/03/13/%E3%80%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%91%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2(FFT)/" target="_self">
+          【学习笔记】快速傅里叶变换(FFT)
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/03/13/%E3%80%90%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E3%80%91%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2(FFT)/" target="_self">
+          
+          
+            
+          
+          0.0 前言0.1 关于本篇文章本篇文章写作主要有两个目的，一是本人想对这一块的知识进行系统的梳理，还有就是将《算法导论》上的知识写成更适合OIer学习的格式（这本书由于各种原因是真的难啃）
+为了方便阅读理解，在看本篇文章的时候我们规定一些标记：
+
+重点难点强调将以加粗形式标注
+
+长篇幅引用将以如下形式标注：
+
+我是引用内容
+
+
+*(括号斜体)*中内容为原书没有，本人为了方便理解，在不改变意思的情
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-03-13 00:08" pubdate>
+              2019-03-13
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2019/03/01/%E7%82%B9%E5%88%86%E6%B2%BB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_self">
+          点分治学习笔记
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/03/01/%E7%82%B9%E5%88%86%E6%B2%BB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" target="_self">
+          
+          
+            
+          
+          导言淀粉质点分治是一种统计方法，具体来说，是对树上的点的一些值来进行统计，标准的点分治统计复杂度为 $O(Nlog^2N)$ 是解决树上疑难杂症的不三之选（还有一个是树形dp）
+算法思路&amp;&amp;具体问题【洛谷P3806】点分治
+
+给你一棵树，有m个询问，每个询问包含一个k，问树中是否存在距离为k的点对
+
+这是一道很好的模板题，在这道题里面，我们具体关注点分治的想法与实现，其中有些地方复
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-03-01 20:12" pubdate>
+              2019-03-01
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2019/01/31/%E3%80%90%E9%97%AE%E9%A2%98%E5%BE%81%E9%9B%86%E3%80%91%E5%85%B3%E4%BA%8E2%E6%9C%881%E5%8F%B7%E5%AF%B9%E4%BA%8E%E5%BE%90%E8%80%81%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98%E5%BE%81%E9%9B%86/" target="_self">
+          【问题征集】关于2月1号对于徐老师提问的问题征集
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/01/31/%E3%80%90%E9%97%AE%E9%A2%98%E5%BE%81%E9%9B%86%E3%80%91%E5%85%B3%E4%BA%8E2%E6%9C%881%E5%8F%B7%E5%AF%B9%E4%BA%8E%E5%BE%90%E8%80%81%E5%B8%88%E6%8F%90%E9%97%AE%E7%9A%84%E9%97%AE%E9%A2%98%E5%BE%81%E9%9B%86/" target="_self">
+          
+          
+            
+          
+          提问内容包括但不限于：1.全国赛试题特点与应对策略分析报告2.其他算法的巧妙应用3.考场得分技巧
+请勿机惨！！！
+如果该你的设备加载该网站很慢，很有可能是该网站在加载“谷歌字体”，借助梯子能加速访问
+另外这里是七天课程的题目，课件，题解：链接提取码是：pteq密码是毕克的用户名!wwwwodddd
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-01-31 20:18" pubdate>
+              2019-01-31
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2019/01/25/%E3%80%90NOI%E5%AF%BC%E5%88%8A%E3%80%91%E5%86%B2%E5%88%BANOI2019%E8%A2%AB%E8%99%90%E8%AE%B0/" target="_self">
+          【NOI导刊】冲刺NOI2019被虐记
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/01/25/%E3%80%90NOI%E5%AF%BC%E5%88%8A%E3%80%91%E5%86%B2%E5%88%BANOI2019%E8%A2%AB%E8%99%90%E8%AE%B0/" target="_self">
+          
+          
+            
+          
+          Day -1想着明天就要出发了，在机房里有点颓，一个下午+晚上也只敲了两道网络流的题目；明明只是个蒟蒻，在机房里也总是感慨，时间过的真快啊，剩下的时间不多了，这个培训过后，距离省选也就70多天了吧。
+Day 0早上7点17的车，尽管昨天已经提早睡了，可还是很困，唯一比较庆幸的一点就是高铁比较空吧在车上看了会《利兹与青鸟》，很难懂（后来才知道要先看《京吹》第二季orz）从火车站到学校这段路是最难过的
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-01-25 22:06" pubdate>
+              2019-01-25
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2019/01/09/%E5%85%B3%E4%BA%8E%E6%9C%80%E8%BF%91%E8%BF%9E%E4%B8%8D%E4%B8%8Assr%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E9%97%AE%E9%A2%98/" target="_self">
+          关于最近连不上ssr服务器的问题
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/01/09/%E5%85%B3%E4%BA%8E%E6%9C%80%E8%BF%91%E8%BF%9E%E4%B8%8D%E4%B8%8Assr%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E9%97%AE%E9%A2%98/" target="_self">
+          
+          
+            
+          
+          经测试，原因是手机端的ssr在断开连接时，服务器端会产生错误信息导致进入死循环而崩溃，致使cpu占用率激增至100%而死机。
+首先，确保您的ssr安卓客户端是最新版本（目前是3.5.4，安装后应用名称叫做SSRR，点此下载）
+如果还有此问题，将考虑实施备用方案。
+另外，如果你是其他平台的用户，请参考下面内容（转自ssr.tools）：
+SSR Windows客户端SSR Windows客户端主要用
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-01-09 07:29" pubdate>
+              2019-01-09
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2019/01/01/2018%E5%B9%B410%E6%9C%88%E6%96%B0%E7%95%AA%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/" target="_self">
+          2018年10月新番个人总结
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2019/01/01/2018%E5%B9%B410%E6%9C%88%E6%96%B0%E7%95%AA%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/" target="_self">
+          
+          
+            
+          
+          2018年已经过去，咕到现在的10月新番总结现在也是时候填了（然而AC自动机还没填……）
+这一个季度的新番真的是让人看得舒服，好久没有追过这么多番了（主要是停课有更多时间来追番？！）
+下面就对我看过的/看完的新番做一个总结和主观评分吧。
+绝大多数不含剧透或只有轻微剧透
+
+中途弃坑的番只对没有弃坑的番打分，所以这一部分并不会打分
+只要贝尔哲布布大小姐喜欢就好
+观看集数：3集；
+弃坑原因：太闲
+
+
+画
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-01-01 01:26" pubdate>
+              2019-01-01
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/11/11/NOIP2018%E5%A4%8D%E7%9B%98%EF%BC%88%E7%BB%88%E4%BA%8E%E4%B8%8D%E5%92%95%E5%92%95%E5%95%A6%EF%BC%81%EF%BC%89/" target="_self">
+          NOIP2018复盘（终于不咕咕啦！）
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/11/11/NOIP2018%E5%A4%8D%E7%9B%98%EF%BC%88%E7%BB%88%E4%BA%8E%E4%B8%8D%E5%92%95%E5%92%95%E5%95%A6%EF%BC%81%EF%BC%89/" target="_self">
+          
+          
+            
+          
+          先占个坑，突然发现可以把发布时间调早一点
+D1T1 铺设道路
+题面
+
+虽然很多人在喊是原题，但是还是写下放下三种写法吧。很容易想到解法，就是维护区间最小值，达到[latex]O(nlogn)[/latex]的复杂度。但是这样子的写法无论是时间上还是代码复杂度上都比不过正解。
+#include&amp;lt;iostream&amp;gt;
+#include&amp;lt;cstdio&amp;gt
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-11-11 21:05" pubdate>
+              2018-11-11
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/11/10/NOIP2018%E9%80%80%E5%BD%B9%E8%AE%B0/" target="_self">
+          NOIP2018退役记
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/11/10/NOIP2018%E9%80%80%E5%BD%B9%E8%AE%B0/" target="_self">
+          
+          
+            
+          
+          Day0上午敲了些板子，树剖还是没能一遍过orz
+中午第二次到教工食堂吃饭，真香！
+坐高铁去南昌，很快就到了。
+做公交车到南大，下车的时候手机和身份证一起落在车上，打了19个电话后终于接了，又回了一遍南昌西，还好什么都没丢，差点提前退役QAQ，一个下午就过去了。
+傍晚去看机房，晚餐在南大的九食堂吃的，一餐8元，特别好吃（比起我们学校），在南昌的每餐都是在这里吃的。
+遇到了JK大佬@Rye_Catc
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-11-10 19:47" pubdate>
+              2018-11-10
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/11/08/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay6%E3%80%91OI%20STILE/" target="_self">
+          【考前冲刺Day6】OI STILE
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/11/08/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay6%E3%80%91OI%20STILE/" target="_self">
+          
+          
+            
+          
+          T1 引子（水箱）非常简单的模拟题目，错误点有两处：
+
+没有读入多位数字
+出现顺序和编号无关
+
+然就是从1号水箱，开始递归，优先从箱底的水管递归下去，然后输出自身的编号。
+
+#include&amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+const int MAXN=1003;
+char mp[MAXN][MAXN];
+int n,m;
+int
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-11-08 17:11" pubdate>
+              2018-11-08
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/3/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/#board">5</a><a class="page-number" href="/page/6/#board">6</a><a class="extend next" rel="next" href="/page/5/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

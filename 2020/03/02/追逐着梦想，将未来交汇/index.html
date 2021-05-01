@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>追逐着梦想，将未来交汇 - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="追逐着梦想，将未来交汇">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-03-02 18:37" pubdate>
+        2020年3月2日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.8k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      18
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">追逐着梦想，将未来交汇</h1>
+            
+            <div class="markdown-body">
+              <center>
+追逐着梦想，将未来交汇
+
+<p><b>An Uplifting Story</b></p>
+<p><font color="red">剧透警告⚠</font></p>
+</center>
+
+<p>先来说说自己的感想，然后再来吐槽和批评。<br>团结、励志、爱情……这些使这部漫画的主题。我在看这部漫画之前对于akb48一点了解都没有（虽然看后也没有了解），但其实并不妨碍作品本身的发挥，这里你可以清楚地感觉到主角们经历的成长和蜕变。<br>浦川实乃梨（浦山实）从一开始的只是想让宽子成为center到后来自己发现做偶像十分有趣，与宽子正面交锋。</p>
+<p>吉永宽子从一开始内向胆小，到进入AKB后的站在小实的背后，再到后来想要靠自己的力量成为center。从一开始因为家庭压力想要退出到后来坚定自己的梦想。<br>冈部爱有着过人实力，但被复仇阴霾笼罩，最终也解开了对母亲的心结。<br>有栖莉空年小失聪，但重燃偶像梦想，焕发活力。<br>我们很多人喜欢把自己带入男主的视角思考，但实际上我们只是奥平老师。<br>但是，正是有了奥平老师一样的“旁观者”才促成了主角的成长。<br>奥平老师用自己的薪水，免费派发门票<br>樱小姐从AKB初期一直工作，保障舞台万无一失</p>
+<p>瑶佳小姐在”GEKOKU嬢”出道初期提供活动支持，之后担任了NUMBER8的制作人<br>这一点在最后一话作者用方格框告诉了我们：</p>
+<blockquote>
+<p>﻿这之后AKB会变成什么样……谁都不知道，可能会变成超级巨星，亦或是数年后就解散了也说不定——但是一定没问题！只要有着比谁都热爱“偶像”这个职业的少女和最喜欢那位偶像的饭存在的话。</p>
+</blockquote>
+<p>副标题我一开始写的是“An Uplifting Story about Idol”，但其实这并不仅仅是偶像的逐梦故事，也是这一个偶像圈里面所有人的奋斗故事。<br>我很喜欢这部作品里面塑造的许多角色，他们都有自己的梦想去追寻，都有自己为了他人的执念。<br>这部作品角色们很多时候是被利他的行为驱动的，这一点的结果就是将自己的未来与他人的未来交汇，让自己与他人一同前行。<br>这其实是很令人羡慕的，有人说，”(男主)就像做了一场4年的黄粱梦，收获了什么只有男主自己知道。”<br>在结尾主角确实失去了浦川实乃梨的身份，但是宽子已经成为center，而且他所构建的，与AKB48其他成员交汇的未来并没有因为男生身份暴露这件事情而被破坏。<br>他所得到的，就是连同众人一起成长的未来。</p>
+<p>浦山实对宽子到底喜欢到何种程度以至于能够付出4年时间，默默支持她的梦想？我认为这份感情是在这4年间不断加深的，在一起训练、成为偶像的路上愈发地喜欢上宽子的。<br>而宽子没想到的是，作为同学喜欢的浦山实，作为闺蜜喜欢的浦川实乃梨，以及作为恋人喜欢的“黑神”，居然是同一个人。<br>这是什么神仙爱情，直接去民政局把结婚证领了吧，结尾作者也是老狡猾了，不直接发糖而是藏起来了：</p>
+<blockquote>
+<p>﻿主持人：AKB48 Happy Mart电视台！！主题是“最近发生的开心的事”……怎么样 宽子？<br>宽子：说起来，我家里有个洗衣机……那个洗衣机在耳边，发出很吵的声音，有时候会吵得睡不着——但是最近洗衣机非常地安静，它的颜色很可爱所以很开心，感觉看起来是红色和茶色的混合色啊……</p>
+</blockquote>
+<p>然后这是这一话的封面：</p>
+<center><img src="https://s2.ax1x.com/2020/03/02/3RhBhn.png" srcset="/img/loading.gif" lazyload  alt="" /></center>
+
+<p>虽然我觉得要是表现地更露骨一点会比较好呢www</p>
+<p>260多话的作品我三言两语也说不完，所以大家还是自己去看看吧，下面我就开始瞎吐槽和批评了。</p>
+<blockquote>
+<p>看完前感想：<br>在DMZJ上一直处在显眼的地位，但是一直没有点进去看，昨天看了宮島礼吏一天工作生活的跟拍，加上对《租借女友》画工的印象很深，就看了。不得不感叹这几年宮島礼吏的画工进步真的很大，看第一话的时候完全不相信是《租借女友》的作者画的，200+话的时候就很精美了。</p>
+</blockquote>
+<p>确实，这部作品在画工上的成长是肉眼可见的，也为《租借女友》的爆火埋下了伏笔，而且作为一部热血漫，演出效果也是一级棒，比如总选举的地方：</p>
+<center><img src="https://s2.ax1x.com/2020/03/02/3R0ORH.png" srcset="/img/loading.gif" lazyload  alt="" /></center>
+<center><img src="https://s2.ax1x.com/2020/03/02/3R0LJe.png" srcset="/img/loading.gif" lazyload  alt="" /></center>
+但是在看完同类型题材《偶像之王》后就没有那么震撼了，那部作品的表现力是真的强。
+主角虽然是伪娘但作者没有特意地画的比真女生可爱（这已经成为趋势了233）但是怎么都不暴露的设定还有对于某些人一下就暴露的设定都很戏剧性。
+<center><img src="https://s2.ax1x.com/2020/03/02/3R0Eb6.png" srcset="/img/loading.gif" lazyload  alt="" /></center>
+说实话，我看完了还认不全
+<center><img src="https://s2.ax1x.com/2020/03/02/3R0kK1.png" srcset="/img/loading.gif" lazyload  alt="" /></center>
+当偶像不如高考（
+<center><img src="https://s2.ax1x.com/2020/03/02/3R0ADx.png" srcset="/img/loading.gif" lazyload  alt="" /></center>
+你才是男的！
+<center><img src="https://s2.ax1x.com/2020/03/02/3R0ZVK.png" srcset="/img/loading.gif" lazyload  alt="" /></center>
+说实话，突然虐莉空真的受不了，这样子导致莉空如果最后没有和主角在一起的话真的很背德，虽然没有人道德绑架我但是真的就感觉自己把自己绑架了，非常难受。这种胃疼感不是来自于谁又绿了谁，而是来自于恋爱情感之上的重压，这一点在作者新作《租借女友》中体现更为强烈。
+
+<p>而且说实话，我觉得这部作品很多地方都是在凑连载话数，有很多重复部分，剧情模板化套路化。<br>具体来说主线就是：一万元公演，GEKOKU娘，全兼任（SKE，NMB），HKT，总选举，后期就放飞自我了<br>每一个剧情都是：<br>好像是机会，很棒！<br>反派来了，设坎！<br>主角团有危机，谋策！<br>单元剧形式，逐个解决！<br>这么做在连载的时候倒无所谓，但是一口气看完的话就会觉得有点枯燥，后一百话我是一口气看完的，有些地方就不愿意看仔细了。<br>总的来说还是一部略有遗憾的作品，在剧情方面有很大提升空间，尤其是爱情线，最有执念的爱情却表现得最含蓄，青涩，这又不是什么100天恋爱，付出了4年，本因该开出绚烂的花朵，结出丰硕的果实的，结果给我们看了一个茁壮成长的小树苗，虽然也是“希望”，也可以看到美好的未来，但是已经4年了啊，读者也看了这么久，给颗糖不行吗？就算现在是偶像，你写个什么“三年后”然后发个糖不行吗。</p>
+<p>补充一点，有miku登场好评</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/03/07/Wuppo%E2%80%94%E2%80%94%E5%8F%AF%E7%88%B1%E8%80%8C%E5%8F%88%E4%B8%8D%E5%A4%B1%E5%8F%AF%E7%8E%A9%E6%80%A7%E7%9A%84%E5%86%92%E9%99%A9%E6%B8%B8%E6%88%8F/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Wuppo——可爱而又不失可玩性的冒险游戏</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/02/15/%E3%80%8A%E5%A5%B3%E9%AB%98%E3%80%8B%E7%9C%9F%E7%9A%84%E6%9C%89%E5%8D%87%E5%8D%8E%E5%90%97%EF%BC%9F%E5%AE%83%E6%9C%89%E7%9A%84%E5%8F%AA%E4%B8%8D%E8%BF%87%E6%98%AF%E6%97%A5%E5%B8%B8%E7%BD%A2%E4%BA%86%EF%BC%81/">
+                        <span class="hidden-mobile">《女高》真的有升华吗？它有的只不过是日常罢了！</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

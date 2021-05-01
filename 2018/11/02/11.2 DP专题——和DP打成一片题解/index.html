@@ -1,0 +1,650 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>11.2 DP专题——和DP打成一片题解 - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="11.2 DP专题——和DP打成一片题解">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2018-11-02 14:45" pubdate>
+        2018年11月2日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      38
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">11.2 DP专题——和DP打成一片题解</h1>
+            
+            <div class="markdown-body">
+              <h1 id="T1-求三角形的最大面积"><a href="#T1-求三角形的最大面积" class="headerlink" title="T1 求三角形的最大面积"></a>T1 求三角形的最大面积</h1><blockquote>
+<p>题目大意：给你一个由多个三角形组成的大三角形，其中有些三角形缺失了，求出剩下部分最大的三角形。</p>
+</blockquote>
+<p>毒瘤题，dp很好想，被特殊情况坑了。<br>首先上三角和下三角都要算一遍（其实就是反过来再找一遍）<br>就拿上三角来说，我们很容易就知道它的高度就是min(左，右)+1，但是实际上还要考虑一些特殊情况</p>
+<p>比如下面这种情况：<br><img src="http://bubbleioa.top/wp-content/uploads/2018/11/%E4%B8%89%E8%A7%92%E5%BD%A2.png" srcset="/img/loading.gif" lazyload><br>输入的时候是这样的</p>
+<pre><code>3
+#---#
+ #-#
+  #
+0
+</code></pre>
+<p>所以在更新f[i][j]的时候要注意判断j的奇偶性就行了  </p>
+<hr>
+<pre><code class="cpp">#include&amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+int n;
+int tri[300][300];//发现这东西是多余的
+int f1[300][300],f2[300][300];//下三角和上三角
+int main()&#123;
+    while(233)&#123;
+        memset(tri,0,sizeof(0));
+        memset(f1,0,sizeof(f1));
+        memset(f2,0,sizeof(0));
+        scanf(&amp;quot;%d&amp;quot;,&amp;amp;n);
+        if(n==0)break;
+        for(int i=1;i&amp;lt;=n;i++)&#123;
+            char str[400];
+            scanf(&amp;quot;%s&amp;quot;,str+1);int len=strlen(str+1);
+            for(int j=1;j&amp;lt;=len;j++)&#123;
+                tri[i][j+i-1]=(str[j]==&amp;#039;-&amp;#039;?1:0);
+                f1[i][j+i-1]=f2[i][j+i-1]=tri[i][j+i-1];//可以放就初始化为1
+            &#125;
+        &#125;
+        for(int i=2;i&amp;lt;=n;i++)&#123;
+            int cnt=1;
+            for(int j=i;j&amp;lt;=2*n-i;j++,cnt++)&#123;
+                if(f1[i][j]==0||cnt%2==0)continue;//偶数不能更新
+                f1[i][j]=f1[i][j]+min(f1[i-1][j+1],min(f1[i-1][j]==0?0:0x3f3f3f3f,f1[i-1][j-1]));//虽然讨论了左右的情况，但是中间不能为不能放的格子
+            &#125;
+        &#125;
+        for(int i=n-1;i&amp;gt;=1;i--)&#123;
+            for(int j=i;j&amp;lt;=2*n-i;j++)&#123;
+                if(f2[i][j]==0)continue;
+                f2[i][j]=f2[i][j]+min(f2[i+1][j+1],min(f2[i+1][j],f2[i+1][j-1]));
+            &#125;
+        &#125;
+        int ans=0;
+        for(int i=1;i&amp;lt;=n;i++)&#123;
+            for(int j=i;j&amp;lt;=2*n-1;j++)&#123;
+                ans=max(ans,max(f1[i][j],f2[i][j]));
+            &#125;
+        &#125;
+        cout&amp;lt;&amp;lt;ans*ans&amp;lt;&amp;lt;endl;
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<h1 id="T2-下楼问题"><a href="#T2-下楼问题" class="headerlink" title="T2 下楼问题"></a>T2 下楼问题</h1><blockquote>
+<p>题目大意：有一个n层楼的建筑，现在有一只猫在楼顶，每层楼有三个门，现给出距离，求猫到1楼的最长距离（不能上楼也不走回头路）</p>
+</blockquote>
+<p>由于每层楼之间是独立的，而且下了楼就不能往上，所以每层楼的状态具有无后效性，即我们不必关心当前状态是怎么来的。<br>我们考虑如何更新当前状态<br><img src="http://bubbleioa.top/wp-content/uploads/2018/11/down-e1541140786226.png" srcset="/img/loading.gif" lazyload><br>假设我们要更新4这个点，我们发现其余5个点都有到它的合法路径，如果我们用5更新4的话，会发现5状态也会需要4来更新，<strong>我更新我自己</strong>是不可以的。<br>于是我们可以只考虑上一层的来更新下一层的  </p>
+<p>先解释下变量吧，我觉得还是比较形象的  </p>
+<table>
+<thead>
+<tr>
+<th align="center">变量名</th>
+<th align="center">变量含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">_path[i]</td>
+<td align="center">第i层楼左边的路径长度</td>
+</tr>
+<tr>
+<td align="center">path_[i]</td>
+<td align="center">第i层楼右边的路径长度</td>
+</tr>
+<tr>
+<td align="center">down[i]</td>
+<td align="center">第i层楼中间门往下的路径长度</td>
+</tr>
+<tr>
+<td align="center">down_[i]</td>
+<td align="center">第i层楼左边门往右下的路径长度</td>
+</tr>
+<tr>
+<td align="center">_down[i]</td>
+<td align="center">第i层楼右边门往左下的路径长度</td>
+</tr>
+<tr>
+<td align="center">f[i][j]</td>
+<td align="center">走到第i层楼第j扇门的最长路</td>
+</tr>
+</tbody></table>
+<p>于是状态可以这样更新：<br>[latex]f[i][2]=max(f[i+1][2]+down[i+1],max(f[i+1][1]+down_[i+1]+path_[i],f[i+1][3]+_down[i+1]+_path[i]))[/latex]<br>[latex]f[i][1]=max(f[i+1][3]+_down[i+1],max(f[i+1][1]+down_[i+1]+_path[i]+path_[i],f[i+1][2]+down[i+1]+_path[i]))[/latex]<br>[latex]f[i][3]=max(f[i+1][1]+down_[i+1],max(f[i+1][3]+_down[i+1]+_path[i]+path_[i],f[i+1][2]+down[i+1]+path_[i]))[/latex]</p>
+<hr>
+<pre><code class="cpp">#include&amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+const int MAXN=500003;
+int f[MAXN][4];//1-left 2-middle 3-right
+int _path[MAXN],path_[MAXN];
+int down[MAXN],down_[MAXN],_down[MAXN];
+int n;
+ 
+int main()&#123;
+    // freopen(&amp;quot;test.out&amp;quot;,&amp;quot;w&amp;quot;,stdout);
+    int t,T;scanf(&amp;quot;%d&amp;quot;,&amp;amp;t);T=t;
+    while(t--)&#123;
+        scanf(&amp;quot;%d&amp;quot;,&amp;amp;n);
+        for(int i=1;i&amp;lt;=n;i++)&#123;
+            scanf(&amp;quot;%d%d%d%d%d&amp;quot;,&amp;amp;_path[i],&amp;amp;path_[i],&amp;amp;down_[i],&amp;amp;down[i],&amp;amp;_down[i]);
+        &#125;
+        f[n][2]=_path[n];f[n][1]=0;f[n][3]=path_[n]+_path[n];
+        for(int i=n-1;i&amp;gt;=1;i--)&#123;
+            f[i][2]=max(f[i+1][2]+down[i+1],max(f[i+1][1]+down_[i+1]+path_[i],f[i+1][3]+_down[i+1]+_path[i]));
+            f[i][1]=max(f[i+1][3]+_down[i+1],max(f[i+1][1]+down_[i+1]+_path[i]+path_[i],f[i+1][2]+down[i+1]+_path[i]));
+            f[i][3]=max(f[i+1][1]+down_[i+1],max(f[i+1][3]+_down[i+1]+_path[i]+path_[i],f[i+1][2]+down[i+1]+path_[i]));
+        &#125;
+        int ans=max(f[1][1],max(f[1][3],f[1][2]));
+        printf(&amp;quot;Case %d: &amp;quot;,T-t);
+        cout&amp;lt;&amp;lt;ans&amp;lt;&amp;lt;endl;
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<h1 id="T3-瞬移"><a href="#T3-瞬移" class="headerlink" title="T3 瞬移"></a>T3 瞬移</h1><blockquote>
+<p>题目大意:有两个人在一个0-1矩阵上进行移动，其中是不可走的位置。他们每次只能从当前行移动到下一行，而且两个人的位置x,y必须满足限制：[latex]x+m_i\le y\le x+m_a[/latex] . 一个人移动到下一行的代价为其横坐标变化值的绝对值。问两个人都到达底端需要的最小消耗.</p>
+</blockquote>
+<p>做惯了大数据的题目,做一些比较小的数据的题目都不敢大胆去想了,这题目n只有1000而m只有10,对于师傅和徒弟两个人,我们可以五重循环分别枚举<strong>层数 当前徒弟位置 当前师傅位置 上一层徒弟位置 上一层师傅位置</strong> 这样的时间复杂度达到了惊人的[latex]O(NM^4)[/latex]然而由于数据范围较小,所以并不会超时.</p>
+<p>我们可以用f[dep][i][j]表示dep层师傅在i徒弟在j时所需要耗费的最小值,枚举上一层的状态即可更新.</p>
+<hr>
+<pre><code class="cpp">#include&amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+int n,m,l,r,x,y;
+int ma[1003][12];
+int f[1003][13][13];
+
+int main()&#123;
+    int t;scanf(&amp;quot;%d&amp;quot;,&amp;amp;t);
+    while(t--)&#123;
+        memset(f,0x3f,sizeof(f));
+        scanf(&amp;quot;%d%d%d%d%d%d&amp;quot;,&amp;amp;n,&amp;amp;m,&amp;amp;l,&amp;amp;r,&amp;amp;x,&amp;amp;y);
+        x++,y++;
+        for(int i=1;i&amp;lt;=n;i++)&#123;
+            char tmp[20];
+            scanf(&amp;quot;%s&amp;quot;,tmp+1);
+            for(int j=1;j&amp;lt;=m;j++)if(tmp[j]==&amp;#039;*&amp;#039;)ma[i][j]=1;else ma[i][j]=0;
+        &#125;
+        for(int i=1;i&amp;lt;=m;i++)ma[1][i]=0;//第一层就把师傅徒弟的初始位置标记为合法,其他为不合法
+        ma[1][x]=ma[1][y]=1;
+        f[1][x][y]=0;
+        for(int dep=2;dep&amp;lt;=n;dep++)&#123;//层数
+            for(int j=2;j&amp;lt;=m;j++)&#123;//徒弟
+                if(!ma[dep][j])continue;
+                for(int i=1;i&amp;lt;j;i++)&#123;//师傅 
+                    if((!ma[dep][i])||j&amp;lt;i+l||j&amp;gt;i+r)continue;
+                    for(int k=2;k&amp;lt;=m;k++)&#123;//上层徒弟
+                        if(!ma[dep-1][k])continue;
+                        for(int z=1;z&amp;lt;k;z++)&#123;//上层师傅
+                            if((!ma[dep-1][z])||k&amp;lt;z+l||k&amp;gt;z+r)continue;
+                            f[dep][i][j]=min(f[dep][i][j],f[dep-1][z][k]+abs(z-i)+abs(k-j));
+                        &#125;
+                    &#125;
+                &#125;
+            &#125;
+        &#125;
+        int mi=1&amp;lt;&amp;lt;30;
+        for(int i=2;i&amp;lt;=m;i++)&#123;
+            if(!ma[n][i])continue;
+            for(int j=1;j&amp;lt;i;j++)&#123;
+                if((!ma[n][j])||i&amp;lt;j+l||i&amp;gt;j+r)continue;
+                mi=min(mi,f[n][j][i]);
+            &#125;
+        &#125;
+        cout&amp;lt;&amp;lt;mi&amp;lt;&amp;lt;endl;
+    &#125;
+    return 0;
+&#125;
+</code></pre>
+<h1 id="T4-数字游戏"><a href="#T4-数字游戏" class="headerlink" title="T4 数字游戏"></a>T4 数字游戏</h1><blockquote>
+<p>题目大意：给你n个数，每个数有一个衰减值，m个回合，每个回合你可以选一个数（选完消失并计入答案），选完后剩余的数衰减。求能选到的最大的总和是多少。</p>
+</blockquote>
+<p>可以比较容易地发现一个结论：如果n=m，就是所有数都会被选到的话，要根据bi的大小来选，先去掉那些每回合损耗多的，再去掉损耗少的，这样显然就是最优的。<br>但如果m&lt;n呢？设想：假如己经选定了m个数，只去掉这m个数，那么与m=n的情况一样，我们一定是按照bi的大小来去掉的。因为显然对于选定的个数，这样做最优。<br>到这里，我们就会想到采用动态规划的方法。把n个数按照bi从大到小排序，然后问题就转化为对于一个n个数的序列，从中选择m个数，第i个选择的数权值为A-B*i，(A,B分别为此数在原来a,b数组里对应的值)，使得所有权值的和最大。<br>不难写出下面的动态规划状态转移方程：</p>
+<p>$$f(i,j)=max(f(k,j-1)+a_i-b_i \times(j-1)$$<br>$$f(0,0)=0$$</p>
+<p>其中，$$1\le i\le n ,1\le j\le m,0\le k&lt;j$$，ai,bi为排序后第i个数相应的值。这样的复杂度是$$O(n^3)$$</p>
+<p>再进一步分析，很容易地把上述动态規划方程改变为下面的形式：<br>令F(i,j)前i个数当中取了j个数的最优解，则</p>
+<p>$$F(i,j)=max(F(i-1,j),F(i-1,j-1)+a_i-b_i\times(j-1)$$<br>$$F(0,0)=0$$</p>
+<p>这样，时间复杂度就降到了$$O(n^2)$$</p>
+<hr>
+<pre><code class="cpp">#include&amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+int n,m;
+struct node&#123;
+    int a,b;
+&#125;num[203];
+int f[203][203];
+
+bool cmp(node a,node b)&#123;
+    return a.b&amp;gt;b.b;
+&#125;
+
+int main()&#123;
+    cin&amp;gt;&amp;gt;n&amp;gt;&amp;gt;m;
+    for(int i=1;i&amp;lt;=n;i++)scanf(&amp;quot;%d&amp;quot;,&amp;amp;num[i].a);
+    for(int i=1;i&amp;lt;=n;i++)scanf(&amp;quot;%d&amp;quot;,&amp;amp;num[i].b);
+    sort(num+1,num+1+n,cmp);
+    for(int i=1;i&amp;lt;=n;i++)&#123;
+        for(int j=1;j&amp;lt;=m;j++)&#123;
+            f[i][j]=max(f[i][j],max(f[i-1][j],f[i-1][j-1]+num[i].a-num[i].b*(j-1)));
+        &#125;
+    &#125;
+    cout&amp;lt;&amp;lt;f[n][m]&amp;lt;&amp;lt;endl;
+    return 0;
+&#125;
+</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/11/03/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay1%E3%80%91%E5%A4%A9%E7%A5%9E%E4%B8%8B%E5%87%A1/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">【考前冲刺Day1】天神下凡</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/11/01/11.1%E4%B8%8D%E8%83%BD%E4%B8%8EDP%E5%A5%BD%E5%A5%BD%E7%9B%B8%E5%A4%84%E9%A2%98%E8%A7%A3/">
+                        <span class="hidden-mobile">11.1不能与DP好好相处题解</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

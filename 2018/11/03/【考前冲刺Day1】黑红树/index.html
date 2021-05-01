@@ -1,0 +1,545 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>【考前冲刺Day1】黑红树 - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="【考前冲刺Day1】黑红树">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2018-11-03 19:17" pubdate>
+        2018年11月3日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.5k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      21
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">【考前冲刺Day1】黑红树</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhber/p/4064897.html">题面</a></p>
+</blockquote>
+<blockquote>
+<p><strong>题解转自<a target="_blank" rel="noopener" href="http://www.cnblogs.com/zhber/p/4036010.html">zhber的这篇文章</a>,本人对部分公式做了LaTex处理,如需转载请注明原作者</strong></p>
+</blockquote>
+<p>zhb原创出品，改编自高一暑假数学作业必修三那章最后一题</p>
+<p>这是这套题唯一会比较防ak的题了</p>
+<p>首先题目我写了一大堆，就是要把你搞晕的</p>
+<p>题意是有两个人进行游戏，其中第一个人在每局中获胜的概率是[latex]\frac{p}{q}[/latex]，如果有一个人比另一个人多赢两局，则游戏结束。现在给出T个询问，每个询问Q表示求游戏刚好在第Q轮结束的精确概率[latex]\frac{a}{b}[/latex]的a%k和b%k。要求[latex]\frac{a}{b}[/latex]是这个概率的最简分数。</p>
+<p>解法是这样的：</p>
+<p>我们把每两局压成一轮，只有三种可能：第一个人赢了，第二个人赢了，两人各赢一局。这样如果有人赢了游戏结束，平局时两人分数相同，相当于又开始一局</p>
+<p>这样我们注意到一个显然的事实：游戏不可能在奇数局结束。因为由上面的推论+自己yy可知，要结束一定是在一轮以后，就是偶数局之后。这样不合法情况删掉一半了</p>
+<p>第一个人一轮赢必须连赢两局，就是<a href="%5Cfrac%7Bp%7D%7Bq%7D">latex</a>^2[/latex]，即[latex]\frac{p^2}{q^2}[/latex]</p>
+<p>第二个人一轮赢也是连赢两局，就是<a href="1-p/q">latex</a>^2[/latex]，通分完[latex]\frac{(p-q)^2}{q^2}[/latex]<br>那么一局能结束的概率就是上面两个加起来，即[latex]\frac{p^2+(p-q)^2}{q^2}[/latex]</p>
+<p>一局不能结束的概率就是1-“上面那式子”</p>
+<p>为简化条件，我们令一轮能结束的概率是A/B，一轮不能结束的概率是C/D。计算方法见上</p>
+<p>那么对于有意义的询问，即偶数Q，令t=Q/2</p>
+<p>那么比赛在第t轮即第Q局结束的充要条件是：在1到t-1轮两人都是平局，并且在第t轮比赛刚好结束</p>
+<p>那么对于询问Q，<a href="%5Cfrac%7BC%7D%7BD%7D">latex</a>^{t-1} \times \frac{A}{B}[/latex] 即是所求</p>
+<p>到这里应该都还能理解吧</p>
+<p>然后比较难搞的是取模。因为p、q是100级别，那么[latex]p^2[/latex]、[latex]q^2[/latex]是1w级别，就是说ABCD这些数都是10000级别</p>
+<p>要求的分数分子是[latex]C^{t-1}\times A[/latex]，分母是[latex]D^{t-1}\times B[/latex]，还要进行约分完取模。我们可以直接预处理使得A和B、C和D分别互质，但是我们没法保证A和D、B和C分别互质。这样约分就有困难了。比如A分解质因数有2^十几次方吧，D只有2^1，那么在接下来的十几次操作中都要用D的2去约掉A的2。但是ABCD的数据规模还算小，所以我们暴力搞出前20轮的答案，然后这样一来改约的也就约干净了，然后每次分子只乘C分母只乘D，又没有约分，可以直接递推。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="cpp">#include&amp;lt;cstdio&amp;gt;
+#define MX 10000     //ABCD的规模是10000
+#define primeMX 1230     //10000以内1229个质数
+#define LL long long
+int prime[primeMX];
+struct fenjie&#123;
+    int rep[primeMX];
+&#125;aa,bb,cc,dd;
+int p,q,T,k,a,b,c,d;
+int ss[primeMX];     //用于暴力，分解质因数之后直接加/减在上面，如果是正的表示分子的分解质因数有ss[i]个prime[i]，反之分母亦然
+LL Q,last;
+LL ansa[1000010],ansb[1000010];     //保存第i局结束的概率的分子分母
+inline void shai()     //筛法
+&#123;
+    bool mrk[10010]=&#123;0&#125;;
+    int leng=0;
+    for (int i=2;i&amp;lt;=MX;i++)
+      if (!mrk[i])
+      &#123;
+        for (int j=2*i;j&amp;lt;=MX;j+=i)mrk[j]=1;
+        prime[++leng]=i;
+      &#125;
+&#125;
+inline int gcd(int a,int b)     //gcd用于A和B、C和D先约分
+&#123;if (!b)return a;else return gcd(b,a%b);&#125; 
+inline void divide(fenjie &amp;amp;a,int b)     //分解质因数，用于前20轮暴力用
+&#123;
+    for (int i=1;i&amp;lt;primeMX;i++)
+      &#123;
+        if (b==1)break;
+        while (b%prime[i]==0)&#123;b/=prime[i];a.rep[i]++;&#125;
+      &#125;
+&#125;
+inline LL read()     //快速读入，100w的询问不加肯定TLE
+&#123;
+    LL x=0,f=1;char ch=getchar();
+    while(ch&amp;lt;&amp;#039;0&amp;#039;||ch&amp;gt;&amp;#039;9&amp;#039;)&#123;if(ch==&amp;#039;-&amp;#039;)f=-1;ch=getchar();&#125;
+    while(ch&amp;gt;=&amp;#039;0&amp;#039;&amp;amp;&amp;amp;ch&amp;lt;=&amp;#039;9&amp;#039;)&#123;x=x*10+ch-&amp;#039;0&amp;#039;;ch=getchar();&#125;
+    return x*f;
+&#125;
+int main()
+&#123;
+    freopen(&amp;quot;mynameisczy.in&amp;quot;,&amp;quot;r&amp;quot;,stdin);
+    freopen(&amp;quot;mynameisczy.out&amp;quot;,&amp;quot;w&amp;quot;,stdout);
+    shai();
+    p=read();q=read();T=read();k=read();
+    if (p==1&amp;amp;&amp;amp;q==1||p==0&amp;amp;&amp;amp;q==0)ansa[2]=ansb[2]=1;  //如果必胜或必败，那一定在第2局就结束。其余概率都是0
+    else
+    &#123;
+        c=p*p+(q-p)*(q-p);
+        b=q*q;
+        a=b-c;
+        d=b;        //这里我AB和CD的意义反过来了
+        int div1=gcd(a,b);a/=div1;b/=div1;
+        int div2=gcd(c,d);c/=div2;d/=div2;
+        divide(aa,a);
+        divide(bb,b);
+        divide(cc,c);
+        divide(dd,d);
+        ansa[2]=c%k;ansb[2]=d%k;
+        for (int i=1;i&amp;lt;primeMX;i++)
+          ss[i]+=cc.rep[i]-dd.rep[i];
+        for(int i=4;i&amp;lt;=40;i+=2)
+        &#123;
+            long long sum1=1,sum2=1;
+            for (int j=1;j&amp;lt;primeMX;j++)
+              ss[j]+=aa.rep[j]-bb.rep[j];
+            for (int j=1;j&amp;lt;primeMX;j++)
+              if (ss[j]&amp;gt;0) for (int l=1;l&amp;lt;=ss[j];l++)sum1=(sum1*prime[j])%k;
+              else if (ss[j]&amp;lt;0)for (int l=1;l&amp;lt;=-ss[j];l++)sum2=(sum2*prime[j])%k;
+            ansa[i]=sum1;ansb[i]=sum2;
+        &#125;
+        for (int i=42;i&amp;lt;=1000000;i+=2)
+        &#123;
+            ansa[i]=(ansa[i-2]*a)%k;
+            ansb[i]=(ansb[i-2]*b)%k;
+        &#125;
+    &#125;
+    for(int i=1;i&amp;lt;=T;i++)
+      &#123;
+        Q=read()-last;     //last是处理加密的问题
+        last=ansa[Q];
+        printf(&amp;quot;%I64d %I64d\n&amp;quot;,ansa[Q],ansb[Q]);
+      &#125;
+    return 0;
+&#125;
+</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2018/11/04/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay2%E3%80%91%E9%AA%97%E5%88%86%E4%B9%8B%E6%97%85/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">【考前冲刺Day2】骗分之旅</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2018/11/03/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay1%E3%80%91%E5%A4%A9%E7%A5%9E%E4%B8%8B%E5%87%A1/">
+                        <span class="hidden-mobile">【考前冲刺Day1】天神下凡</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

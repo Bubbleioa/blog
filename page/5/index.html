@@ -1,0 +1,743 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 100vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="The LTS version of ioa's blog.">
+              
+            </span>
+
+            
+          </div>
+
+          
+            <div class="scroll-down-bar">
+              <i class="iconfont icon-arrowdown"></i>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      <div class="container nopadding-x-md">
+        <div class="py-5" id="board"
+          style=margin-top:0>
+          
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-md-10 m-auto">
+                
+
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/11/07/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay5%E3%80%91%E8%80%83%E8%AF%95%E6%97%B6%E5%AE%8C%E5%85%A8%E6%B2%A1%E6%9C%89%E6%80%9D%E8%B7%AF%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F%E5%8F%AF%E4%BB%A5%E6%9A%B4%E5%8A%9B%E5%90%97%EF%BC%9F%E5%8F%AF%E4%BB%A5%E4%B9%B1%E6%90%9E%E5%90%97%EF%BC%9F/" target="_self">
+          【考前冲刺Day5】考试时完全没有思路怎么办？可以暴力吗？可以乱搞吗？
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/11/07/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay5%E3%80%91%E8%80%83%E8%AF%95%E6%97%B6%E5%AE%8C%E5%85%A8%E6%B2%A1%E6%9C%89%E6%80%9D%E8%B7%AF%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F%E5%8F%AF%E4%BB%A5%E6%9A%B4%E5%8A%9B%E5%90%97%EF%BC%9F%E5%8F%AF%E4%BB%A5%E4%B9%B1%E6%90%9E%E5%90%97%EF%BC%9F/" target="_self">
+          
+          
+            
+          
+          T1 改造二叉树
+题面
+
+洛谷上的数据有水，过了不代表正确；
+这题还是比较难想的（至少我是这么认为的）  
+首先如果我们对一颗平衡树进行中序遍历，得到的一个遍历的序列是单调上升的。于是我们这道题就转化成一个这样的问题：给一棵二叉树，让它的中序遍历序列变为严格单调上升序列，最少需要多少次修改  
+《算法竞赛进阶指南（第二版）》的263面提过一个思考题：  
+
+把一个序列A变成非严格单调递增的（单调不
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-11-07 15:36" pubdate>
+              2018-11-07
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/11/07/%E4%BA%BA%E7%94%9F%E7%AC%AC%E4%B8%80%E6%AC%A1Pull%20Request%E8%A2%AB%E9%87%87%E7%BA%B3%E4%BA%86%EF%BC%81%EF%BC%81/" target="_self">
+          人生第一次Pull Request被采纳了！！
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/11/07/%E4%BA%BA%E7%94%9F%E7%AC%AC%E4%B8%80%E6%AC%A1Pull%20Request%E8%A2%AB%E9%87%87%E7%BA%B3%E4%BA%86%EF%BC%81%EF%BC%81/" target="_self">
+          
+          
+            
+          
+          人生第一次Pull Request被采纳了！！记录下这个时刻！！！
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-11-07 07:54" pubdate>
+              2018-11-07
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/11/06/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay4%E3%80%91%E5%85%B3%E4%BA%8E%E6%88%91%E4%B8%8D%E5%BC%80long%20long%E8%A7%81%E7%A5%96%E5%AE%97%E8%BF%99%E6%A1%A9%E4%BA%8B/" target="_self">
+          【考前冲刺Day4】关于我不开long long见祖宗这桩事
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/11/06/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay4%E3%80%91%E5%85%B3%E4%BA%8E%E6%88%91%E4%B8%8D%E5%BC%80long%20long%E8%A7%81%E7%A5%96%E5%AE%97%E8%BF%99%E6%A1%A9%E4%BA%8B/" target="_self">
+          
+          
+            
+          
+          T1 增援前线实锤乱搞题，考试的时候写了一个错误的dp，只拿了一半的分。实际上这一题应该属于贪心吧我们用f[i]表示i号点能站多少人。显然，前l个点的f[i]=a[i]；对于其他情况，f[i]应由i-l到i-1这段区间内的点更新而来。具体来说，就是“能跳则跳，满员为止”我们优先选择距离当前点较远的点来更新，下面将证明这一结论。  
+我们每次只能在[latex]i-l[/latex]到[latex]
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-11-06 15:16" pubdate>
+              2018-11-06
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/11/05/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay%EF%BC%93%E3%80%91%E9%9D%92%E6%98%A5%E6%9C%9F%E7%8C%AA%E5%A4%B4%E5%B0%91%E5%B9%B4%E4%B8%8D%E4%BC%9A%E5%8F%96%EF%BC%82%E8%86%9C%EF%BC%82/" target="_self">
+          【考前冲刺Day３】青春期猪头少年不会取＂膜＂
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/11/05/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay%EF%BC%93%E3%80%91%E9%9D%92%E6%98%A5%E6%9C%9F%E7%8C%AA%E5%A4%B4%E5%B0%91%E5%B9%B4%E4%B8%8D%E4%BC%9A%E5%8F%96%EF%BC%82%E8%86%9C%EF%BC%82/" target="_self">
+          
+          
+            
+          
+          T1 海龟
+题目大意：给你ｎ个点，依次连接形成一条折线，问这条折线经过了多少个整点真的不是刀剑里的那个海龟
+
+考试的时候写了两个程序，一个是枚举矩阵里的点带进函数，一个是枚举ｘ算出ｙ，后者写挂了，但是对拍的时候考试用的电脑没法用ｆｃ，人工对比耗费了不少时间而且还没对比出来，于是把两个程序混合起来只有６０分
+想法很简单，每次枚举一条线段覆盖的最小矩阵的所有点，带进直线方程看看在不在直线上，用ｂｏｏｌ
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-11-05 14:51" pubdate>
+              2018-11-05
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/11/04/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay2%E3%80%91%E9%AA%97%E5%88%86%E4%B9%8B%E6%97%85/" target="_self">
+          【考前冲刺Day2】骗分之旅
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/11/04/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay2%E3%80%91%E9%AA%97%E5%88%86%E4%B9%8B%E6%97%85/" target="_self">
+          
+          
+            
+          
+          T1 x今天唯一一道没有用骗分方法的题目,然而还是由于一个小细节写挂了orz
+显然的是,如果两个数不互质,显然他们必须在一个集合里,于是我们可以将不互质的数连边,最后看有多少个联通块,答案就是[latex]2^{s}-2[/latex]其中s就是联通块的个数.如果用暴力的方法来实现的话,时间复杂度是[latex]O(n^2)[/latex]的.
+我们可以只枚举每个数的质因子,来降低这一复杂度.
+
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-11-04 15:13" pubdate>
+              2018-11-04
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/11/03/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay1%E3%80%91%E9%BB%91%E7%BA%A2%E6%A0%91/" target="_self">
+          【考前冲刺Day1】黑红树
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/11/03/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay1%E3%80%91%E9%BB%91%E7%BA%A2%E6%A0%91/" target="_self">
+          
+          
+            
+          
+          
+题面
+
+
+题解转自zhber的这篇文章,本人对部分公式做了LaTex处理,如需转载请注明原作者
+
+zhb原创出品，改编自高一暑假数学作业必修三那章最后一题
+这是这套题唯一会比较防ak的题了
+首先题目我写了一大堆，就是要把你搞晕的
+题意是有两个人进行游戏，其中第一个人在每局中获胜的概率是[latex]\frac{p}{q}[/latex]，如果有一个人比另一个人多赢两局，则游戏结束。现在给出T个询
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-11-03 19:17" pubdate>
+              2018-11-03
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/11/03/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay1%E3%80%91%E5%A4%A9%E7%A5%9E%E4%B8%8B%E5%87%A1/" target="_self">
+          【考前冲刺Day1】天神下凡
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/11/03/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay1%E3%80%91%E5%A4%A9%E7%A5%9E%E4%B8%8B%E5%87%A1/" target="_self">
+          
+          
+            
+          
+          
+题面
+
+我们先来看看样例：首先一开始就有一个区域；一般来说，一个圆对答案的贡献为1，无论它是在外面还是在其他圆的里面。但是，如果一个圆它的一条直径上所有的点都被覆盖了的话，它对答案的贡献就为2了由于只能在x轴上安放，覆盖的情况我们也只要考虑x轴上的，所以就可以把这个问题抽象为一个线段覆盖问题。首先将所有的线段离散化一下，再根据长度排序，对于每条线段，先查询它是不是被全部覆盖了，再用它来更新覆盖的
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-11-03 16:23" pubdate>
+              2018-11-03
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/11/02/11.2%20DP%E4%B8%93%E9%A2%98%E2%80%94%E2%80%94%E5%92%8CDP%E6%89%93%E6%88%90%E4%B8%80%E7%89%87%E9%A2%98%E8%A7%A3/" target="_self">
+          11.2 DP专题——和DP打成一片题解
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/11/02/11.2%20DP%E4%B8%93%E9%A2%98%E2%80%94%E2%80%94%E5%92%8CDP%E6%89%93%E6%88%90%E4%B8%80%E7%89%87%E9%A2%98%E8%A7%A3/" target="_self">
+          
+          
+            
+          
+          T1 求三角形的最大面积
+题目大意：给你一个由多个三角形组成的大三角形，其中有些三角形缺失了，求出剩下部分最大的三角形。
+
+毒瘤题，dp很好想，被特殊情况坑了。首先上三角和下三角都要算一遍（其实就是反过来再找一遍）就拿上三角来说，我们很容易就知道它的高度就是min(左，右)+1，但是实际上还要考虑一些特殊情况
+比如下面这种情况：输入的时候是这样的
+3
+#---#
+ #-#
+  #
+0
+
+所以在更新
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-11-02 14:45" pubdate>
+              2018-11-02
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/11/01/11.1%E4%B8%8D%E8%83%BD%E4%B8%8EDP%E5%A5%BD%E5%A5%BD%E7%9B%B8%E5%A4%84%E9%A2%98%E8%A7%A3/" target="_self">
+          11.1不能与DP好好相处题解
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/11/01/11.1%E4%B8%8D%E8%83%BD%E4%B8%8EDP%E5%A5%BD%E5%A5%BD%E7%9B%B8%E5%A4%84%E9%A2%98%E8%A7%A3/" target="_self">
+          
+          
+            
+          
+          T1 不老的传说
+题目大意：有n个石头环成一圈，每次染色能染1-k个连续石头，问多最少多少次能染成目标状态
+
+这道题真的是各种既视感，环的话直接变成两倍的链就OK了，之后就是区间dp[latex]f[i][j][/latex]表示(i,j)对i,j一段染色的最少次数
+初始化就是[latex]f[i][j]=\begin{cases}1&amp;i=j\ 0&amp;i&gt;j\ \infty&a
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-11-01 16:45" pubdate>
+              2018-11-01
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2018/10/26/NOIP2018%E5%80%92%E8%AE%A1%E6%97%B6/" target="_self">
+          NOIP2018倒计时
+        </a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2018/10/26/NOIP2018%E5%80%92%E8%AE%A1%E6%97%B6/" target="_self">
+          
+          
+            
+          
+          最近教练安排得比较紧，没时间更新博客了，最后10多天好好努力吧！不要让自己后悔！
+
+
+
+「同じ世界に、立っていたんだ」と“在同一个世界 站起来了”「同じ未来に、立っているんだ」と“也会站在同一个未来”
+
+距离NOIP2018还剩[wpcdt-countdown id=”415”]
+
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2018-10-26 19:14" pubdate>
+              2018-10-26
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/page/4/#board"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/#board">6</a><a class="extend next" rel="next" href="/page/6/#board"><i class="iconfont icon-arrowright"></i></a>
+    </span>
+  </nav>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

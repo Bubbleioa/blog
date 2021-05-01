@@ -1,0 +1,527 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>你好！我们又见面了呢~ - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="你好！我们又见面了呢~">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-10-18 20:05" pubdate>
+        2020年10月18日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      39
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">你好！我们又见面了呢~</h1>
+            
+            <div class="markdown-body">
+              <p>很久很久很久没更新博客了，不知道诸位有没有想我呢ww，还是面对这突然的更新心理想：“这谁啊！”</p>
+<p>这次的文章想写成类似于一本书的后记的形式呢，我的人生的前半部分已然结束，在看这篇文章的诸位在之前或多或少介入过我的生活，所以作为我人生前半部分的读者，看到这样一篇后记，也才算是真正读完这本书。（其实就是想过把瘾）</p>
+<p>但是直接刻板地去对书的内容做一个总结感想实在不是后记的形式，事实上，大部分书的后记都是说些有的没的和书无关的内容然后感谢一波和读者没啥关系的人呢。我正在读的一部轻小说的作者每次后记都要说自己的猫怎么怎么样，还说自己的猫会说：“饭（日语）”呢，怎么想都不可能吧，真的是一位病入膏肓的猫痴啊XD</p>
+<p>不过说到书的后记，其实还有一部分内容是汇报自己新作的开展情况吧，正好大学生活已经开始一周了，是时候谈谈高中毕业后到大学这段时间的事情了。</p>
+<p>金钱的重要性，在毕业之后愈发凸显。在师傅的介绍下，我在本地的一个教育培训机构开始了助教兼职。</p>
+<p><img src="http://bubbleioa.top/wp-content/uploads/2020/10/IMG_20200815_095227-%E5%89%AF%E6%9C%AC.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
+<blockquote>
+<p>刚刚忘记保存，丢了一半多的进度orz</p>
+</blockquote>
+<p>工作了16天，拿了1300+，算成时薪的话大概有18元，工作强度不大，还算是不错的工作……如果没有小学生的话。</p>
+<p>我带了两个班，一个是初中生的，一个是小学生的。初中生的班级还行，小学生班上一个比一个皮，有几个男孩子上课吵个不停，还满口黄段子，简直让我心力憔悴……</p>
+<p>不过呢，这也让我想起了我的小学，不也是这么过来的吗？我的邻居当时还被我们封上“变态淫魔”的“无上称号”，现在不也到了五道口某所大学上学去了。还有就是记得4年级以前，有一位喜欢摸别人生殖器的宋姓同学，简直是一生噩梦。</p>
+<p>在这个暑假期间呢，我还向初中喜欢的女生“告白”了。之所以打上引号，是因为大多数的人告白都是为了发展成恋人关系，结婚生子，白头偕老吧（虽然有人只是想玩玩）虽然我们在同一所高中，但是这三年来也没怎么见过，而且我也知道我们之后并不会走到一块去。不过我仍然打算把这份“喜欢”的心情传达出去，处在一个缺少爱的环境中，尤为知道被爱的幸福。</p>
+<p>兼职完之后，各个同学的升学宴就接踵而至。期间也没发生什么有意思的事情，我在我的升学宴上放了miku的舞蹈，十分满足o(<em>￣︶￣</em>)o</p>
+<p>让我们直接快进到出发吧，中间我在为<a target="_blank" rel="noopener" href="https://yuyuko.cc/">@kino</a>做一份礼物，但是还没做完就要出发了，为了保持神秘感就不发图片了XD</p>
+<p><img src="http://bubbleioa.top/wp-content/uploads/2020/10/IMG_20201005_141400-副本.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>家人提前6小时把我通过高速送到昌北，然后快登机的时候肚子饿了 还被机场狠狠宰了一波。第一次坐飞机的体验还是挺好的（指在飞机上，上飞机前和下飞机后够呛）没有身体不适。
+<img src="http://bubbleioa.top/wp-content/uploads/2020/10/IMG_20201005_175757-副本.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>晚上的飞机总是让人没有实感，从窗外看到的是云海，但是这云仿佛就是一张2D贴图，没有立体可言。其余的时间就是让人无法呼吸的黑暗，我方才意识到人类居住的地方原来是这么小，我们的未来会是驱散这无边黑暗的璀璨光芒吗？</p>
+<p>失去信号的手机，要想知道位置就只能靠着自身的陀螺仪，结合缺德地图，识别的位置还是非常准的，但是高度就离谱，最高处甚至有6000m
+<img src="http://bubbleioa.top/wp-content/uploads/2020/10/IMG_20201005_204141_1-副本.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>哦对了，虽然是去哈尔滨，但是我选择在上海转机，到上海的时候已经接近10点，但这时候<a target="_blank" rel="noopener" href="https://yuyuko.cc/">@kino</a>还是从学校来了上海浦东机场，于是开始了两人愉快的夜晚(✿◡‿◡)（指在星巴克打电动）
+<img src="http://bubbleioa.top/wp-content/uploads/2020/10/4e999a2b5af9d98d-副本.jpg" srcset="/img/loading.gif" lazyload alt="" /><img src="http://bubbleioa.top/wp-content/uploads/2020/10/20201018210407.png" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>在kino回去之后，繁忙的浦东机场瞬时寂寥无声，24小时营业的星巴克成为了无数旅人歇脚的地方。在星巴克等待的时间里，我碰到了一队母子，通过交谈知道，他们是明天早上的飞机，但是地铁没有那么早，于是来这里通宵候机。他们在玩短视频，但是相机方向怎么都不对，我帮他们重启了手机，解决了。凌晨，我在便利店随便吃了点夜宵，发现这里的消费甚至比昌北低。整个机场里到处都是疲惫的旅人，无论是坐着的，躺着的，还是像我一样乱逛的……</p>
+<p><img src="http://bubbleioa.top/wp-content/uploads/2020/10/IMG_20201005_213213-副本.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
+<center>我待的星巴克，拍摄于kino来之前</center>
+<p>那对母子也在躺着的人群中，不过他们躺在了机组职员通道。
+“这么晚应该不会有航班了吧，应该没事”我是这么想的。
+但是事实不是如此，大概在凌晨2点，一队洋人走了过来，我忽略了还有国际航班可能会在晚上有，领头的是一位穿着防护服的机场工作人员，他们果不其然遇到了这对母子，不过防护服并没有将他们叫醒，而是把通道的围栏（可移动）向外移动，领队绕过。
+在机场里休息的人们数不胜数，他们不是要饭的，也不是没钱，但是对机场的治安充满信心。我在这样的氛围里也有几次坦然地离开座位上厕所，行李仍然放在原位。
+\
+终于到第二趟飞机登机的时候了，不得不说上海还真的大，本来我以为主楼已经够大了，结果没想到登机的时候还要我去卫星楼，而且是机场专供地铁，在卫星楼里也是走得我脚疼。
+<img src="http://bubbleioa.top/wp-content/uploads/2020/10/IMG_20201006_045810-副本.jpg" srcset="/img/loading.gif" lazyload alt="" />
+<img src="http://bubbleioa.top/wp-content/uploads/2020/10/IMG_20201006_060620-副本.jpg" srcset="/img/loading.gif" lazyload alt="" /><img src="http://bubbleioa.top/wp-content/uploads/2020/10/IMG_20201006_061224-副本.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>然后就是飞行！这次是白天，而且是大海，于是我激动地！睡着了……没办法，睡叫一晚上没睡了
+<img src="http://bubbleioa.top/wp-content/uploads/2020/10/IMG_20201006_071057-副本.jpg" srcset="/img/loading.gif" lazyload alt="" /><img src="http://bubbleioa.top/wp-content/uploads/2020/10/IMG_20201006_082701-副本.jpg" srcset="/img/loading.gif" lazyload alt="" />
+中间醒了一次，吃飞机餐，还可以，不止照片里的，还有水和面包。
+<img src="http://bubbleioa.top/wp-content/uploads/2020/10/IMG_20201006_082854-副本.jpg" srcset="/img/loading.gif" lazyload alt="" />
+第一次看到这么大的平原，这种一望无际的感觉很棒
+<img src="http://bubbleioa.top/wp-content/uploads/2020/10/IMG_20201006_101127-副本.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>在开学前还在哈尔滨玩了会，不得不说这里饮食消费占比高，恩格尔系数肯定不低吧，而且也不和我口味。（学校稍微便宜点，但是更难吃了，大概是高中没改食堂和改了食堂取个平均值）</p>
+<p>还和在哈尔滨的学姐玩了一下午，从中央大街到老道外再到江北，真的是逛了个遍233<img src="http://bubbleioa.top/wp-content/uploads/2020/10/IMG_20201007_195636-副本.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>之后就是报道了，然后就上了一周的课，马上又到第二周了啊！可恶
+<img src="http://bubbleioa.top/wp-content/uploads/2020/10/IMG_20201009_103503-副本.jpg" srcset="/img/loading.gif" lazyload alt="" /><img src="http://bubbleioa.top/wp-content/uploads/2020/10/IMG_20201009_150045-副本.jpg" srcset="/img/loading.gif" lazyload alt="" /><img src="http://bubbleioa.top/wp-content/uploads/2020/10/IMG_20201011_143723-副本.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>熟悉我的人都知道，我聊这么多现实的话题而且还配上实景图片简直不像我，我也这么觉得233，可能几次出去培训的时候有过这样的博文吧。所以现在就聊些网上的还有我个人的东西。</p>
+<p>先是作品</p>
+<p><strong>《信条》</strong>
+看完了诺兰的新作《信条》，打算写点什么来批判一番
+按照惯例欲扬先抑一波
+首先这个画面和音效没得说，十分顶尖，尤其是逆向和正向同时存在的场景，可以看得出来在开拍前做了大量的准备工作，无论是前期还是后期都是统筹一体一气呵成。但是这部电影给人的感觉很奇怪，我真的觉得是不是诺兰哪天突发奇想：“正放和倒放如果同时出现在一个画面里会不会很有趣？”然后他就立项拍这部电影了。
+怎么这么说呢？首先这是一部典型的“超级英雄”救人类的故事：超级英雄，反派，美人，队友牺牲，倒计时，天降援助………主角就差一个超能力就能进漫威宇宙了。
+这本来没什么错，但是放到这影片中就很奇怪。拉跨的正是本片的核心元素：科幻。就像之前诺兰的《盗梦空间》一样，本片给人的感觉就是，这是一部“硬科幻”，而不是传统超级英雄电影里面的“软科幻”。尤其是第一次看到逆向子弹的时候，我心中就已经确定它是一个“硬科幻”电影了。
+它“硬科幻”的第一个问题，就是解释不通。当然，就算是非常优秀的“硬科幻”作品，也会有别扭的地方，但是本片特别突出。比如说逆向转化只需要进一个离心机样的装置？未来人在哪？逆向转化转化时间就算了，咋出来的时候空间也变了？（指到了另一个房间）正向的火烧逆向的人会让人冻僵？那按道理来说正向的火温度不就要升高？然后温度升高导致逆向的人温度降低更快，岂不是套娃？类似的问题还有很多，但这还不是这部电影最主要问题 。
+它最主要的问题就是作为一部“硬科幻”，主题内涵太浅。随便举几个例子，《流浪地球》从头到尾都在努力淡化大义，而去强调人性。没有谁是真正意义上的英雄。这部影片里的每个人物，他们的每一步选择都不是为了大义，而是为了所爱之人。《火星救援》强调了科学主义、理性主义、乐观精神的重要性，还展现了人类的团结协作精神。
+而《信条》呢？可以说什么也没有，或者说和一般的超级英雄电影差不多，而且没有它们看得爽。就这点而言，已经足够让我对诺兰失望的了。</p>
+<p><strong>《ATRI》</strong>
+今天把ATRI打通了，这才是真正的属于理科生的科幻浪漫啊！
+原先看种种作品留下的遗憾，都在这部作品中得到了补偿。
+看《信条》时，虽然很科幻，拯救全人类也很宏大，但是缺少人文关怀；看《天气之子》时，总想着拯救大家以及拯救自己喜欢的人全都要；看《刀剑神域》时，觉得将自己的意识同步在网上很酷，但是绝对不是用来NTR、恶心观众的
+幸福是什么？这个在无数作品里被讨论的问题，放在《ATRI》中，小小的机器人女孩回答是“幸福是未来”。
+然而这并不是一个很宏大的故事，至少在剧情的进展过程中，是以《知晓天空之蓝的人啊》中平淡的视角来展开。
+《知晓天空之蓝的人啊》中有一句话我特别喜欢：“井底之蛙，不知大海之宽广，却知晓天空之蓝”
+但是在《ATRI》的主角中，我却看到了遨游世界的青蛙，硬要说的话就是“知晓大海之宽广，却更爱天空之蓝”
+这种兼顾人文与科幻的视角，在西方作品中真的非常少见（也有可能是我阅历太浅），在这一个晚上的游戏流程中，我不断地反思自己的人格，去体会游戏中人物的心情，并且重新塑造我为人处世的方式。我随着人物，开始思考自己的理想，自己喜欢什么样的生活，想要成为一个怎样的人。正因有了人文关怀，《ATRI》才能做到这些。（还有就是因为我是“高性能”的嘛~）而它所给出的答案，就是属于咱专属的浪漫——在自己所爱的人，爱自己的人们的帮助下，去完成自己伟大理想的同时，好好守护住这一份小小的幸福（也许最后这两个分句可以稍微调换位置，不确定的原因是我现在还没有达成前两个分句的条件orz）
+这样的就很对我的电波。
+还有一点想说的就是关于剧情中的“离别”，有点《朝花夕誓》的味道了呢。所有的离别都是为了新的邂逅……还有再会
+那么 晚安Zzz…
+<img src="http://bubbleioa.top/wp-content/uploads/2020/10/atri.png" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p><strong>《原神》</strong>
+好玩</p>
+<p><strong>《革命曲途》</strong>
+演出棒，剧情拉跨</p>
+<p><strong>《仰望半夜的月空》</strong>（正在看）
+<img src="http://bubbleioa.top/wp-content/uploads/2020/10/IMG_20201015_114701-副本.jpg" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>怎么说呢，上面的文字可以说道出了我现在的心声。
+没有进入计算机专业，其实这重要吗？我觉得不太重要，自己想学的东西还是能学。我现在迷茫的，是如何去抓住这个“未来”。想学Python/C/C++/Unity/Blender……但是呢，自己会的Ae、Pr也并不能做出些什么东西来，原先信誓旦旦地说想做PV/MAD结果打开Ae，啥灵感都没有，眼睁睁看着做MAD地一个个都结了婚😂真就做MAD喜路一条。</p>
+<p>不过最近看了Warma的电台，熟悉了一周的校园，大概也知道自己之后该怎么办了吧，或者说，不该怎样。</p>
+<p>从某种程度上来说，有这么多苦恼说不定是好事？咱这可能是青春的苦恼呢，爷青回！</p>
+<p>再聊下本季度新番吧。</p>
+<p><strong>No.1 《成神之日》</strong>
+麻枝准+P.A. Works YYDS
+最喜欢的笑点，最喜欢的OP/ED,舒适的画面，还有必将反转的剧情
+快进到打棒球</p>
+<p><strong>No.2 《总之就是非常可爱》</strong>
+原作优秀，改编贫穷。《旋风管家》算是入宅作之一，作者玩梗能力贼强。我也不是不能理解先结婚再恋爱所带来的安全感+青涩感双重up的超级加成，简直是当代恋爱的最佳选择，当然这是理论上。且不论婚姻所带来的法律责任和社会压力（父母）是普通情侣难以接受的，再者还不一定能遇到对的人呢，有几个初恋走到白头的啊（希望我是其中之一😭）</p>
+<p><strong>No.2 《魔女之旅》</strong>
+改编很棒，突出了女主的可爱。不过第三话这两个故事在原作中就很拉跨，一是没有对世界观进行详细阐释，二是没有对主角形象塑造有多大帮助，三是这两个故事寓意给人感觉知乎抖机灵样的，非常幼稚。</p>
+<p>不过根据原作来看这样的篇幅不多，还是能期待后续的。</p>
+<p><strong>No. 4《你与我最后的战场，亦或是世界起始的圣战》</strong>
+很尬就是了，我记得原作还不错的哇，算了就当吃个瓜吧。</p>
+<p>点兔、樱与抱月还没看</p>
+<p>另外在主页上还更新了python和日语的学习笔记，尽量每周4更，希望大家监督orz</p>
+<p>那就到这吧，之后也会频繁更新的，总之我又回来了www</p>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/11/14/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E6%B2%A1%E6%9C%89%E5%A5%B3%E6%9C%8B%E5%8F%8B%EF%BC%9F/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">为什么我没有女朋友？</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/07/19/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%BB%88%E4%BA%8E%E5%A4%8D%E6%B4%BB%E4%BA%86%EF%BC%81%EF%BC%81%EF%BC%81/">
+                        <span class="hidden-mobile">个人博客终于复活了！！！</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

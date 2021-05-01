@@ -1,0 +1,516 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>【学习笔记】快速傅里叶变换(FFT) - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="【学习笔记】快速傅里叶变换(FFT)">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-03-13 00:08" pubdate>
+        2019年3月13日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      27
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">【学习笔记】快速傅里叶变换(FFT)</h1>
+            
+            <div class="markdown-body">
+              <h1 id="0-0-前言"><a href="#0-0-前言" class="headerlink" title="0.0 前言"></a>0.0 前言</h1><h2 id="0-1-关于本篇文章"><a href="#0-1-关于本篇文章" class="headerlink" title="0.1 关于本篇文章"></a>0.1 关于本篇文章</h2><p>本篇文章写作主要有两个目的，一是本人想对这一块的知识进行系统的梳理，还有就是将《算法导论》上的知识写成更适合OIer学习的格式（这本书由于各种原因是真的难啃）</p>
+<p>为了方便阅读理解，在看本篇文章的时候我们规定一些标记：</p>
+<ol>
+<li><p>重点难点强调将以<strong>加粗</strong>形式标注</p>
+</li>
+<li><p>长篇幅引用将以如下形式标注：</p>
+<blockquote>
+<p>我是引用内容</p>
+</blockquote>
+</li>
+<li><p>*(括号斜体)*中内容为原书没有，本人为了方便理解，在不改变意思的情况下加上的内容，如果有误欢迎联系我</p>
+</li>
+<li><p>循环变量将优先使用j表示，i要作为虚数单位。</p>
+</li>
+<li><p><font face='STKaiti'>楷体字为定理或引理</font></p>
+</li>
+</ol>
+<h2 id="0-2-FFT是用来干什么的？"><a href="#0-2-FFT是用来干什么的？" class="headerlink" title="0.2 FFT是用来干什么的？"></a>0.2 FFT是用来干什么的？</h2><p>将多项式乘法从 $O(n^2)$ 加速到 $O(nlogn)$ 。</p>
+<h2 id="0-3-前置知识"><a href="#0-3-前置知识" class="headerlink" title="0.3 前置知识"></a>0.3 前置知识</h2><p>有以下的只是基础会让你的学习变得更加轻松</p>
+<ol>
+<li>复数</li>
+<li>多项式基本概念</li>
+<li>矩阵基本运算</li>
+</ol>
+<h2 id="0-4-基本原理框架"><a href="#0-4-基本原理框架" class="headerlink" title="0.4 基本原理框架"></a>0.4 基本原理框架</h2><p>为了更方便地理解下面每个概念的意义，先给出算法实现的大体框架：<br><img src="http://bubbleioa.top/wp-content/uploads/2019/03/FFT.png" srcset="/img/loading.gif" lazyload></p>
+<h1 id="1-0-多项式"><a href="#1-0-多项式" class="headerlink" title="1.0 多项式"></a>1.0 多项式</h1><h2 id="1-1-多项式基本概念"><a href="#1-1-多项式基本概念" class="headerlink" title="1.1 多项式基本概念"></a>1.1 多项式基本概念</h2><p>为了让我们对多项式的基本概念达成共识，这部分简单内容还是稍微提下：</p>
+<ol>
+<li>多项式表示：$A(x)=\displaystyle\sum_{j=0}^{n-1}a_jx^j$</li>
+<li>多项式的系数：其中， [latex]{a_0,a_1,\cdots,a_{n-1} }[/latex] 被称为<strong>系数</strong>，<strong>所有系数都属于复数集合C</strong>  </li>
+<li>多项式的次数： $A(x)$ 的具有非零系数的最高次的次数，记为 $degree(A)$ </li>
+<li>次数界：<strong>任何</strong>一个严格大于次数的整数<br>这就是一般的多项式，如果拿来相乘的话，时间复杂度为$O(n^2)$</li>
+</ol>
+<h2 id="1-2-多项式的表示"><a href="#1-2-多项式的表示" class="headerlink" title="1.2 多项式的表示"></a>1.2 多项式的表示</h2><h3 id="1-2-1-系数表达"><a href="#1-2-1-系数表达" class="headerlink" title="1.2.1 系数表达"></a>1.2.1 系数表达</h3><p>多项式 $A(x)=\displaystyle\sum_{j=0}^{n-1}a_jx^j$ 的系数表达为一个由系数组成的向量 $a=(a_0,a_1,\cdots,a_{n-1})$<br>这也是我们平时最常用的表达方式。</p>
+<h3 id="1-2-2-点值表达"><a href="#1-2-2-点值表达" class="headerlink" title="1.2.2 点值表达"></a>1.2.2 点值表达</h3><blockquote>
+<p>一个次数界为 $n$ 的多项式 $A(x)$的点值表达就是一个由 $n$ 个点值对所组成的集合</p>
+</blockquote>
+<center>[latex]\left\{ (x_0,y_0),(x_1,y_1),\cdots,(x_{n-1},y_{n-1}) \right\}[/latex]</center>
+使 $k=0,\ 1,\ 2, \cdots, n-1$ 所有的 $x_k$ 各不相同，
+$$y_k=A(x_k)$$
+一个多项式可以有很多不同的点值表达。
+
+<p>在求点值表达的时候我们可以使用秦九韶算法，但这样的做法的时间复杂度任然是 $O(n^2)$ 之后我们将会讨论如何优化这一过程。<br>求值计算的逆运算称为<strong>插值</strong>。</p>
+<h3 id="1-2-3-插值多项式的唯一性（可跳过）"><a href="#1-2-3-插值多项式的唯一性（可跳过）" class="headerlink" title="1.2.3 插值多项式的唯一性（可跳过）"></a>1.2.3 插值多项式的唯一性（可跳过）</h3><blockquote>
+<p><font face='STKaiti'>对于任意 $n$ 个点值对组成的集合 [latex]{(x_0,y_0),(x_1,y_1),\cdots,(x_{n-1},y_{n-1})}[/latex] ，其中所有的 $x_k$ 都不同；那么存在唯一的次数界为 $n$ 的多项式 $A(x)$ ，满足 $y_k=A(x_k),k=0,1,\cdots,n-1$ 。</font></p>
+</blockquote>
+<blockquote>
+<p><strong>证明</strong> 证明主要是根据某个矩阵存在逆矩阵。<br>$$\begin{bmatrix}1&amp;x_0&amp;x_0^2&amp;\cdots&amp;x_0^{n-1}\1&amp;x_1&amp;x_1^2&amp;\cdots&amp;x_1^{n-1}\\vdots&amp;\vdots&amp;\vdots&amp;\cdots&amp;\vdots\1&amp;x_{n-1}&amp;x_{n-1}^2&amp;\cdots&amp;x_{n-1}^{n-1}\end{bmatrix}\begin{bmatrix}a_0\a_1\\vdots\a_{n-1}\end{bmatrix}=\begin{bmatrix}y_0\y_1\\vdots\y_{n-1}\end{bmatrix}$$<br>左边矩阵的行列式值为：<br>$$\displaystyle\prod_{0\le j&lt; k\le n-1}(x_k-x_j)$$</p>
+</blockquote>
+<p>下略（需要用到矩阵相关知识，这一部分内容超出本人理解范围，而且不影响我们的算法）</p>
+<h1 id="2-0-单位复数根"><a href="#2-0-单位复数根" class="headerlink" title="2.0 单位复数根"></a>2.0 单位复数根</h1><h2 id="2-1-单位复数根的定义"><a href="#2-1-单位复数根的定义" class="headerlink" title="2.1 单位复数根的定义"></a>2.1 单位复数根的定义</h2><p>单位负数根就是我们之前说的选的特殊值，它具有一些神奇的性质以至于我们可以分治的方法，来用它求点值表达。<br>我们定义<strong>n次单位复数根</strong>是满足 $\omega_n=1$ 的复数 $\omega$ 。<br>为什么这样定义呢？我们现在需要用到<strong>欧拉公式</strong>：<br>$$e^{iu}=cos(u)+isin(u)$$</p>
+<p>如下图（ $\omega$ 表示的是 $\omega_8^1$ 其他的都是它的次幂），说明 $n$ 个单位复数根均匀地分布在以复平面的<strong>原点为圆心的单位半径的圆周</strong>上<br>$$\omega_n=e^{\frac{2\pi i}{n}}$$</p>
+<div id="applet_container"></div><script src="http://ggbstudy.top/ggb/deployggb.js"></script><script>new GGBApplet({"ggbBase64":"UEsDBBQACAgIAMqDbU4AAAAAAAAAAAAAAAAXAAAAZ2VvZ2VicmFfZGVmYXVsdHMyZC54bWztWt9zmzgQfr7+FRqeeg+xAYNxMiGdtDM3l5k0zVwynb7KsMa6gMQhEeP89SckDDj+Ucd2EydNHiJWrIT0favdleTTT0USo3vIOGHUN6yOaSCgAQsJjXwjF6OjgfHp7MNpBCyCYYbRiGUJFr7hlpp1Oyl1ep5T1qGCkxPKrnACPMUB3ARjSPAlC7BQqmMh0pNudzKZdGaddlgWdaNIdAoeGkgOiHLfqB5OZHdzjSY9pW6bptX98fVSd39EKBeYBmAgOdgQRjiPBZePEEMCVCAxTcE3UkaoMFCMhxD7xnUpoY+jDOBPA1WNJAamcfbhj1M+ZhPEhv9CIOtElkPdTgndUke+/sJilqHMNzzPQJEuhr5hu66BcJyOsW+YWjnGU8jQPY7rGpwLFqj2qnaEYw4zXfmlrywE/cap9ClJFIqIC0jlSA3EU4BQPekZyodUfkix1+qP8JsxTmHhOwFjWchR4RtX+MpA06p80KVSUZjdkIeqsduuFdMYWjM67VZwbwZ8CCnQUCrNoW9thX5/oNAvi6Eu3iL4zr7A/0bbkNtbQW7ZrsJcle8mvwHqF/QfiORc2tj33rF/FuznLd7ZCnVTYW6+McSVisaWl/99I2BJGkOxR0JiQhtwL5VQk2FvF2/bZJgvQoW5dypKmDSoYkyCOwqcl4g33ysf/iahDJpqHEwmWETInixvoHuA/+gclUQySaTOeno4RKVUI34zkxuStgvL7yQtI4nlIi5HdEGFTKAllnIGfGEodwDprezqG73NMOVl4q11ZlCv5jPD03Vcuu9cvh4uRzlVnV59x1nNUC7z5pEce9imdbtUYmVQ69juoXL7c7TWI7V7+H8VC+CJ1r0fM+xv511s01kOb8d7hWZ4L6fNGpy+V2INUu8959mfC16SwOJMACeY/mybEE+jlq+4nsk1T57mafcxPnmD5/YU1661sB4sU/9ZzrFpWX25ez9Q+tcDP7cluK4rGuitF4L+QBfZajQDRklQT+qLlmocnd/E1exh70QioNpzc4QKU6lNTdX4wawOxwtLyVNLvX2wdLVqLyeUkQKd6xbnWvHc1kVPF44u3Bq47TZsivJUerlWmv8oxDjb7djeguN5k8bwDFsNmieQtVzJ1UyujcrVzkT2l8Mc5Ru4jlX2s9paeExCaVoJkSQdSfYSXCgW8ZCzOBdwE2QAtLla0uY9IaEYlwml/PaIFKUZ6T7RmGXkgVFRo4HK1XEeq0uo9oJYaj72usR50YjlfHf27JhGcbNgz7XUkKHP7ZXS46O4ZRy14TQrNPsde9CzBm7P9Czv2B30N0TXGjTo6hcbgzvnkSpmNghFlrmxRe3ukZ7kP+xl/gNnQXNo2jNX2Yg58Ox+3+nb7vGxZ/Udb2ebWdgB/1VXNHu0l8gJWstrKebKmh6r/ioHv+aomgU5b86qtVQjN/hNsimcFyQmOJs+I/ICiiafuVVC61L+AIFfPRVJR9QM7UJLrTtuPZkRkShSnMgGFRv0Mw7uoozlNFyMhnuZunWoNrcazCFjMeDGoX2eya0b7IW8ZBVwmwecX7ZagzEEd0NWzMXP9T6J8GZlXCqhdYO8ZGXsElaPDtZEtjnR3PQC82jh/LPb+hlRd/ZTpbP/AVBLBwh/yyUBwQQAADElAABQSwMEFAAICAgAyoNtTgAAAAAAAAAAAAAAABcAAABnZW9nZWJyYV9kZWZhdWx0czNkLnhtbO1X3U7bMBS+Hk9h+Z7Gzk9LUQOq2MUmARriZrductpkS+1gu23Kq+0d9kxz7DSk0E6jKkKayEWOf86P/X0nx87ospoXaAlS5YLHmPYIRsATkeZ8FuOFnp6e4cuLk9EMxAwmkqGpkHOmYxzVmq2d6fWCQViPoUrl51zcsjmokiVwn2QwZ9ciYdqqZlqX5563Wq16G6c9IWfebKZ7lUoxMgviKsZN49y42zJaBVbdJ4R632+unfvTnCvNeAIYmcWmMGWLQivThALmwDXS6xJinAieJ4GJUbAJFDH+yrXZAST1ylCykEtj3xjHOKARwRcnn0YqEyskJj+MXoy1XEBrbzterWOmr0QhJJIx9qMII4Me9QcYTWJsQGFFmTHT6lHiHhoOCaV96jvzgq1BoiUram07whZaJNajHZ2yQsFG18S+ESm4mbDR5/ncIoyUhtIEx0iVAKltud2bdZQmkGW24y9X9xkr4WWcnMO9XheAdJYnPzkow0rUcVY3vuRpCnXiOBvIZ8CXBighlckEYqOviVV/JE1+VdT219TOPlI3bO3NFmReobGzGDvFse9E4EToRNRCBQ/crVPV7xiXTJrkM46Sen7kNTnwIhtYlatOMozr7uetBCDBQQlALP3kOfn/GdX7UUdNGwwWv3/9nQT71SVMalA54x06ruqJ53z0P/jYzcd+gE1cDh1cv9n+Fq6mlh6E63BogfXp0EJrZVvpomPBuw+kRAiZKlS5YuJKjH2v2lBTVp9jTfS9tXcX2ORAsEWxziCVgj/h3Rl6gjxoID/ky3stTTQKLE8RfXEchQ0k0bBPwn54NM6O/UnsR5yDbrd/W7e7GEcfGB8D44cFS21dbyC42/S7WNPD7kok3F2ce4M3LyBvccHZeb2pB90dZu3Eo986fO2NB437TgycOHNi2KCzn0S1kFNzHd911DZT23yG78Xnk+N3PW7pv54AXud3w9v80lz8AVBLBwhyzZtN2QIAAFkNAABQSwMEFAAICAgAyoNtTgAAAAAAAAAAAAAAABYAAABnZW9nZWJyYV9qYXZhc2NyaXB0LmpzSyvNSy7JzM9TSE9P8s/zzMss0dBUqK4FAFBLBwjWN725GQAAABcAAABQSwMEFAAICAgAyoNtTgAAAAAAAAAAAAAAAAwAAABnZW9nZWJyYS54bWzdW91u2zgWvu48BaGrZBHbJEVSUmF3kP5hBugUxWZ3sNiLAWSJttnIkiDJPynmYi/2Zp5m3mT6DvMke0hKtmK7TZSkGWenVSlRh+fwfN/hOUdIZvj9ep6gpSxKlaUjh/Sxg2QaZbFKpyNnUU16vvP9i++GU5lN5bgI0SQr5mE1criW3KyDp77rMT2n4pGDmf+av339tke497LH3rzlveBN4PVev/YD9yVh/NWbwEFoXarnafY+nMsyDyN5Ec3kPHyXRWFllM6qKn8+GKxWq35jvp8V08F0Ou6vy9hBsPW0HDn1zXNQd23RyjXiFGMy+NdP76z6nkrLKkwj6SDt1kK9+O7ZcKXSOFuhlYqrGYDACXXQTKrpTDsagFMDLZWDt7mMKrWUJaxtPRqnq3nuGLEw1e+f2TuUbPxxUKyWKpYFANSnnLiUept/mYOyQsm0qoVJbXTQqBsulVxZvfrOmGQ48IAFVapxIkfOJExK8EulkwIw3TyX1VUixyGYrYoFPG93RM7MHxBRn6RWB65aLOAdxmf68uDivMagZduAVGVZYjRj9CsiiGO4EAnQGRIezFBEOGIw48OMh1w9xwlDLtIixEWMwcj0NBH6HYf1HCNCYBpRjChFlCDqwiPniAvEPb2QgqwIjDIMl5aG7cDl6jnXhcvMuQwuqu9AEbdqYBPcFeaOa2nQz6nevpl0fcQCMKQnuEeQC3uAZw8j0Ohq9cQ4wTDSfwliWj31EPUR6AO/tWZMu7BST+zQ0pDCD5Ei4DJs7ZDCrlMCDGDw7UwPxA7UzmL7iF07UDswO3Arw+xKZkWto5hZGebe18PGP7eLf37LP6KdAD707s3gIr1vYvavB1Y/CvtoogwTXM/6djbQj+Kezrh3coa0rNqT2cVoY5IQym5vk97H5tZNv4ub90T3ILYckpL+a649k26n87eXFe9gUVw7eQ/jMPNvbZ5Q/9FtevhgsrEjqceHISK4PRH3TUwbIPjXTQ4HTT0e1iCgcqZlG5uVnJcaF89Fgm6qo9D1qy6RHkUeR55oFcozXSoF31ZLXSv9a9WS+62SCfVS6EnP1F8oUrrg2fJJWVNBz+oa+uteDYWSx7ZVDzaoVRGEoEQjoRNkXf5gF3RTACnXNZAKBEWSUyR0Ev5CLXRQnpVqg+xMJvkGIAOiSvNFdR24aB43kVBlIB4mpvOrF8RZdPlyF2sZllVbLzRN297MNlHXWrdnwyQcywRa3AsdCQgtw0SfWmNhkqUVanKrcIw60yYO5SJKVKzC9GdgvunI3i/mY1kgc5tpL40SvRxt+klC3VY/6QdWJsqyIr64KiFQ0Prfssh00Pl94QUehaaLeUI3hVf2jSv8PqXQGxEWYJdxziFQo1AHOeWiH/Ag4B4T+jWsOfgG1lrDcnkhqwq8L1G4lmWD9rRQcfv+x/JllsQbXPNMpdWrMK8Whfk2AJcK7dF5Ok2kwdFwDE12dDnO1hcGQCqsrn9c5TqfWvvj6assyQpU6B2CH9N6HNvRyOiNbaSwkcFGomZJK928JwE1EmYc29FIAcV2a7WjpPESN1ZUaT9YnDqi6hSkw0M37ItUVe+ah0pFl1tHtbwlv0HwukryQCqHg524G9YnoonCeRZLG8Gulb/2fngpi1QmWnBRytJ9bUW3G44g3lW6yBalfWPpHtQLPoTV7DyN/y6ncIg/hDqNVrC9XSWxjNQcFtr5Gv1QR8Y/wV07G8tpIRuU7BYtN/XeUZkXMozLmZTVhiF7SLZi2LrYODUso0LlOpbRGJL4pdzGa6zKEIpA3PJI+1rCpiOdkQD7SuPuoHBRzbLCfJ+FlZ7RZ30Nmyn1x61lDo2cz79BpllDRvrzv7//cnJyQtHf0Of/nMK/f/yOBsg/PQU+TZybo2IMykTO4Zvu2nwTCqDPpAogHWXjj5CddmJlCy+8PngYzLEJk3wWbgBLwiudjloJzWj7aRMkTeinQJjBARJQbsMvl9IGrt0u3OSgzpz2VlSo8mIW5nIvWgxVJVrrr1sPewQLzyfEFxwyGeSkA9Ow+U+blNliurQnIsrmeSLX9rXBTicVa5e3Z/fCo4b9AI9QT2oWP//2ywndoQzdxFl4J8qEbzjTw9gOd+PsZuRFH2oNdV2d813hCSF7xDPgk7tjze6M9biFtdsV6/GRY907FM+Hwlx8e+hBxzxMY5SaNvfHVOdoQMzZ9lghHjnrcyhOAAgZOVfm1qK3qBqBc6u31nYDP+dHzg+2bLTBfxB0fwZXs2IH2nMLK+T0XUwXX8d0abU1oC3uXRPwN0S0U15vjG16sGoG3U4KGUKn79p9bG9+UHEs7UdCloeRqnTG8vwvHpmwqGQJHVHdbVfw/EGzaNPN+d0JDPf4W3bib3nM/N1UHZ4kY+M9xladGFsdM2Mda8wREbjfDEStZoB1bQaiIy82PWLPEXykM8HgGz4gzHO5S+GIPUL930c7bqHNu6IdHzvae/Fv09jB4/L42MsW9qIr9vLYsSd93xWBh0nge5RgGng2xq/sKXh8uCctuL2ucE+OHO69iGZfiHTvr4B+2oLe7wr99Mihtym9R/uMBTRweeDTgHlYsMfJ6bdvgaZ7LdCsUws0O+YW6GYWjqjruT1nkz3OVCfO1DFz1jFpPUkC5R6BHzsR+PGYCbxFkX+SpMV7pF12Iu3yqEnr2BU/SQajPQaTTgwmR83gjV+RR8TZ11o7u+4klrlMYQ/V6V/a6n3Ln3W9D98bzsz4yY4P2WOjkfNqUSybT0pzf7I+RSNUW9rhYbJIzY83N9Da1beAH8nlZpsPHvsTtZbx7k+Nv4TufaP7a1GaXM1kXLTwOS+imZrLWELg38H44C6BTQkxoDLPoKqHBtY+w/Y/HggMSYA/eKjjLqHeCcoPV0U4V/EjwhgYGAMLI8X/JzAWqpw/IojC/gqOBTEQTwLEQftXOcyvaNX/h8CL/wFQSwcI2Tf6BKAIAADSMAAAUEsBAhQAFAAICAgAyoNtTn/LJQHBBAAAMSUAABcAAAAAAAAAAAAAAAAAAAAAAGdlb2dlYnJhX2RlZmF1bHRzMmQueG1sUEsBAhQAFAAICAgAyoNtTnLNm03ZAgAAWQ0AABcAAAAAAAAAAAAAAAAABgUAAGdlb2dlYnJhX2RlZmF1bHRzM2QueG1sUEsBAhQAFAAICAgAyoNtTtY3vbkZAAAAFwAAABYAAAAAAAAAAAAAAAAAJAgAAGdlb2dlYnJhX2phdmFzY3JpcHQuanNQSwECFAAUAAgICADKg21O2Tf6BKAIAADSMAAADAAAAAAAAAAAAAAAAACBCAAAZ2VvZ2VicmEueG1sUEsFBgAAAAAEAAQACAEAAFsRAAAAAA==","borderColor":null,"enableShiftDragZoom":false,"enableRightClick":false,"width":1000,"height":773}, 'applet_container').inject('html5')</script>
+
+<p>细心的读者可能已经发现，在这 $n$ 个单位复数根内，似乎它们总是成对存在（比如 $\omega_8^8$ 和 $\omega_8^4$ ），这是不是意味着我们能分治地去处理求值问题呢？</p>
+<h2 id="2-2-0-三大引理"><a href="#2-2-0-三大引理" class="headerlink" title="2.2.0 三大引理"></a>2.2.0 三大引理</h2><p>在这一小节中，将介绍单位复数根的三大引理，这也是降低算法时间复杂度的关键。</p>
+<h3 id="2-2-1-消去引理"><a href="#2-2-1-消去引理" class="headerlink" title="2.2.1 消去引理"></a>2.2.1 消去引理</h3><blockquote>
+<p><font face='STKaiti'>对于任何整数 $n\ge 0, k\ge 0, d&gt;0$，总有</font><br>$$\omega_{dn}^{dk}=\omega_{n}^{k}$$</p>
+</blockquote>
+<p><strong>证明</strong>    首先我们可以形象地理解这个结论，假设我把单位圆分成 $n$ 份，从 $\omega_{n}^{0}$ 开始，取第 $k$ 份，和我把单位圆分成 $dn$ 份，从 $\omega_{dn}^{0}$ 开始，取第 $dk$ 份是不是取到的边是一样的？ 如果你喜欢严谨一点的话，下面的推导式子也不难理解。<br>$$\omega_{dn}^{dk}=(e^{\frac{2\pi i}{dn}})^{dk}=(e^{\frac{2\pi i}{n}})^k=\omega_{n}^{k}$$</p>
+<h3 id="2-2-2-折半引理"><a href="#2-2-2-折半引理" class="headerlink" title="2.2.2 折半引理"></a>2.2.2 折半引理</h3><blockquote>
+<p><font face='STKaiti'>如果 $n&gt;0$ *(且)*为偶数，那么 $n$ 个 $n$ 次单位复数根的平方的集合就是 $n/2$ 个 $n/2$ 次单位复数根的集合</font></p>
+</blockquote>
+<p>从上面的文字来理解其实是有点抽象的，其实根据图像这个结论是显然的，在图像上，这个引理就是(下面虽然是引用但是是本人总结的)：</p>
+<blockquote>
+<p><font face='STKaiti'>我们称单位复数根与实轴正半轴的角为夹角，那么一个单位复数根逆时针转动两倍的夹角会等价于，它先转过180°，再转过两倍的夹角</font></p>
+</blockquote>
+<p><strong>证明</strong>    $$(\omega_n^{k+n/2})^2=\omega_n^{2k+n}=\omega_n^{2k}\omega_n^n=\omega_n^{2k}=(\omega_n^{k})^2$$</p>
+<p>有了它，就可以进行分治了。<br>只要运用以上两个引理，就可以进行快速求值，因此建议读者先跳过求和引理，等到需要的时候再回头看(其实不是很难)。</p>
+<h3 id="2-2-3-求和引理（建议先跳过）"><a href="#2-2-3-求和引理（建议先跳过）" class="headerlink" title="2.2.3 求和引理（建议先跳过）"></a>2.2.3 求和引理（建议先跳过）</h3><blockquote>
+<p>对于任意整数 $n\ge1$ 和不能被 $n$ 整除的非负整数 $k$ ，有<br>$$\displaystyle\sum_{j=0}^{n-1}(\omega_n^k)^j=0$$</p>
+</blockquote>
+<p>这些引理一个比一个抽象……但是不难发现，如果把图中复平面内的向量全部加起来，就是一个零向量，<strong>显然</strong>成立QWQ</p>
+<p>好吧 还是给出严谨的证明</p>
+<p><strong>证明</strong> 等比数列求和公式不但适用于实数，也适用于复数，因此：<br>$$\displaystyle\sum_{j=0}^{n-1}(\omega_n^k)^j=\frac{(\omega_n^k)^n-1}{\omega_n^k-1}=\frac{(\omega_n^n)^k-1}{\omega_n^k-1}=\frac{(1)^k-1}{\omega_n^k-1}=0$$</p>
+<h1 id="3-0-FFT的递归实现"><a href="#3-0-FFT的递归实现" class="headerlink" title="3.0 FFT的递归实现"></a>3.0 FFT的递归实现</h1><h2 id="3-1-DFT离散傅里叶变换"><a href="#3-1-DFT离散傅里叶变换" class="headerlink" title="3.1 DFT离散傅里叶变换"></a>3.1 DFT离散傅里叶变换</h2><p>被上面的一团东西搞晕了？别忘了我们的目的是什么？对，求值（最终目标是实现 $O(nlogn)$ 的多项式乘法)</p>
+<p>普通求值的复杂度是平方级别的，那是基于随机选点（或者叫做随意选点）。</p>
+<blockquote>
+<p>现在，我们希望计算多项式<br>$$A(x)=\displaystyle\sum_{j=0}^{n-1}a_jx^j$$<br>在 $n$ 个 $n$ 次单位复数根处的值。<br>现在多项式还是以系数的形式给出 $a=(a_0,a_1,\cdots,a_{n-1})$ ,定义结果为 $y_k$:<br>$$y_k=A(\omega_n^k)=\sum_{j=0}^{n-1}a_j\omega_n^{kj}$$</p>
+</blockquote>
+<p>我们称 $y$ 就是 $a$ 的<strong>离散傅里叶变换</strong>(DFT)<br>我们记作 $y=DFT_n(a)$</p>
+<h2 id="3-2-FFT能够快速实现的奥秘"><a href="#3-2-FFT能够快速实现的奥秘" class="headerlink" title="3.2 FFT能够快速实现的奥秘"></a>3.2 FFT能够快速实现的奥秘</h2><p>假设 &amp;n&amp; 为2的整数幂  </p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/04/18/%E4%B9%8B%E5%89%8D%E4%BB%A3%E7%A0%81%E4%B8%80%E7%9B%B4%E6%98%AF%E6%88%91%E7%9A%84%E6%AF%92%E7%98%A4%E7%A0%81%E9%A3%8E%E7%9C%9F%E7%9A%84%E5%BE%88%E6%8A%B1%E6%AD%89QAQ/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">之前代码一直是我的毒瘤码风真的很抱歉QAQ</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/03/01/%E7%82%B9%E5%88%86%E6%B2%BB%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="hidden-mobile">点分治学习笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

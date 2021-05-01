@@ -1,0 +1,471 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>我想要知道“爱”的含义（无剧透） - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="我想要知道“爱”的含义（无剧透）">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-01-11 18:17" pubdate>
+        2020年1月11日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.6k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      16
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">我想要知道“爱”的含义（无剧透）</h1>
+            
+            <div class="markdown-body">
+              <blockquote>
+<p>我想要知道“爱”的含义。   ——薇尔莉特·伊芙加登</p>
+</blockquote>
+<p>北京时间1月11日12点10分，今天老师意外的没有拖堂。</p>
+<p>“下课，同学们再见。”听到这段话的时候我早已在教室外面，要问为什么我这么急的话，距离我订的电影开始还有40分钟，而我距离影院4.5公里。</p>
+<p>室外温度大约6~7℃的样子，摩托车载着我在金属的河流中穿梭奔驰。尽管如此，我的手还在口袋外，操作着手机，希望能够在到达后节省一部分时间。</p>
+<p>“没有任何一个乘客是没有必要送达的。”这是我看完电影后的想法。</p>
+<p>扫码、打票、取票、验票、上厕所、坐好。一套动作刚刚做完，电影正好开始，没有看广告，整个影院里只有我和我的朋友，这是我人生中第一次“包场”看电影。</p>
+<p>我之所以能这么快速地完成这些步骤，其中离不开信息的交流，可能在今天，其载体更多的是手机等电子设备。但这些东西，都是客观的，死板的数据，不值得被纪念，甚至是不值得被记录的（从个体角度）。</p>
+<p>而《紫罗兰永恒花园外传 - 永恒与自动手记人偶》（以下简称《紫罗兰外传》）中则以“信”为载体，传达“爱”的信息。</p>
+<p>要以商业电影的角度来看的话，《紫罗兰外传》无疑是不成功的。它缺少商业电影惯用的手段（比如说“英雄之旅”），感人的核心要点过于复杂，情感表达过于细腻收敛（前半段）。倘若将《CLANNAD》做出一部剧场版来，也很难像TV版那般煽人泪下。（个人觉得《紫罗兰（TV版）》能做成24集就好了）</p>
+<blockquote>
+<p>“伟大的动画，就是抹去了时间的刻度，跨越了空间的距离，始终完成了陪伴这两个字。”  ——CCTV6对本作品的评价</p>
+</blockquote>
+<p>是的，正是因为它不的这些特质，从而使它能被反复品味，陪伴于我们身边。在现实中能有几个人，几次机会像帆高那样率真热情地挥洒青春呢？但是我们身边却无时不刻都有他人，他人有着他人的情感，我们自己有着我们自己的情感，受限于种种原因，我们经常不能将自己的真情实感传达给别人，也就是“届不到”，所以去仔细地品味《紫罗兰外传》所想要传达给我们的关于人与人之间情感的传达方式，是很重要的。</p>
+<p>前段时间我们语文老师说他们那个时代的人们都很浮躁，我们这个时代又何尝不是呢？功利化的价值观从一定程度上推进了社会的发展，但处于这个时代更难能稀缺的恰恰是“爱”。这种“爱”不单止爱情，它可以是“兼爱非攻”中的爱，也可以是“老吾老，以及人之老；幼吾幼，以及人之幼。”中的爱。</p>
+<p>在本片中，我觉得艾米对于泰勒的爱就偏向于后一种。明明没有血缘关系的姐妹，却在战争中联系到了一起，最终形成了血浓于水的亲情。这一点我在以前很多观后感中都提到过，是类似于《小王子》中所说的“驯养”的关系。</p>
+<p>刚刚也说这部作品的情感很复杂，而且很多需要自己体会的地方，请务必亲自体会！（其实是我太菜了表达不出来）</p>
+<blockquote>
+<p>没有一封信是不需要被送达的。 ——贝内迪克特·布卢</p>
+</blockquote>
+<p>在信息技术如此发达的今天，我也写过信，虽然最终因成本太高放弃了（10元/封，虽然可以寄1kg），但我相信我在信中所传达到的情感对方肯定收到了。</p>
+<p>薇尔莉特在本作中其实不算是特别核心的人物（所以叫做外传），故事的主线也不是她，但当我看到结尾被问到 “你的幸福道路是什么？” 而回答不上来的薇尔莉特，我想到了TV版中一开始她对社长的话 “我想知道‘爱’的含义。”她是否寻找到了，其实没有那么重要，关键是她承认了自己不知道，并且在寻找。我们又是否真的了解爱呢？还是不懂装懂呢？其实这比不知道更加不妙吧（笑）</p>
+<p><strong>总结</strong></p>
+<p>今天考试的时候读到了铁凝的《在人民的创造中实现文学的创造》，颇有启发。</p>
+<p>《紫罗兰外传》这部作品本身绝不是那些给人“爽”的电影，也不是为了赚眼泪的“泪腺战士”。观看时其实包含了理性于情感的复杂的认识过程。看小说、电影就是“了解各种人，熟悉各种人，了解各种事情，熟悉各种事情”的过程。而“了解”和“熟悉”不仅仅是听到新鲜的故事、掌握表象的细节，而是与人们发生思想感情的深入交流。。对文学来说，其所想表达的主题、想要传达给读者观众们的情感不止是存在于概念和观念之中，这样只是停留在了作品本身，而读者观众们自身却没有收获，其真正存在于人们之间的关系中，在我们面对“各种人们的脸”敞开心扉的时刻被蓦然照亮。</p>
+<p>因此我还是希望大家真的仔细品味每一部温柔的作品，在这个时代，它们的存在就是一盏明灯</p>
+<p><strong>小吐槽</strong></p>
+<ol>
+<li>好像我每次观后感的风格都不一样？</li>
+<li>档期这么靠近春节好评，CCTV6吹爆好评。</li>
+<li>薇尔莉特双马尾suki</li>
+<li>“新时代”来了，薇尔莉特她们的生意虽然会受到打击，但我相信不会消失。（毕竟快递还是要人送的ww）、</li>
+<li>BGM好多是TV版OST里面的老东西，由于之前经常在听所以觉得用在这里不是特别恰当。</li>
+<li>这次写得比较急，欢迎大家来讨论~</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/02/07/%E9%AD%94%E5%A5%B3%E4%B9%8B%E6%B3%892%E2%80%94%E2%80%94%E4%B8%80%E6%AC%BE%E4%BC%98%E7%A7%80%E7%9A%84%E5%AD%90%E4%BE%9B%E5%90%91%E4%BD%9C%E5%93%81/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">魔女之泉2——一款优秀的子供向作品</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/08/22/%E7%94%9F%E5%91%BD%E7%9A%84%E8%81%94%E7%B3%BB%E2%80%94%E2%80%94%E3%80%8A%E6%88%91%E6%83%B3%E5%90%83%E6%8E%89%E4%BD%A0%E7%9A%84%E8%83%B0%E8%84%8F%E3%80%8B%E8%A7%82%E5%90%8E%E6%84%9F/">
+                        <span class="hidden-mobile">生命的联系——《我想吃掉你的胰脏》观后感</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

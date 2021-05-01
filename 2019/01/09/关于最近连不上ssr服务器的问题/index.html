@@ -1,0 +1,479 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>关于最近连不上ssr服务器的问题 - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="关于最近连不上ssr服务器的问题">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-01-09 07:29" pubdate>
+        2019年1月9日 早上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      15
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">关于最近连不上ssr服务器的问题</h1>
+            
+            <div class="markdown-body">
+              <p>经测试，原因是手机端的ssr在断开连接时，服务器端会产生错误信息导致进入死循环而崩溃，致使cpu占用率激增至100%而死机。</p>
+<p>首先，确保您的ssr安卓客户端是最新版本（目前是3.5.4，安装后应用名称叫做SSRR，<a target="_blank" rel="noopener" href="http://bubbleioa.top/files/shadowsocksr-android-3.5.4.apk">点此下载</a>）</p>
+<p>如果还有此问题，将考虑实施备用方案。</p>
+<p>另外，如果你是其他平台的用户，请参考下面内容（转自<a target="_blank" rel="noopener" href="https://ssr.tools/">ssr.tools</a>）：</p>
+<h2 id="SSR-Windows客户端"><a href="#SSR-Windows客户端" class="headerlink" title="SSR Windows客户端"></a>SSR Windows客户端</h2><p>SSR Windows客户端主要用于电脑端，目前最新版本为 4.9.0</p>
+<p><strong>下载地址：</strong><a target="_blank" rel="noopener" href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases/download/4.9.0/ShadowsocksR-win-4.9.0.zip">https://github.com/shadowsocksrr/shadowsocksr-csharp/releases/download/4.9.0/ShadowsocksR-win-4.9.0.zip</a></p>
+<p><strong>使用教程：</strong> </p>
+<p><a target="_blank" rel="noopener" href="http://bubbleioa.top/wp-content/uploads/2019/05/ssr-windows.png">点击查看</a></p>
+<h2 id="SSR-Android客户端"><a href="#SSR-Android客户端" class="headerlink" title="SSR Android客户端"></a>SSR Android客户端</h2><p>SSR 安卓客户端主要用于安卓手机、安卓平板平台，目前最新版本为3.5.4</p>
+<p><strong>下载地址：</strong><a target="_blank" rel="noopener" href="https://github.com/shadowsocksrr/shadowsocksr-android/releases/download/3.5.4/shadowsocksr-android-3.5.4.apk">https://github.com/shadowsocksrr/shadowsocksr-android/releases/download/3.5.4/shadowsocksr-android-3.5.4.apk</a></p>
+<p><strong>使用教程：</strong><br><a target="_blank" rel="noopener" href="http://bubbleioa.top/wp-content/uploads/2019/05/ssr-android.png">点击查看</a></p>
+<h2 id="SSR-iOS客户端"><a href="#SSR-iOS客户端" class="headerlink" title="SSR iOS客户端"></a>SSR iOS客户端</h2><p>需要美版账号（其他国家的没试过），<a target="_blank" rel="noopener" href="http://bubbleioa.top/wp-content/uploads/2019/05/ssr-get.png">点击查看获取方法</a></p>
+<p>ssr应用推荐（参考），<a target="_blank" rel="noopener" href="http://bubbleioa.top/wp-content/uploads/2019/05/ssr-ios.png">点击查看</a></p>
+<p>配置方法其实和安卓，windows差不多，都是填那几个参数。</p>
+<h2 id="SSR-MacOS客户端"><a href="#SSR-MacOS客户端" class="headerlink" title="SSR MacOS客户端"></a>SSR MacOS客户端</h2><p><strong>下载地址：</strong><a target="_blank" rel="noopener" href="https://github.com/qinyuhang/ShadowsocksX-NG-R/releases/download/1.4.3-R8-build3/ShadowsocksX-NG-R8.dmg">https://github.com/qinyuhang/ShadowsocksX-NG-R/releases/download/1.4.3-R8-build3/ShadowsocksX-NG-R8.dmg</a></p>
+<p><strong>使用方法：</strong>和Windows几乎没区别</p>
+<h2 id="SSR-Linux客户端"><a href="#SSR-Linux客户端" class="headerlink" title="SSR Linux客户端"></a>SSR Linux客户端</h2><p>这是一个有图形界面的Linux客户端，下载和安装请见：<br><a target="_blank" rel="noopener" href="https://github.com/erguotou520/electron-ssr">https://github.com/erguotou520/electron-ssr</a></p>
+<p>使用方法和上面的类似。</p>
+<h2 id="SSR-路由器客户端"><a href="#SSR-路由器客户端" class="headerlink" title="SSR 路由器客户端"></a>SSR 路由器客户端</h2><p>如果想要所有局域网设备，无需一一设置，自动实现科学上网，那么有效的途径就是在路由器上安装SSR客户端，实现局域网所有设备科学上网。</p>
+<h3 id="路由器科学上网所需条件"><a href="#路由器科学上网所需条件" class="headerlink" title="路由器科学上网所需条件"></a>路由器科学上网所需条件</h3><p>在路由器上安装SSR客户端的前提，是路由器可以安装第三方固件，然后在第三方固件中安装SSR客户端。</p>
+<p><strong>1.不能是普通的TP-Link、迅捷、腾达等大众路由器。</strong><br>原因：这些大众品牌路由器，其官方固件功能比较简单，同时又无法刷入功能强大的第三方固件。</p>
+<p><strong>2.有哪些品牌的路由器可以安装SSR？</strong><br>一般来说，新兴的互联网品牌路由器，一般都可以安装第三方固件，并且比较便宜。比如Newifi路由器、小米路由器、斐迅路由器、极路由等。<br>另外老牌的华硕路由器、网件路由器、Linksys路由器等，这些大牌路由，基本都可以安装第三方固件，不过价格相对比较高。</p>
+<p><strong>3.有哪些第三方固件可供选择？</strong><br>目前比较主流的第三方固件有：openwrt、LEDE、PandoraBox、老毛子（Padavan）、梅林。其中LEDE是openwrt的最新版名称，PandoraBox是openwrt基础上的打包版本。这三者的本质都是openwrt，都可以自己在系统内安装SSR等功能。<br>老毛子和梅林则集成众多实用功能，自带SSR，固件相对比较封闭。<br>新手的话，推荐用老毛子固件或梅林固件，功能强大，自带功能也够用，免去自己安装的麻烦。</p>
+<p><strong>4.上面提到的固件，分别对应哪些路由器？</strong><br>华硕、网件的路由器，大部分都可以适配第三方的梅林固件，梅林固件自带SSR。<br>Linksys的路由器，大部分都可适配第三方的openwrt或LEDE固件。<br>小米、Newifi、斐迅、极路由等品牌，则可以适配PandoraBox或老毛子固件，也自带SSR。</p>
+<p>由于老毛子固件和梅林固件，自带SSR，无需另外安装，下面我们主要介绍下openwrt固件下，SSR的下载，安装和使用。</p>
+<h3 id="openwrt固件-SSR安装教程"><a href="#openwrt固件-SSR安装教程" class="headerlink" title="openwrt固件 SSR安装教程"></a>openwrt固件 SSR安装教程</h3><p><strong>下载地址：</strong> <a target="_blank" rel="noopener" href="https://github.com/ywb94/openwrt-ssr/releases/download/V1.2.1/luci-app-shadowsocksR_1.2.1.rar">https://github.com/ywb94/openwrt-ssr/releases/download/V1.2.1/luci-app-shadowsocksR_1.2.1.rar</a></p>
+<ol>
+<li>以上压缩包下载完成后解压，会得到6个文件夹，分别代表6种CPU架构，我们只需用到其中1个。</li>
+<li>查询你的路由器是什么CPU、CPU是什么架构。查到后打开对应的文件夹。</li>
+<li>文件夹内有两个SSR版本，一个带GFW字样、一个不带。推荐选择不带GFW的版本，因为GFW版本需要路由器其它模块的配合，比较麻烦。</li>
+<li>在PC端用Winscp连接路由器，连接时协议选SCP，端口为22，用户名密码一般与你的路由登录密码一致。连接成功后，将luci-app-shadowsocksR_1.2.1_all.ipk上传至路由器的 /tmp目录。</li>
+<li>打开Putty运行以下命令：<code>opkg install /tmp/luci-app-shadowsocksR_1.2.1_all.ipk</code></li>
+<li>以上命令成功运行完成后，SSR就安装成功了。</li>
+<li>打开路由器后台管理页面刷新，在菜单的服务一栏下，找到ShadowsocksR就代表安装成功了。<h3 id="openwrt固件-SSR使用教程"><a href="#openwrt固件-SSR使用教程" class="headerlink" title="openwrt固件 SSR使用教程"></a>openwrt固件 SSR使用教程</h3>打开路由器后台管理页面，依次打开 菜单——服务——ShadowsocksR</li>
+</ol>
+<p>在最上方的客户端、服务端、状态三项中，我们只需配置客户端，服务端一般用不到。</p>
+<p><strong>客户端配置</strong></p>
+<p>在默认的客户端界面中，从上到下分为以下几大项：</p>
+<ul>
+<li>服务器配置</li>
+<li>全局设置</li>
+<li>SOCKS 5代理</li>
+<li>访问控制<br>下面我们依次介绍。<a target="_blank" rel="noopener" href="http://bubbleioa.top/wp-content/uploads/2019/05/ssr-luyouqi.png">点击查看</a></li>
+</ul>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/01/25/%E3%80%90NOI%E5%AF%BC%E5%88%8A%E3%80%91%E5%86%B2%E5%88%BANOI2019%E8%A2%AB%E8%99%90%E8%AE%B0/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">【NOI导刊】冲刺NOI2019被虐记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/01/01/2018%E5%B9%B410%E6%9C%88%E6%96%B0%E7%95%AA%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93/">
+                        <span class="hidden-mobile">2018年10月新番个人总结</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

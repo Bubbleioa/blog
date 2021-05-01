@@ -1,0 +1,502 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>然后，下一曲开始了！ - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="然后，下一曲开始了！">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-03-16 20:12" pubdate>
+        2020年3月16日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      27
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">然后，下一曲开始了！</h1>
+            
+            <div class="markdown-body">
+              <center>
+<font size=4><b>然后，下一曲开始了！</b></font>
+
+<p>《 吹响！悠风号》观后感（仅动画）</p>
+<p><font color="red">⚠剧透警告⚠</font></p>
+</center>
+
+<h2 id="Part-1-观看背景"><a href="#Part-1-观看背景" class="headerlink" title="Part.1 观看背景"></a>Part.1 观看背景</h2><p>还依稀记得第一季连载的时候，感叹着“这个世界上还有制作如此精良的动画”的我的样貌。但后来不知道什么原因，阴差阳错地没有继续看下去。</p>
+<p>后来在完全懵逼的情况下在高铁上看完了《莉兹与青鸟》，真的除了感叹制作精良之外就没有什么想法了。</p>
+<p>然而当我时隔多年重新观看的时候，我突然意识到，下一曲开始了！</p>
+<h2 id="Part-2-剧情梗概"><a href="#Part-2-剧情梗概" class="headerlink" title="Part.2 剧情梗概"></a>Part.2 剧情梗概</h2><p>如同该作名称一样，故事主要讲述了北宇治高中吹奏部参加全国大赛的故事，而我们的主角黄前久美子在社团中担当的就是上低音号演奏者。</p>
+<blockquote>
+<p>北宇治高中吹奏部直到5年前还是关西大会的常客，并且过去还是全国大会出场过的强校代表，然而自从顾问换了之后，该吹奏部就再也没有挺进过关西大会。之后以新顾问的赴任为契机，怀揣着高远目标的部员们挥洒着奋斗的青春，过着波澜万丈的每一天。终于，比赛的日子也即将到来……</p>
+</blockquote>
+<p>如同很多为高中生举办的比赛一样，日本的中学生吹奏大赛也是一年举行一次，要参加全国赛，必须在地区赛中取得名额（剧中是关西大赛），要想参加地区赛，必须在府赛中取得名额（剧中为京都府），在此之前，还有本地举办的Sunrise Festival的活动。</p>
+<center>
+<img src="https://s1.ax1x.com/2020/03/16/8YNqdP.png" srcset="/img/loading.gif" lazyload  alt="" />
+</center>
+
+<p>但是作为一个55人参加的团体比赛，团队内部的和谐和凝聚力也是十分重要的，团队内部的矛盾不可能没有，而我们的主角久美子，随着时间的推移，也从一个旁观者变成了勇于冲进漩涡中心的调解员。而每一次解开部员之间的矛盾，都使得这个团队更加团结……</p>
+<h2 id="Part-3-主题与人物"><a href="#Part-3-主题与人物" class="headerlink" title="Part.3 主题与人物"></a>Part.3 主题与人物</h2><blockquote>
+<p>京吹1期很有青春的感觉，因为它唤醒了6、7年前的一些乐团的记忆。下面把京吹的一些情节和我当年的经历对比一下，简直神还原。京阿尼的片很多表面上是日常，实际上带有很浓郁青春的味道，比如轻音、比如冰菓，比如京吹。如果说京吹1给普通观众的“青春感”是10分，那么对于混过乐团的人来说就是20分。因为它总是有意无意地还原一些细节。<br>——引用自<a target="_blank" rel="noopener" href="https://bgm.tv/blog/289327">锐ちゃん的日志</a></p>
+</blockquote>
+<p>说到青春，其实这是一个很大的范围，我甚至觉得它囊括了该作所有主题：奋斗、团结、友情、爱情、成长……</p>
+<p>有一部我很喜欢的漫画，主题也是青春的《星野，闭上眼》，其中汉化组组长的一段话让我印象深刻</p>
+<blockquote>
+<p>不知从哪里听说过，青春总是残酷的。<br>…………<br>但是青春不就是这个样子的吗？<br>路还长，我们还年轻。<br>青春永远在途中，无需完美的句号。<br>——暗夜黑猫</p>
+</blockquote>
+<p>（我省略了很多，原文很长但是真的非常有文采！佩服！）</p>
+<center>
+<img src="https://s1.ax1x.com/2020/03/16/8YwmQg.png" srcset="/img/loading.gif" lazyload  alt="" />
+</center>
+
+<p>但是“京吹”的青春很不同，或者说，表现方式很不同。上面所提到的《星野，闭上眼》以及很多其他“青春”题材的作品，都很戏剧性，人物的行为动机都很随机，是一种常用的“商业手段”。而“京吹”如同锐ちゃん所说，是一种“日常的青春”，戏剧性拉到最低以至于有人会做出“主线过于平淡”的评价。</p>
+<p>我们总是站在上帝视角，来评判一个人的行动，来赞颂某部作品里所谓的“青春”。但是真正的青春难道更多的不是心灵上的感受吗？而京都动画将这些细腻的情感跃然于画面之上，“细腻的情感流露”也是该作能变现出“真实感”的原因之一。</p>
+<center>
+我一直认为，青春总是充满挫折的
+久美子避开初中同学，选择北宇治高中
+丽奈暗恋泷升老师，但却无法得到回应
+明日香面对家长压力，被迫放弃社团活动
+香织拥有强劲实力，因制度无缘独奏
+夏纪经历退部风波，练习逐渐浑水摸鱼
+麻美子放弃自我所好，等到大学后悔无比
+美玲不善表达情感，入部之后自我孤立
+
+<p>很多人看番喜欢带入角色<br>我们都以为自己是久美子，其实我们只是我们自己<br>没有久美子的真挚宽容<br>没有丽奈的争强好胜<br>没有明日香的圆滑大方<br>没有香织的人缘宽广<br>没有夏纪的不耻下问<br>没有麻美子的自我醒悟<br>没有美玲的过硬技术<br>我们经常憧憬着优秀的人，但只和自己相当的人交流<br>在网络上数落他人甚至是虚构人物的言行，但自己完全做不到<br>想要变得优秀，但又怕努力了没有成果<br>默默搞着自己的兴趣，却不被别人认可<br>身边的朋友总是像在往前走，自己总感觉在原地踏步<br>每天活在焦虑之中，通过沙雕视频慰藉心灵<br>哈哈一笑之后，又陷入自我责备的循环<br>被消费主义冲昏了头脑，买来一时的快感</p>
+<p>即便是青春中最甜蜜的爱情<br>大多数也无法修成正果</p>
+<p>不知从哪里听说<br>青春是场垃圾游戏<br>是给那些已经赢在起跑线上的人的狂欢<br>而我们如同大多数人一样<br>在名为青春的漩涡里抱头鼠窜，找不到方向</p>
+<p>难道我们所讴歌的青春<br>真的是场垃圾游戏？真的是给胜利者的狂欢？</p>
+<p>新月之舞缓缓落幕，春的脚步处处生息<br>人们之所以将年少冠以青春之名，<br>正是因为青春是成长的时期</p>
+<p>久美子帮助社团解决矛盾<br>丽奈向老师射出爱之箭矢<br>明日香取得成绩参加大赛<br>香织面对机会主动让位<br>夏纪受到感染努力练习<br>麻美子不顾反对坚持理想<br>美玲走出封闭敞开心扉</p>
+<p>尽管第一次只拿到了铜奖<br>就算第二次连全国大赛也没能参加<br>但这些重要吗？</p>
+<p>不是每个努力都必须要有结果，<br>过程和感悟或许更加珍贵<br>不是每个问题都必须要有答案，<br>苦恼和思索有时更加重要</p>
+<p>我们每个人都把青春想的太功利化<br>得到什么，失去什么的心情挥之不去<br>可青春正是最不用考虑得失的时候<br>无所顾虑地向前无视前方的艰难险阻</p>
+<p>“京吹”也是如此<br>吹奏比赛没能拿到理想的成绩<br>丽奈也没法得到老师的回应<br>秀一与久美子还没能在一起</p>
+<p>但是这就是青春，<br>无需完美的结局，<br>去将当下所有美好的事物谱写，<br>形成绝妙的乐章，<br>这，正是青春的特权</p>
+</center>
+
+<h2 id="Part-4-吐槽"><a href="#Part-4-吐槽" class="headerlink" title="Part.4 吐槽"></a>Part.4 吐槽</h2><p>先说一句：我忍你们这些在“京吹”底下用政治口气讲话的人很久了！！</p>
+<p>啊，写起来真的是没完没了，真的好想把自己的感情原封不动地搬到文章里啊！<br>高中虽然没有参加过团体竞赛，但好歹也参加过团体和竞赛XD</p>
+<p>团体是指团委，竞赛是指奥赛，关于奥赛还有一篇黑历史在我的第一篇日志里，当时真的有点气愤吧，有点像希美当时退部的时候的感情？但看来我还是坚持了下来呢。</p>
+<p>我在团委里也算是一个夏纪一样的人物吧，就是提不起劲的那种，有什么任务安排到我头上了我才会做的那种（真的很抱歉QAQ）<br>不过和剧中有所不同，我们这一届团委应该是由于做的很好我才能这么悠闲？<br>但是到了下一届招新的时候真的是惨不忍睹233，下一届他们自己内部的问题很大，还有几个“久石奏”和“美玲”在里面，真的非~常难处理<br>但是由于团委只同时有两届工作，加起来大概25人左右，所以冲突也不是那么明显（当然想解决也因为时间有限也很难）</p>
+<p>要说到团体里的冲突的话感觉问题最大的就是我现在所在的班级吧，虽然快毕业了但是回想起来我还是有很大一部分责任的。当时当班长却有一段时间为了奥赛停课而导致的班上氛围变化。作为一个团队的Leader我其实很憧憬久美子，十分欣赏她的性格。</p>
+<p>我认为只有京都动画能够做到这么忠实于日常的同时做到如此丰实的内容，虽然连着看不免陷入一种单元剧推动主线的感觉，但是比起其他作品来说这种感觉要好很多。</p>
+<p>另一条线就是久美子和秀一的爱情线，据说原作小说得了一个什么恋爱小说奖？这是真的吗我怎么一点也看不出来？虽然还是很甜就是了，尤其是久美子把礼物还回去的时候，有些人可能觉得“惨 秀一 惨”，但我反而觉得是那种“老夫老妻”的安心感，像是已经约定好了的夫妻。能为了自己的理想而暂时放下爱情的两人，不可谓不成熟。原来之前青涩的感觉都是假的， 都已经发展到这一步了吗www</p>
+<p>还有配音要好好夸夸，这种感觉，我记得上次还是在古力特里面感受到过，这种不加修饰的纯正的声音，为这部番增色不少。</p>
+<p>虽然感觉说这么点有点不够的样子，心中还有很多想要诉说的东西。<br>但是写了这么多，我发现我也要好好努力了呢，在这所剩不多的青春里。<br>期待第三季！</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2020/03/27/%E3%80%90%E5%8A%A8%E7%94%BB%E8%A7%82%E5%AF%9F%E8%B0%83%E8%89%B2%E6%9D%BF#0%E3%80%91%E7%B3%BB%E5%88%97%E4%BB%8B%E7%BB%8D/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">【动画观察调色板#0】系列介绍</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2020/03/07/%E6%88%91%E4%BB%AC%E6%89%80%E7%BB%8F%E5%8E%86%E7%9A%84%E6%AF%8F%E4%B8%AA%E5%B9%B3%E5%87%A1%E7%9A%84%E6%97%A5%E5%B8%B8%EF%BC%8C%E4%B9%9F%E8%AE%B8%E5%B0%B1%E6%98%AF%E8%BF%9E%E7%BB%AD%E5%8F%91%E7%94%9F%E7%9A%84%E5%A5%87%E8%BF%B9%E3%80%82/">
+                        <span class="hidden-mobile">我们所经历的每个平凡的日常，也许就是连续发生的奇迹。</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

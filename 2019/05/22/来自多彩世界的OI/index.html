@@ -1,0 +1,480 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <link rel="icon" href="https://sm.ms/image/kOKBJzfYEWpT7gy">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="为了防止主博客再炸的静态版本博客">
+  <meta name="author" content="Bubbleioa">
+  <meta name="keywords" content="">
+  
+  <title>来自多彩世界的OI - ioa&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.6.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"ltsblog.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="来自多彩世界的OI">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2019-05-22 21:41" pubdate>
+        2019年5月22日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.7k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      28
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">来自多彩世界的OI</h1>
+            
+            <div class="markdown-body">
+              <h1 id="涟漪"><a href="#涟漪" class="headerlink" title="涟漪"></a>涟漪</h1><p>2015年5月21日（现在不可以查了，还好我记得这个日子），我注册了一个B站账号，是被拜年祭吸引过来的，这也注定了我是对睿站的（当时应该还是逸站）MAD是最感兴趣的，后面慢慢了解到有个公司叫做Adobe，有个软件叫AE，当时硬是靠速龙Ⅱ来学的，现在想来都可怕XD。<br>在AE里我接触到了代码：也就是表达式。当时真的觉得很神奇，一行短短的代码就能让MAD栩栩如生，当时还觉得那东西很难233</p>
+<p>没过多久，睿站的第二届弹幕（也是最新一届）开始征稿，毫无经验的我也凑热闹参加。当时弹幕多到我速龙Ⅱ的电脑都渲染不出来（可以看2P的录屏，明显延迟），链接在这：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av2594281">https://www.bilibili.com/video/av2594281</a></p>
+<p>当然，冠军是真的触，直接整出一个MAD来：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av2739681/">https://www.bilibili.com/video/av2739681/</a><br>真的是太强啦！%%%</p>
+<p>在文化课的学习过程中，这些小小的代码，在灰色的视界上点缀了些许彩色。</p>
+<h1 id="斑斓"><a href="#斑斓" class="headerlink" title="斑斓"></a>斑斓</h1><p>2017年11月24日，我在PTA上提交了第一份代码，开始了我的OI之旅。初识OI并没有想象中的那么浪漫，就是抱着渣男的态度觉得随便试试就好。这个态度在接下来的半年里慢慢改观，然而这太慢了，以至于原本不多的时间又被截去了一部分。</p>
+<p>停课总是很快乐的，无论是在别人放假的时候还是在别人上课的时候。寒假里停了15天，当时还是萌新（虽然现在升级为蒟蒻了），感觉学得还很轻松，晚上整个学校就我们几个学奥赛的住寝室，很恐怖QAQ，但是，yy在下铺打开电脑，播放《寻梦环游记》，一整个寝室的人都凑过来看，我在上铺，很冷不想下去，于是就看起《序列之争》来了233.现在想起来，那段时光是特别单纯而又幸福的，没有被大佬锤的压力，没有升学的烦躁。</p>
+<p>平常的奥赛学习可以认为是没有作用的（具体可以看<a target="_blank" rel="noopener" href="http://bubbleioa.top/archives/891">这篇文章</a>），只是在地上松土，为了能在停课的时候更好的播种。</p>
+<p>就这样度过了半年的空白区，到了暑假，期间也没有什么特别值得记录的事情发生，只是有一个学长省选遗憾地没选上（学OI的时候疯狂炉石），那是JXOI最后一次由可怜出题，同时也是竞争最后一次那么弱的。</p>
+<p>夏日的回忆，没有小姐姐的泳装（其实有，在《ISLAND》里233），只有OI。这段时间去了常州培训，具体可以看<a target="_blank" rel="noopener" href="http://bubbleioa.top/archives/113">这篇文章</a>，我只记得我们被锤爆，然后回来发奋图强，但是有一个人因为玩游戏被教练T了，可能是他玩的游戏并不够OI吧。</p>
+<p>然后就是突然理解到了clj所说的学了OI不需要女朋友，因为OIer都把全部的爱投入到了OI上，我真的从未感受过哪门学科的学生对该门学科如此热爱的，出题目，讲课，开发OJ，开发评测软件，写书……大家都努力地想要让OI变好，泪目。</p>
+<p>然后又滚回来上了一个月文化课，在常州意识到差距之后，我们那个时候真的很着急。我当时正好在追《轻羽飞扬》，看了之后结合自己的感受黑化了一会（无能泄愤），然后在Bangumi上留下了<a target="_blank" rel="noopener" href="http://bangumi.tv/blog/281939">黑历史</a>（还是首评）QAQ，也特别感谢Bangumi上的各位的批判，后来也一个个认了错（或者是解释了一下），以后应该就不会有这种事了（吧）。</p>
+<p>NOIP2018前又停了1个月的课（我们强行要求的），之后来看，这个选择正确的，因为2018年JX竞争突然猛烈了许多，如果不是这次停课，我们很可能全军覆没。但是这次停课有人也很聪明（就是再说Linz），把刷题的中心从我们校内OJ转移到了Luogu，可以更好地于外校对比，刷题量也比我们多，最后的NOIP也是考得最好的。</p>
+<p>大概是重阳节的时候我们在洛谷上举办了一个公开赛，现在看来，洛谷的审核是真的松，把好多大佬都坑了QWQ，<a target="_blank" rel="noopener" href="https://www.luogu.org/contestnew/show/11523">具体请看这里</a>。<br>这里有个小插曲，就是当时我们全校停电，出的题目很坑，所以很多人来问，然后我就要了班主任手机开热点答疑，但是没人问我出的题目，很崩溃orz</p>
+<p>NOIP炸了，本来其实可以上400的，最后只有300多一点，没看清数据范围是一方面，平时题解看多了也是锅。具体可以看<a target="_blank" rel="noopener" href="http://bubbleioa.top/archives/581">我的游记</a>，当时如果能多考一点，结局会不会不一样呢？我不敢断言。</p>
+<p>之后的寒假我们就兵分两路，Linz和教练去了WC，我还有其他4人去了<a target="_blank" rel="noopener" href="http://bubbleioa.top/archives/629">郑州NOI导刊</a>。</p>
+<p>回来后我犯了一个错误，就是和其他学生一样，平平淡淡地过完了一个寒假，没有碰OI。期间只和Linz等人开黑打CF div2 然后被Hack到死。<br>开学后，Linz带着其他几个人，一起退役了。其实这也并不奇怪，毕竟大家都被锤爆了，他们很理智地分析了自己和别人地差距，然后选择了放弃，我按理来说不应该责怪他们，但是……Linz你个烂人杰啊！请看Linz<del>令人羞耻的</del><a target="_blank" rel="noopener" href="http://bubbleioa.top/archives/908">退役记录</a>。这只OIer是真的一点也不可爱，写退役记录也写得跟流水账似的，你不会写你可以“嘤嘤嘤”啊。</p>
+<p><del>嘤嘤嘤……</del></p>
+<p>然后就是我和机房的独处时光了~，省选前一个月，我确保每天都有3个小时的OI时间，但是我又犯了一个错误，就是看题解太多，想得太少，这也导致了我省选T3没写出来，虽然确实我们省没人写出来，但是我觉得我当时思路的方向是对的，可能就是少那么最后几步。</p>
+<p>接着到来的省选在这里都有<a target="_blank" rel="noopener" href="http://bubbleioa.top/archives/927">记录</a>，其实除了80pt挂成40pt很可惜外，没有什么无法释怀的，hwc都没进队，而且进队的那些队爷没有一个是比我花的时间少的，我又有什么好抱怨的呢？这只是单纯的奇迹没有发生罢了。</p>
+<p>在这段学习OI的日子里，由最初的认识到OI可以保送的光鲜外表，再到后来慢慢了解到她的真实、她的的残酷，喜欢的心情从未减少。<br>如果再给我一次选择的机会，我还是会选择接触OI，多亏了OI，让我的黑白的高中生活多了些斑斓的色彩。</p>
+<h1 id="多彩世界"><a href="#多彩世界" class="headerlink" title="多彩世界"></a>多彩世界</h1><p>退役后就感觉无比轻松，APIO就当作是OI生涯的退役之旅吧，但是没想到这次旅途，给我带来了一个多彩的世界。<br>具体请看<a target="_blank" rel="noopener" href="http://bubbleioa.top/archives/936">这篇文章</a>。</p>
+<hr>
+<p>等等，还没有结束呢！</p>
+<h1 id="O-I-人（梗来自请APIO2019主持稿，画面自行脑部）"><a href="#O-I-人（梗来自请APIO2019主持稿，画面自行脑部）" class="headerlink" title="O I 人（梗来自请APIO2019主持稿，画面自行脑部）"></a>O I 人（梗来自请APIO2019主持稿，画面自行脑部）</h1><p><a target="_blank" rel="noopener" href="http://m-sea-blog.com/">M_sea</a>：祝CF上蓝！<br><a target="_blank" rel="noopener" href="http://www.yihan.ac.cn/">Yijan</a>：祝考上CDQZ！<br><a target="_blank" rel="noopener" href="https://www.goldenpotato.cn/">GoldenPotato</a>：OIer是不会被打倒的！话说你们学校机房真的是豪华<br><img src="http://bubbleioa.top/wp-content/uploads/2019/05/psb.jpg" srcset="/img/loading.gif" lazyload><br><a target="_blank" rel="noopener" href="http://www.cnblogs.com/Rye-Catcher">RyeCatcher</a>：恭喜SM2过了！话说新加坡那边的大学也有ICPC吧xd<br><a target="_blank" rel="noopener" href="https://www.hh12.cn/">HigHwind</a>：队爷%%祝THUSC&amp;NOI2019 RP++，什么时候有机会再来颓War3吧~<br><a target="_blank" rel="noopener" href="https://oi.yuyuko.cc/">kririae</a>：虽然现在您不认识我，但是AE+OI+GalGame，咱们匹配度很高啊！<br><a target="_blank" rel="noopener" href="https://www.luogu.org/blog/ShadowassIIXVIIIIV/">Shadowice1984</a>：神仙加油！退役了文化课上也不要输啊！<br><a target="_blank" rel="noopener" href="http://www.cnblogs.com/">星星之火</a>：您是不是团委的呀（我在我们学校也是个团委委员）<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/AlenaNuna/">AlenaNuna</a>：明年加油！明年再当一次主持人然后在Au那一栏里念出自己的名字。<br><a target="_blank" rel="noopener" href="https://www.luogu.org/space/show?uid=91499">Linz</a>：这次不会输给你了。<br><a target="_blank" rel="noopener" href="https://www.luogu.org/space/show?uid=96570">Steve_braveman</a>：潮学是啥？（狗头）<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/butterflydew/">ButterflyDew</a>：您是让我醒悟，认识到自己是多么蒟蒻的OIer<br><strong>以下OIer由于某些原因找不到合适的链接（有的甚至连昵称都不知道，所以用首字母缩写）</strong><br>cyc：羡慕不用学导数，当然抛开分数不说，知识本身还是挺有趣的。<br>hjm：努力也要适度哦，主持的中场就不要写作业了吧ww<br>zzh：APIO2019主持人团队中唯一拿牌了的%%%<br>hxf：话说您学校的OJ为什么老是挂，怕不是您推荐给太多的人用了233</p>
+<h1 id="妙妙屋"><a href="#妙妙屋" class="headerlink" title="妙妙屋"></a>妙妙屋</h1><ol>
+<li>之前想过立下毒誓“没进省队就女装”，脑补了一下发现有一个变态在镜子里。</li>
+<li>《碧浪航线》有一个绊爱联动的活动是要点一个格子，周围反转，要总和非负（当然越大越好），然后就写了一个dfs，后面想到，这种东西是固定的，直接上网搜不就好了么xd</li>
+<li>主持的时候把莒看成了营，我谢罪。</li>
+<li>之前把电脑装成Ubuntu的然后又装回Windows，真香！</li>
+<li>颓游戏的时间很少，颓网页的时间很多。Chrome=娱乐工具说成立。</li>
+</ol>
+<h1 id="给学弟学妹们的建议（如果有学妹的话）"><a href="#给学弟学妹们的建议（如果有学妹的话）" class="headerlink" title="给学弟学妹们的建议（如果有学妹的话）"></a>给学弟学妹们的建议（如果有学妹的话）</h1><ol>
+<li>不要颓废！不要颓废！不要颓废！（说了和白说一样）</li>
+<li>如果要冲省队的话，我们学校停课时间不够，至少要4个月（除去假期）</li>
+<li>从开始学的那一刻起，你们的时间就不多了。</li>
+<li>多于外界交流！多去参加活动，这次的APIO没有参加真的有点可惜（话说APIO的要求是啥）。</li>
+<li>不要出毒瘤题，不要学lxl出题！</li>
+<li>少看题解，但是如果一道题看了1个小时还做不出来，赶紧看题解切了，然后加入到你的收藏夹里，定期抽出来再做一遍。</li>
+<li>多打比赛，CF，洛谷（其实有时候洛谷会有坑）都是很不错的。</li>
+<li>写博客，博客是你记录自己学习的地方，同时也是你和其他OIer交流的窗口。</li>
+<li>出去培训其实有利有弊，选好去哪很重要。</li>
+<li>欢迎补充……</li>
+</ol>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>退役啦！！！我终于可以<del>打GalGame，学AE</del>狂补文化课了。以后大学也有了大致方向，按照专业排序的话大概就是：CS&gt;软件工程=人工智能吧，ICPC还要看选不选的上校队。</p>
+<p>愿每个OIer都被温柔以待。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2019/05/28/2019%E5%B1%8A%E7%BD%91%E7%BB%9C%E7%9B%B4%E6%92%AD%E7%8F%AD%E6%AF%95%E4%B8%9A%E4%BA%A4%E6%B5%81/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">2019届网络直播班毕业交流</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2019/05/22/%E3%80%8A%E4%B8%80%E7%94%B7%E4%B8%A4%E5%88%B6%E3%80%8B%E2%80%94%E2%80%94%E5%8F%8B%E6%83%85%E3%80%81%E7%88%B1%E6%83%85%E4%BB%A5%E5%8F%8ALGBT/">
+                        <span class="hidden-mobile">《一男两制》——友情、爱情以及LGBT</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.2/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
