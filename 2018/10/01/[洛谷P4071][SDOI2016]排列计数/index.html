@@ -24,7 +24,7 @@
 
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/blog/lib/hint/hint.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
 
   
     
@@ -57,17 +57,17 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
 
 
-<link  rel="stylesheet" href="/blog/css/main.css" />
+<link  rel="stylesheet" href="/css/main.css" />
 
 <!-- 自定义样式保持在最底部 -->
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"bubbleioa.github.io","root":"/blog/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"lts.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
-  <script  src="/blog/js/utils.js" ></script>
-  <script  src="/blog/js/color-schema.js" ></script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 
@@ -76,7 +76,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/blog/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -93,7 +93,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/">
+              <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
                 首页
               </a>
@@ -105,7 +105,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/archives/">
+              <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 归档
               </a>
@@ -117,7 +117,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/categories/">
+              <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 分类
               </a>
@@ -129,7 +129,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/tags/">
+              <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 标签
               </a>
@@ -141,7 +141,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/about/">
+              <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
               </a>
@@ -166,7 +166,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/blog/img/default.png') no-repeat center center;
+         style="background: url('/img/default.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -239,24 +239,24 @@
               <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>求有多少种长度为 n 的序列 A，满足以下条件：<br>1 ~ n 这 n 个数在序列中各出现了一次<br>若第 i 个数 A[i] 的值为 i，则称 i 是稳定的。序列恰好有 m 个数是稳定的<br>满足条件的序列可能很多，序列数对 10^9+7 取模。</p>
 <h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行一个数 T，表示有 T 组数据。<br>接下来 T 行，每行两个整数 n、m。<br>T=500000，n≤1000000，m≤1000000</p>
 <h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出 T 行，每行一个数，表示求出的序列数</p>
-<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><pre><code>5
+<h2 id="输入样例"><a href="#输入样例" class="headerlink" title="输入样例"></a>输入样例</h2><div class="code-wrapper"><pre><code>5
 1 0
 1 1
 5 2
 100 50
 10000 5000
-</code></pre>
-<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h2><pre><code>0
+</code></pre></div>
+<h2 id="输出样例"><a href="#输出样例" class="headerlink" title="输出样例"></a>输出样例</h2><div class="code-wrapper"><pre><code>0
 1
 20
 578028887
 60695423
-</code></pre>
+</code></pre></div>
 <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>没思路？我们来找规律！<br>比如一个[latex]n=5[/latex]的排列，我们假设[latex]m=2[/latex]也就是说，我们其实已经确定了排列种某些位置的值，就这个例子来说：</p>
 <p>[latex]12???[/latex] [latex]1?3??[/latex] [latex]1??4?[/latex] [latex]1???5[/latex] [latex]?23??[/latex] [latex]?2?4?[/latex] [latex]?2??5[/latex] [latex]??34?[/latex] [latex]??3?5[/latex] [latex]???45[/latex] </p>
 <p>共10种，很容易发现其实就是[latex]C_n^m[/latex]，那么其中的问号又多少种排列呢？</p>
-<p>没思路？我们再来找规律！<br>我们设[latex]D_i[/latex]为i个?的可能的排列数，显然，[latex]D_1=0[/latex] [latex]D_2=1[/latex]<br>接着我们来看下[latex]D_3[/latex]，可以有[latex]312[/latex],[latex]231[/latex]<br>如果我们继续找下去的话，容易出错，所以我们现在来找找规律（灵魂画师）。<br>就拿[latex]D_4[/latex]来说，上面的是数，下面的是位置，首先，1不能放到1号位，而且放到2，3，4上对于递推是等价的，于是他别无选择地放到了其他地方（假设是2号位）<br><img src="https://s1.ax1x.com/2018/08/22/PTVWbn.png" srcset="/blog/img/loading.gif" lazyload><br>然后我们假设2放到1号位上去，剩下的3，4正好是[latex]D_2[/latex]<br><img src="https://s1.ax1x.com/2018/08/22/PTVy8S.png" srcset="/blog/img/loading.gif" lazyload><br>但2怎么可能只有放在1号位上的命运呢？它还可以不放到1号位，咦？我们之前说，i不能放到i号位，那么既然2不放到1号位，那么1号位在这里是不是等价于2号位呢？没错！<br><img src="https://s1.ax1x.com/2018/08/22/PTVcvQ.png" srcset="/blog/img/loading.gif" lazyload><br>而之前的“万恶之源”数字1，它有[latex]n-1[/latex]种放法，所以我们就大胆猜测：[latex]D_n=(n-1)(D_{n-1}+D_{n-2})[/latex]<br>严谨的证明还请大家自己百度<br>然后我们就愉快地输出[latex]C_n^m\times D_{n-m}[/latex]就好啦<br>其他知识点比如说逆元求组合数（费马小定理）还请大家自行了解  </p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="cpp">#include&amp;lt;iostream&amp;gt;
+<p>没思路？我们再来找规律！<br>我们设[latex]D_i[/latex]为i个?的可能的排列数，显然，[latex]D_1=0[/latex] [latex]D_2=1[/latex]<br>接着我们来看下[latex]D_3[/latex]，可以有[latex]312[/latex],[latex]231[/latex]<br>如果我们继续找下去的话，容易出错，所以我们现在来找找规律（灵魂画师）。<br>就拿[latex]D_4[/latex]来说，上面的是数，下面的是位置，首先，1不能放到1号位，而且放到2，3，4上对于递推是等价的，于是他别无选择地放到了其他地方（假设是2号位）<br><img src="https://s1.ax1x.com/2018/08/22/PTVWbn.png" srcset="/img/loading.gif" lazyload><br>然后我们假设2放到1号位上去，剩下的3，4正好是[latex]D_2[/latex]<br><img src="https://s1.ax1x.com/2018/08/22/PTVy8S.png" srcset="/img/loading.gif" lazyload><br>但2怎么可能只有放在1号位上的命运呢？它还可以不放到1号位，咦？我们之前说，i不能放到i号位，那么既然2不放到1号位，那么1号位在这里是不是等价于2号位呢？没错！<br><img src="https://s1.ax1x.com/2018/08/22/PTVcvQ.png" srcset="/img/loading.gif" lazyload><br>而之前的“万恶之源”数字1，它有[latex]n-1[/latex]种放法，所以我们就大胆猜测：[latex]D_n=(n-1)(D_{n-1}+D_{n-2})[/latex]<br>严谨的证明还请大家自己百度<br>然后我们就愉快地输出[latex]C_n^m\times D_{n-m}[/latex]就好啦<br>其他知识点比如说逆元求组合数（费马小定理）还请大家自行了解  </p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><div class="code-wrapper"><pre><code class="cpp">#include&amp;lt;iostream&amp;gt;
 #include&amp;lt;cstdio&amp;gt;
 using namespace std;
 typedef long long ll;
@@ -301,7 +301,7 @@ int main()&#123;
     &#125;
     return 0;
 &#125;
-</code></pre>
+</code></pre></div>
 
             </div>
             <hr>
@@ -322,7 +322,7 @@ int main()&#123;
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/blog/2018/10/01/%5BNOIP2009%5D%E6%9C%80%E4%BC%98%E8%B4%B8%E6%98%93/">
+                      <a href="/2018/10/01/%5BNOIP2009%5D%E6%9C%80%E4%BC%98%E8%B4%B8%E6%98%93/">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">[NOIP2009]最优贸易</span>
                         <span class="visible-mobile">上一篇</span>
@@ -332,7 +332,7 @@ int main()&#123;
                   <article class="post-next col-6">
                     
                     
-                      <a href="/blog/2018/10/01/%5B%E5%BC%80%E5%AD%A6%E8%80%83%E8%AF%95%5D%E6%9C%80%E5%A4%A7%E5%B9%B3%E6%96%B9%E6%95%B0/">
+                      <a href="/2018/10/01/%5B%E5%BC%80%E5%AD%A6%E8%80%83%E8%AF%95%5D%E6%9C%80%E5%A4%A7%E5%B9%B3%E6%96%B9%E6%95%B0/">
                         <span class="hidden-mobile">[开学考试]最大平方数</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -426,14 +426,14 @@ int main()&#123;
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/blog/js/events.js" ></script>
-<script  src="/blog/js/plugins.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 <!-- Plugins -->
 
 
   
-    <script  src="/blog/js/img-lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -476,10 +476,10 @@ int main()&#123;
 
 
 
-  <script  src="/blog/js/local-search.js" ></script>
+  <script  src="/js/local-search.js" ></script>
   <script>
     (function () {
-      var path = "/blog/local-search.xml";
+      var path = "/local-search.xml";
       $('#local-search-input').on('click', function() {
         searchFunc(path, 'local-search-input', 'local-search-result');
       });
@@ -543,7 +543,7 @@ int main()&#123;
 
 
 <!-- 主题的启动项 保持在最底部 -->
-<script  src="/blog/js/boot.js" ></script>
+<script  src="/js/boot.js" ></script>
 
 
 </body>

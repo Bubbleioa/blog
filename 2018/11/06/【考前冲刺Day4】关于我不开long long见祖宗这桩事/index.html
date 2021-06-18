@@ -24,7 +24,7 @@
 
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/blog/lib/hint/hint.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
 
   
     
@@ -57,17 +57,17 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
 
 
-<link  rel="stylesheet" href="/blog/css/main.css" />
+<link  rel="stylesheet" href="/css/main.css" />
 
 <!-- 自定义样式保持在最底部 -->
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"bubbleioa.github.io","root":"/blog/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"lts.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
-  <script  src="/blog/js/utils.js" ></script>
-  <script  src="/blog/js/color-schema.js" ></script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 
@@ -76,7 +76,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/blog/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -93,7 +93,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/">
+              <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
                 首页
               </a>
@@ -105,7 +105,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/archives/">
+              <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 归档
               </a>
@@ -117,7 +117,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/categories/">
+              <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 分类
               </a>
@@ -129,7 +129,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/tags/">
+              <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 标签
               </a>
@@ -141,7 +141,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/about/">
+              <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
               </a>
@@ -166,7 +166,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/blog/img/default.png') no-repeat center center;
+         style="background: url('/img/default.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -240,7 +240,7 @@
 <p>我们每次只能在[latex]i-l[/latex]到[latex]i-1[/latex]这段区间内选择点来更新答案，每次我们可选的状态空间都会变动（整体右移），如果我们优先选择左边的点来更新的话，右边的点的可选方案数不会改变，而左边的点的可选方案显然是比右边的少的（因为左边的点会先退出可行方案），根据决策包容性我们可知该贪心方案正确。</p>
 <p>代码中的3个if是优化枚举（可行性），否则时间复杂度将达到[latex]O((N-L)\times L)[/latex] <del>然而数据太水不加也能过</del></p>
 <hr>
-<pre><code class="cpp">#include&amp;lt;bits/stdc++.h&amp;gt;
+<div class="code-wrapper"><pre><code class="cpp">#include&amp;lt;bits/stdc++.h&amp;gt;
 using namespace std;
 const int MAXN=100004;
 int f[MAXN],a[MAXN];
@@ -263,11 +263,11 @@ int main()&#123;
     printf(&amp;quot;%d&amp;quot;,f[n]);
     return 0;
 &#125;
-</code></pre>
-<h1 id="T2-进化序列"><a href="#T2-进化序列" class="headerlink" title="T2 进化序列"></a>T2 进化序列</h1><p>QAQ QAQ QAQ QAQ，就是这一题！！！！<del>我可不是什么邪恶的史莱姆</del><br>考场上先写了一个暴力，然后写了线段树+二分（Binary Segment Tree简称<del>BST</del>），对拍发现答案不一样，最后发现是暴力写错了orz<br>然后自己造了好多大数据，都是暴力跑得快（但是暴力还是被卡了）<br>然后没开long long 或运算起来可能会爆int，见祖宗了<br><img src="http://bubbleioa.top/wp-content/uploads/2018/10/%E9%80%89%E6%89%8B%E8%A1%A8%E6%BC%94.jpg" srcset="/blog/img/loading.gif" lazyload></p>
+</code></pre></div>
+<h1 id="T2-进化序列"><a href="#T2-进化序列" class="headerlink" title="T2 进化序列"></a>T2 进化序列</h1><p>QAQ QAQ QAQ QAQ，就是这一题！！！！<del>我可不是什么邪恶的史莱姆</del><br>考场上先写了一个暴力，然后写了线段树+二分（Binary Segment Tree简称<del>BST</del>），对拍发现答案不一样，最后发现是暴力写错了orz<br>然后自己造了好多大数据，都是暴力跑得快（但是暴力还是被卡了）<br>然后没开long long 或运算起来可能会爆int，见祖宗了<br><img src="http://bubbleioa.top/wp-content/uploads/2018/10/%E9%80%89%E6%89%8B%E8%A1%A8%E6%BC%94.jpg" srcset="/img/loading.gif" lazyload></p>
 <hr>
 <p>为什么用线段树？我们要查询的区间或值是满足区间可加性的。<br>为什么二分？可以发现越多的数或起来不会变小。</p>
-<pre><code class="cpp">#include&amp;lt;bits/stdc++.h&amp;gt;
+<div class="code-wrapper"><pre><code class="cpp">#include&amp;lt;bits/stdc++.h&amp;gt;
 #define lt p&amp;lt;&amp;lt;1
 #define rt p&amp;lt;&amp;lt;1|1
 using namespace std;
@@ -320,7 +320,7 @@ int main()&#123;
     cout&amp;lt;&amp;lt;cnt&amp;lt;&amp;lt;endl;
     return 0;
 &#125;
-</code></pre>
+</code></pre></div>
 
             </div>
             <hr>
@@ -341,7 +341,7 @@ int main()&#123;
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/blog/2018/11/06/%5Bsdut1808%5D%E5%AE%89%E5%85%A8%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/">
+                      <a href="/2018/11/06/%5Bsdut1808%5D%E5%AE%89%E5%85%A8%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">[sdut1808]安全网络问题</span>
                         <span class="visible-mobile">上一篇</span>
@@ -351,7 +351,7 @@ int main()&#123;
                   <article class="post-next col-6">
                     
                     
-                      <a href="/blog/2018/11/05/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay%EF%BC%93%E3%80%91%E9%9D%92%E6%98%A5%E6%9C%9F%E7%8C%AA%E5%A4%B4%E5%B0%91%E5%B9%B4%E4%B8%8D%E4%BC%9A%E5%8F%96%EF%BC%82%E8%86%9C%EF%BC%82/">
+                      <a href="/2018/11/05/%E3%80%90%E8%80%83%E5%89%8D%E5%86%B2%E5%88%BADay%EF%BC%93%E3%80%91%E9%9D%92%E6%98%A5%E6%9C%9F%E7%8C%AA%E5%A4%B4%E5%B0%91%E5%B9%B4%E4%B8%8D%E4%BC%9A%E5%8F%96%EF%BC%82%E8%86%9C%EF%BC%82/">
                         <span class="hidden-mobile">【考前冲刺Day３】青春期猪头少年不会取＂膜＂</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -445,14 +445,14 @@ int main()&#123;
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/blog/js/events.js" ></script>
-<script  src="/blog/js/plugins.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 <!-- Plugins -->
 
 
   
-    <script  src="/blog/js/img-lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -495,10 +495,10 @@ int main()&#123;
 
 
 
-  <script  src="/blog/js/local-search.js" ></script>
+  <script  src="/js/local-search.js" ></script>
   <script>
     (function () {
-      var path = "/blog/local-search.xml";
+      var path = "/local-search.xml";
       $('#local-search-input').on('click', function() {
         searchFunc(path, 'local-search-input', 'local-search-result');
       });
@@ -562,7 +562,7 @@ int main()&#123;
 
 
 <!-- 主题的启动项 保持在最底部 -->
-<script  src="/blog/js/boot.js" ></script>
+<script  src="/js/boot.js" ></script>
 
 
 </body>

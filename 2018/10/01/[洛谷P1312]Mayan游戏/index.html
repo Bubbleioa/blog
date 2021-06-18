@@ -24,7 +24,7 @@
 
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/blog/lib/hint/hint.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
 
   
     
@@ -57,17 +57,17 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
 
 
-<link  rel="stylesheet" href="/blog/css/main.css" />
+<link  rel="stylesheet" href="/css/main.css" />
 
 <!-- 自定义样式保持在最底部 -->
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"bubbleioa.github.io","root":"/blog/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"lts.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
-  <script  src="/blog/js/utils.js" ></script>
-  <script  src="/blog/js/color-schema.js" ></script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 
@@ -76,7 +76,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/blog/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -93,7 +93,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/">
+              <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
                 首页
               </a>
@@ -105,7 +105,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/archives/">
+              <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 归档
               </a>
@@ -117,7 +117,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/categories/">
+              <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 分类
               </a>
@@ -129,7 +129,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/tags/">
+              <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 标签
               </a>
@@ -141,7 +141,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/about/">
+              <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
               </a>
@@ -166,7 +166,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/blog/img/default.png') no-repeat center center;
+         style="background: url('/img/default.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -237,7 +237,7 @@
             
             <div class="markdown-body">
               <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Mayan puzzle是最近流行起来的一个游戏。游戏界面是一个 7 行 ×5 列的棋盘，上面堆放着一些方块，方块不能悬空堆放，即方块必须放在最下面一行，或者放在其他方块之上。游戏通关是指在规定的步数内消除所有的方块，消除方块的规则如下：</p>
-<p>1 、每步移动可以且仅可以沿横向（即向左或向右）拖动某一方块一格：当拖动这一方块时，如果拖动后到达的位置（以下称目标位置）也有方块，那么这两个方块将交换位置（参见输入输出样例说明中的图 6  到图 7 ）；如果目标位置上没有方块，那么被拖动的方块将从原来的竖列中抽出，并从目标位置上掉落（直到不悬空，参见下面图1 和图2）；<br><img src="https://cdn.luogu.org/upload/pic/103.png" srcset="/blog/img/loading.gif" lazyload><br>2 、任一时刻，如果在一横行或者竖列上有连续三个或者三个以上相同颜色的方块，则它们将立即被消除（参见图1 到图3）。<br><img src="https://cdn.luogu.org/upload/pic/102.png" srcset="/blog/img/loading.gif" lazyload><br>注意：</p>
+<p>1 、每步移动可以且仅可以沿横向（即向左或向右）拖动某一方块一格：当拖动这一方块时，如果拖动后到达的位置（以下称目标位置）也有方块，那么这两个方块将交换位置（参见输入输出样例说明中的图 6  到图 7 ）；如果目标位置上没有方块，那么被拖动的方块将从原来的竖列中抽出，并从目标位置上掉落（直到不悬空，参见下面图1 和图2）；<br><img src="https://cdn.luogu.org/upload/pic/103.png" srcset="/img/loading.gif" lazyload><br>2 、任一时刻，如果在一横行或者竖列上有连续三个或者三个以上相同颜色的方块，则它们将立即被消除（参见图1 到图3）。<br><img src="https://cdn.luogu.org/upload/pic/102.png" srcset="/img/loading.gif" lazyload><br>注意：</p>
 <p>a) 如果同时有多组方块满足消除条件，几组方块会同时被消除（例如下面图 4 ，三个颜色为 1 的方块和三个颜色为 2 的方块会同时被消除，最后剩下一个颜色为 2 的方块）。</p>
 <p>b) 当出现行和列都满足消除条件且行列共享某个方块时，行和列上满足消除条件的所有方块会被同时消除（例如下面图5 所示的情形，5 个方块会同时被消除）。</p>
 <p>3 、方块消除之后，消除位置之上的方块将掉落，掉落后可能会引起新的方块消除。注意：掉落的过程中将不会有方块的消除。</p>
@@ -248,24 +248,24 @@
 <p>输入数据保证初始棋盘中没有可以消除的方块。</p>
 <h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>如果有解决方案，输出 n 行，每行包含 3 个整数 x,y,g，表示一次移动，每两个整数之间用一个空格隔开，其中 (x ,y)表示要移动的方块的坐标， g 表示移动的方向， 1 表示向右移动， −1 表示向左移动。注意：多组解时，按照 x 为第一关健字， y 为第二关健字， 1 优先于 −1 ，给出一组字典序最小的解。游戏界面左下角的坐标为 (0 ,0) 。</p>
 <p>如果没有解决方案，输出一行，包含一个整数 -1 。</p>
-<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><pre><code>3
+<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><div class="code-wrapper"><pre><code>3
 1 0
 2 1 0
 2 3 4 0
 3 1 0
 2 4 3 4 0
-</code></pre>
-<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><pre><code>2 1 1
+</code></pre></div>
+<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><div class="code-wrapper"><pre><code>2 1 1
 3 1 1
 3 0 1
-</code></pre>
+</code></pre></div>
 <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>【输入输出样例说明】</p>
-<p>按箭头方向的顺序分别为图 6 到图 11<br><img src="https://cdn.luogu.org/upload/pic/104.png" srcset="/blog/img/loading.gif" lazyload><br>样例输入的游戏局面如上面第一个图片所示，依次移动的三步是：(2,1) 处的方格向右移动，(3,1) 处的方格向右移动,(3,0)处的方格向右移动，最后可以将棋盘上所有方块消除。</p>
+<p>按箭头方向的顺序分别为图 6 到图 11<br><img src="https://cdn.luogu.org/upload/pic/104.png" srcset="/img/loading.gif" lazyload><br>样例输入的游戏局面如上面第一个图片所示，依次移动的三步是：(2,1) 处的方格向右移动，(3,1) 处的方格向右移动,(3,0)处的方格向右移动，最后可以将棋盘上所有方块消除。</p>
 <p>【数据范围】</p>
 <p>对于 30% 的数据，初始棋盘上的方块都在棋盘的最下面一行；</p>
 <p>对于 100% 的数据，0&lt;n≤5。</p>
 <p>noip2011提高组day1第3题</p>
-<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="cpp">#include&amp;lt;iostream&amp;gt;
+<h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><div class="code-wrapper"><pre><code class="cpp">#include&amp;lt;iostream&amp;gt;
 #include&amp;lt;cstdio&amp;gt;
 #include&amp;lt;cstring&amp;gt;
 #include&amp;lt;stack&amp;gt;
@@ -380,7 +380,7 @@ int main()&#123;
     return 0;
 &#125;
 
-</code></pre>
+</code></pre></div>
 
             </div>
             <hr>
@@ -401,7 +401,7 @@ int main()&#123;
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/blog/2018/10/01/%5BUVA1330%5DCity%20Game/">
+                      <a href="/2018/10/01/%5BUVA1330%5DCity%20Game/">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">[UVA1330]City Game</span>
                         <span class="visible-mobile">上一篇</span>
@@ -411,7 +411,7 @@ int main()&#123;
                   <article class="post-next col-6">
                     
                     
-                      <a href="/blog/2018/10/01/%5BBZOJ4195%5D%5BNoi2015%5D%E7%A8%8B%E5%BA%8F%E8%87%AA%E5%8A%A8%E5%88%86%E6%9E%90/">
+                      <a href="/2018/10/01/%5BBZOJ4195%5D%5BNoi2015%5D%E7%A8%8B%E5%BA%8F%E8%87%AA%E5%8A%A8%E5%88%86%E6%9E%90/">
                         <span class="hidden-mobile">[BZOJ4195][Noi2015]程序自动分析</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -505,14 +505,14 @@ int main()&#123;
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/blog/js/events.js" ></script>
-<script  src="/blog/js/plugins.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 <!-- Plugins -->
 
 
   
-    <script  src="/blog/js/img-lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -555,10 +555,10 @@ int main()&#123;
 
 
 
-  <script  src="/blog/js/local-search.js" ></script>
+  <script  src="/js/local-search.js" ></script>
   <script>
     (function () {
-      var path = "/blog/local-search.xml";
+      var path = "/local-search.xml";
       $('#local-search-input').on('click', function() {
         searchFunc(path, 'local-search-input', 'local-search-result');
       });
@@ -622,7 +622,7 @@ int main()&#123;
 
 
 <!-- 主题的启动项 保持在最底部 -->
-<script  src="/blog/js/boot.js" ></script>
+<script  src="/js/boot.js" ></script>
 
 
 </body>

@@ -24,7 +24,7 @@
 
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/blog/lib/hint/hint.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
 
   
     
@@ -57,17 +57,17 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
 
 
-<link  rel="stylesheet" href="/blog/css/main.css" />
+<link  rel="stylesheet" href="/css/main.css" />
 
 <!-- 自定义样式保持在最底部 -->
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"bubbleioa.github.io","root":"/blog/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"lts.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
-  <script  src="/blog/js/utils.js" ></script>
-  <script  src="/blog/js/color-schema.js" ></script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 
@@ -76,7 +76,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/blog/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -93,7 +93,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/">
+              <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
                 首页
               </a>
@@ -105,7 +105,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/archives/">
+              <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 归档
               </a>
@@ -117,7 +117,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/categories/">
+              <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 分类
               </a>
@@ -129,7 +129,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/tags/">
+              <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 标签
               </a>
@@ -141,7 +141,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/about/">
+              <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
               </a>
@@ -166,7 +166,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/blog/img/default.png') no-repeat center center;
+         style="background: url('/img/default.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -236,10 +236,10 @@
             <h1 style="display: none">[BZOJ2469][中山市选2010]简单数谜</h1>
             
             <div class="markdown-body">
-              <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>很多人都曾经听说过数独，但你是否听说过数谜（Karuro）呢？实际上，数谜是数独的更大（且更难）的兄弟问题，而且在日本也是非常受欢迎的。<br>数谜问题和填字游戏类似，不过它要填的不是文字而是数字。数谜游戏的目标是用1-9填满所有空格，且这些数字相加的和满足相应的要求（或者称为“提示”），且在同一栏（“栏”是指一些水平或者竖直的连续的空格，用于提示的格子不算空格）不能填重复的数字。当所有格子按要求被填满后，这个数谜就看作被解决了。图1和图2是一个可能的数谜游戏示例。<br>当然，直接求解数谜问题的话会比较困难。所以现在我们需要解决的是一个更简单的数谜问题。简单数谜的形状是一个(n+1）行乘(m+1)列的矩形。而简单数谜也只有两种要求，就是行要求和列要求，且分别处于第一行和第一列，其他格子则是空格，而左上角是忽略不计的。coolzzz同学爱好简单数谜，他已经给一些简单数谜填好了其中的一些空格。现在，他想寻求你的帮助，来帮他完成这些简单数谜。如图3所示，2和9是coolzzz同学已经填好的空格，图4则是一个基于图3 的一个可能的解答。<br><img src="https://www.lydsy.com/JudgeOnline/upload/201109/bbb.jpg" srcset="/blog/img/loading.gif" lazyload></p>
+              <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>很多人都曾经听说过数独，但你是否听说过数谜（Karuro）呢？实际上，数谜是数独的更大（且更难）的兄弟问题，而且在日本也是非常受欢迎的。<br>数谜问题和填字游戏类似，不过它要填的不是文字而是数字。数谜游戏的目标是用1-9填满所有空格，且这些数字相加的和满足相应的要求（或者称为“提示”），且在同一栏（“栏”是指一些水平或者竖直的连续的空格，用于提示的格子不算空格）不能填重复的数字。当所有格子按要求被填满后，这个数谜就看作被解决了。图1和图2是一个可能的数谜游戏示例。<br>当然，直接求解数谜问题的话会比较困难。所以现在我们需要解决的是一个更简单的数谜问题。简单数谜的形状是一个(n+1）行乘(m+1)列的矩形。而简单数谜也只有两种要求，就是行要求和列要求，且分别处于第一行和第一列，其他格子则是空格，而左上角是忽略不计的。coolzzz同学爱好简单数谜，他已经给一些简单数谜填好了其中的一些空格。现在，他想寻求你的帮助，来帮他完成这些简单数谜。如图3所示，2和9是coolzzz同学已经填好的空格，图4则是一个基于图3 的一个可能的解答。<br><img src="https://www.lydsy.com/JudgeOnline/upload/201109/bbb.jpg" srcset="/img/loading.gif" lazyload></p>
 <h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>输入包含多组测试数据。第一行包含一个正整数T，表示测试数据数目。每组数据第一行是n(n&lt;10)和m(m&lt;10)，表示数谜的形状的大小。接下来一行有n个整数，是相应的行要求；然后一行是m个整数，是相应的列要求。接下来的n行每行有m个小于10的非负整数，0表示该空格还没有被填数字，其他表示coolzzz同学已经填好的数字。输入数据保证未填数字的空格不会超过16个。</p>
 <h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>对于每组测试数据，输出若干行。如果基于coolzzz已填的结果，该数谜只有一个解，则输出该解；如果不止一个解，则输出一行“Not unique.”；如果没有解，则输出一行“No answer.”。</p>
-<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><pre><code>3
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><div class="code-wrapper"><pre><code>3
 3 3
 6 6 6
 6 6 6
@@ -256,12 +256,12 @@
 4 4
 0 0
 0 0
-</code></pre>
-<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><pre><code>Not unique.
+</code></pre></div>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><div class="code-wrapper"><pre><code>Not unique.
 2 7 1
 3 9 5
 No answer.
-</code></pre>
+</code></pre></div>
 <h1 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h1><p>一道简单的爆搜题，和数独比起来稍微复杂一点（然而代码量更少），比较坑爹的就是如果不加一句话的话全部超时，加上去了就只要32ms<br>我们每次填只关心当前行满不满足要求，最后结束的时候再来判断是不是合法<br>具体数组作用可以用一个表格体现  </p>
 <table>
 <thead>
@@ -295,7 +295,7 @@ No answer.
 <td align="center">当前状态的行、列和</td>
 </tr>
 </tbody></table>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code class="cpp">#include&amp;lt;iostream&amp;gt;
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><div class="code-wrapper"><pre><code class="cpp">#include&amp;lt;iostream&amp;gt;
 #include&amp;lt;cstdio&amp;gt;
 #include&amp;lt;cstring&amp;gt;
 using namespace std;
@@ -395,7 +395,7 @@ int main()&#123;
     &#125;
     return 0;
 &#125;
-</code></pre>
+</code></pre></div>
 
             </div>
             <hr>
@@ -416,7 +416,7 @@ int main()&#123;
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/blog/2018/10/14/%5BNOI1999%5D%5BPOJ1190%5D%E7%94%9F%E6%97%A5%E8%9B%8B%E7%B3%95/">
+                      <a href="/2018/10/14/%5BNOI1999%5D%5BPOJ1190%5D%E7%94%9F%E6%97%A5%E8%9B%8B%E7%B3%95/">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">[NOI1999][POJ1190]生日蛋糕</span>
                         <span class="visible-mobile">上一篇</span>
@@ -426,7 +426,7 @@ int main()&#123;
                   <article class="post-next col-6">
                     
                     
-                      <a href="/blog/2018/10/12/%5BUSACO17OPEN%5DModern%20Art/">
+                      <a href="/2018/10/12/%5BUSACO17OPEN%5DModern%20Art/">
                         <span class="hidden-mobile">[USACO17OPEN]Modern Art</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -520,14 +520,14 @@ int main()&#123;
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/blog/js/events.js" ></script>
-<script  src="/blog/js/plugins.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 <!-- Plugins -->
 
 
   
-    <script  src="/blog/js/img-lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -570,10 +570,10 @@ int main()&#123;
 
 
 
-  <script  src="/blog/js/local-search.js" ></script>
+  <script  src="/js/local-search.js" ></script>
   <script>
     (function () {
-      var path = "/blog/local-search.xml";
+      var path = "/local-search.xml";
       $('#local-search-input').on('click', function() {
         searchFunc(path, 'local-search-input', 'local-search-result');
       });
@@ -637,7 +637,7 @@ int main()&#123;
 
 
 <!-- 主题的启动项 保持在最底部 -->
-<script  src="/blog/js/boot.js" ></script>
+<script  src="/js/boot.js" ></script>
 
 
 </body>

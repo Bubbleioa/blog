@@ -24,7 +24,7 @@
 
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
-  <link  rel="stylesheet" href="/blog/lib/hint/hint.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
 
   
     
@@ -57,17 +57,17 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
 
 
-<link  rel="stylesheet" href="/blog/css/main.css" />
+<link  rel="stylesheet" href="/css/main.css" />
 
 <!-- 自定义样式保持在最底部 -->
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"bubbleioa.github.io","root":"/blog/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"lts.bubbleioa.top","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
-  <script  src="/blog/js/utils.js" ></script>
-  <script  src="/blog/js/color-schema.js" ></script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
 <meta name="generator" content="Hexo 5.4.0"></head>
 
 
@@ -76,7 +76,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/blog/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>ioa's blog</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -93,7 +93,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/">
+              <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
                 首页
               </a>
@@ -105,7 +105,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/archives/">
+              <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 归档
               </a>
@@ -117,7 +117,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/categories/">
+              <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 分类
               </a>
@@ -129,7 +129,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/tags/">
+              <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 标签
               </a>
@@ -141,7 +141,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/blog/about/">
+              <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
               </a>
@@ -166,7 +166,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/blog/img/default.png') no-repeat center center;
+         style="background: url('/img/default.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -248,13 +248,13 @@
 <p>输出碰面所需要的跳跃次数，如果永远不可能碰面则输出一行”Impossible”</p>
 <h2>Sample Input</h2>
 
-<pre><code class="line-numbers">1 2 3 4 5
-</code></pre>
+<div class="code-wrapper"><pre><code class="line-numbers">1 2 3 4 5
+</code></pre></div>
 
 <h2>Sample Output</h2>
 
-<pre><code class="line-numbers">4
-</code></pre>
+<div class="code-wrapper"><pre><code class="line-numbers">4
+</code></pre></div>
 
 <h2>Source</h2>
 
@@ -264,7 +264,7 @@
 <p>其实这一题洛谷的数据更毒一点。<br>虽然在洛谷上是一道绿题，不过数学这方面我是真的不擅长，以至于这一题我觉得比树剖的题目还难。</p>
 <h2>代码</h2>
 
-<pre><code class="language-cpp line-numbers">#include&lt;iostream&gt;
+<div class="code-wrapper"><pre><code class="language-cpp line-numbers">#include&lt;iostream&gt;
 #include&lt;cstdio&gt;
 using namespace std;
 long long x,y,m,n,l; 
@@ -292,7 +292,7 @@ int main()&#123;
     else printf("%lld\n",ans);
     return 0;
 &#125;
-</code></pre>
+</code></pre></div>
             </div>
             <hr>
             <div>
@@ -312,7 +312,7 @@ int main()&#123;
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/blog/2018/12/08/%5BUVA11105%5D%20Semi-prime%20H-numbers/">
+                      <a href="/2018/12/08/%5BUVA11105%5D%20Semi-prime%20H-numbers/">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">[UVA11105] Semi-prime H-numbers</span>
                         <span class="visible-mobile">上一篇</span>
@@ -322,7 +322,7 @@ int main()&#123;
                   <article class="post-next col-6">
                     
                     
-                      <a href="/blog/2018/11/11/NOIP2018%E5%A4%8D%E7%9B%98%EF%BC%88%E7%BB%88%E4%BA%8E%E4%B8%8D%E5%92%95%E5%92%95%E5%95%A6%EF%BC%81%EF%BC%89/">
+                      <a href="/2018/11/11/NOIP2018%E5%A4%8D%E7%9B%98%EF%BC%88%E7%BB%88%E4%BA%8E%E4%B8%8D%E5%92%95%E5%92%95%E5%95%A6%EF%BC%81%EF%BC%89/">
                         <span class="hidden-mobile">NOIP2018复盘（终于不咕咕啦！）</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -416,14 +416,14 @@ int main()&#123;
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/blog/js/events.js" ></script>
-<script  src="/blog/js/plugins.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 <!-- Plugins -->
 
 
   
-    <script  src="/blog/js/img-lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -466,10 +466,10 @@ int main()&#123;
 
 
 
-  <script  src="/blog/js/local-search.js" ></script>
+  <script  src="/js/local-search.js" ></script>
   <script>
     (function () {
-      var path = "/blog/local-search.xml";
+      var path = "/local-search.xml";
       $('#local-search-input').on('click', function() {
         searchFunc(path, 'local-search-input', 'local-search-result');
       });
@@ -533,7 +533,7 @@ int main()&#123;
 
 
 <!-- 主题的启动项 保持在最底部 -->
-<script  src="/blog/js/boot.js" ></script>
+<script  src="/js/boot.js" ></script>
 
 
 </body>
